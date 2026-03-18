@@ -28,15 +28,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEEnius AI | Train With Future Papers</title>
+    <title>JEEnius AI | We Predicted 83% of JEE 2026</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="jeenius.webp">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="JEEnius AI | 2026 JEE Paper Predictions">
+    <meta property="og:title" content="JEEnius AI | We Predicted 83% of JEE Main 2026">
     <meta property="og:description"
-        content="Solve 500+ questions likely to appear in JEE Main 2026. One Kota-Level AI Mentor trained on 20+ years of papers.">
+        content="Our AI predicted 605 out of 728 questions in JEE Main 2026 (Jan). Physics 92%, Chemistry 87%. See the proof.">
     <meta property="og:image" content="https://ai.jeenius.tech/jeenius/landing/jeenius.webp">
     <meta property="og:image:alt" content="JEEnius AI logomark">
     <meta property="og:url" content="https://ai.jeenius.tech">
@@ -45,16 +45,16 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JEEnius AI | 2026 JEE Paper Predictions">
+    <meta name="twitter:title" content="JEEnius AI | We Predicted 83% of JEE Main 2026">
     <meta name="twitter:description"
-        content="Solve 500+ questions likely to appear in JEE Main 2026. One Kota-Level AI Mentor trained on 20+ years of papers.">
+        content="Our AI predicted 605 out of 728 questions in JEE Main 2026 (Jan). Physics 92%, Chemistry 87%. See the proof.">
     <meta name="twitter:image" content="https://ai.jeenius.tech/jeenius/landing/jeenius.webp">
     <meta name="twitter:image:alt" content="JEEnius AI logomark">
 
     <!-- General Meta -->
     <meta name="description"
-        content="JEEnius AI - The only JEE-trained AI mentor with 2026 paper predictions. 500+ predicted questions, 24/7 doubt solving, and Kota-level guidance.">
-    <meta name="keywords" content="JEE preparation, JEE 2026, AI tutor, JEE predictions, mock tests, doubt solving">
+        content="JEEnius AI predicted 83% of JEE Main 2026 question topics. Physics 92%, Chemistry 87%. The only AI mentor proven to predict JEE patterns.">
+    <meta name="keywords" content="JEE preparation, JEE 2026, AI tutor, JEE predictions, mock tests, doubt solving, JEE prediction results">
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -335,15 +335,478 @@
             cursor: pointer;
         }
 
-        /* --- Hero Section --- */
+        /* --- OLD SUCCESS BANNER CSS - COMMENTED FOR FUTURE USE
+        .success-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #244A44 100%);
+            padding: 16px 0;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .success-banner:hover {
+            background: linear-gradient(135deg, #244A44 0%, var(--primary) 100%);
+        }
+        .success-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 6px 12px;
+            border-radius: 50px;
+            color: #22C55E;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .success-text {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .success-text .highlight {
+            background: #22C55E;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 800;
+        }
+        .success-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .success-stat {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .success-stat span {
+            color: #22C55E;
+            font-weight: 700;
+        }
+        END OLD SUCCESS BANNER CSS */
+
+        /* --- Hero Section - Victory Style --- */
         .hero {
-            padding-top: 160px;
+            padding-top: 80px;
             padding-bottom: 100px;
             position: relative;
             overflow: hidden;
             background: radial-gradient(circle at 50% 0%, #F1F8E9 0%, #FAFCFA 70%);
             max-width: 100vw;
             box-sizing: border-box;
+        }
+
+        .hero-victory {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            background: linear-gradient(180deg, var(--primary) 0%, #244A44 60%, #2D5A52 100%);
+            position: relative;
+        }
+
+        .hero-victory::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .victory-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .victory-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
+        }
+
+        .victory-badge i {
+            color: #FFD700;
+            font-size: 1.1rem;
+        }
+
+        .victory-headline {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .victory-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .victory-subtext {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 48px;
+            font-weight: 400;
+        }
+
+        .victory-stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .victory-stat {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 24px 32px;
+            min-width: 120px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .victory-stat:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .victory-stat-highlight {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .victory-stat-highlight:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .victory-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .victory-stat-highlight .victory-stat-number {
+            color: #FFD700;
+        }
+
+        .victory-stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .victory-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 1.05rem;
+        }
+
+        .victory-proof {
+            display: flex;
+            justify-content: center;
+        }
+
+        .victory-proof-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .victory-proof-text i {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .victory-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .victory-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 15s infinite ease-in-out;
+        }
+
+        .victory-particle:nth-child(1) { left: 10%; top: 20%; background: #FFD700; animation-delay: 0s; }
+        .victory-particle:nth-child(2) { left: 20%; top: 60%; background: rgba(255,255,255,0.5); animation-delay: 2s; }
+        .victory-particle:nth-child(3) { left: 35%; top: 30%; background: #FFD700; animation-delay: 4s; }
+        .victory-particle:nth-child(4) { left: 50%; top: 70%; background: rgba(255,255,255,0.5); animation-delay: 1s; }
+        .victory-particle:nth-child(5) { left: 65%; top: 25%; background: #FFD700; animation-delay: 3s; }
+        .victory-particle:nth-child(6) { left: 80%; top: 55%; background: rgba(255,255,255,0.5); animation-delay: 5s; }
+        .victory-particle:nth-child(7) { left: 90%; top: 35%; background: #FFD700; animation-delay: 2.5s; }
+        .victory-particle:nth-child(8) { left: 5%; top: 80%; background: rgba(255,255,255,0.5); animation-delay: 1.5s; }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.6; }
+        }
+
+        /* Confetti Animation */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            top: -20px;
+            opacity: 0;
+        }
+
+        @keyframes confetti-fall-1 {
+            0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.3); }
+        }
+        @keyframes confetti-fall-2 {
+            0% { opacity: 1; transform: translateY(0) rotate(0deg) translateX(0); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(-540deg) translateX(100px); }
+        }
+        @keyframes confetti-fall-3 {
+            0% { opacity: 1; transform: translateY(0) rotate(0deg) translateX(0); }
+            100% { opacity: 0; transform: translateY(100vh) rotate(360deg) translateX(-80px); }
+        }
+
+        /* Floating Questions Background */
+        .floating-questions {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-question {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .floating-question .q-preview {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .floating-question .q-full {
+            display: none;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .floating-question:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #FFD700;
+            color: #1B3B36;
+            transform: scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
+            max-width: 380px;
+            z-index: 100;
+            padding: 20px 24px;
+        }
+
+        .floating-question:hover .q-preview {
+            display: none;
+        }
+
+        .floating-question:hover .q-full {
+            display: block;
+        }
+
+        .floating-question .q-tag {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+        }
+
+        .floating-question .q-tag-hover {
+            display: none;
+            margin-bottom: 12px;
+        }
+
+        .floating-question:hover .q-tag-hover {
+            display: inline-block;
+            background: #1B3B36;
+            color: white;
+        }
+
+        .floating-question .match-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem;
+            color: #22C55E;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .floating-question:hover .match-badge {
+            opacity: 1;
+            border-color: rgba(27, 59, 54, 0.15);
+            color: #15803D;
+        }
+
+        @keyframes float-question {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Interactive Formulas Background */
+        .formula-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .formula-item {
+            position: absolute;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.08);
+            font-size: 1.2rem;
+            transition: all 0.5s ease;
+            pointer-events: auto;
+            cursor: default;
+            user-select: none;
+        }
+
+        .formula-item:hover {
+            color: rgba(255, 215, 0, 0.4);
+            transform: scale(1.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .formula-item.large {
+            font-size: 1.8rem;
+        }
+
+        .formula-item.small {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .floating-questions, .formula-bg {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-victory {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+            .victory-headline {
+                font-size: 2rem;
+            }
+            .victory-subtext {
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+            .victory-stats {
+                gap: 12px;
+            }
+            .victory-stat {
+                padding: 16px 20px;
+                min-width: 100px;
+            }
+            .victory-stat-number {
+                font-size: 1.5rem;
+            }
+            .victory-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-large {
+                width: 100%;
+                max-width: 300px;
+            }
         }
 
         .hero-grid {
@@ -625,6 +1088,26 @@
         .insight-nav:hover {
             border-color: var(--primary);
             background: var(--secondary);
+        }
+
+        .learn-more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: all 0.2s ease;
+        }
+
+        .learn-more-link:hover {
+            color: var(--primary-hover);
+            gap: 12px;
+        }
+
+        .learn-more-link i {
+            font-size: 0.8rem;
         }
 
         /* --- USP Section --- */
@@ -2133,6 +2616,9 @@
 
 <body>
 
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -2144,14 +2630,14 @@
             </a>
 
             <div class="nav-links">
-                <a href="#prediction-lab" data-track-label="nav_prediction" data-track-category="nav">2026 Prediction</a>
+                <a href="prediction-results.html" data-track-label="nav_results" data-track-category="nav">Prediction Results</a>
+                <a href="#prediction-lab" data-track-label="nav_prediction" data-track-category="nav">2027 Predictions</a>
                 <a href="#features" data-track-label="nav_features" data-track-category="nav">Features</a>
                 <a href="#pricing" data-track-label="nav_pricing" data-track-category="nav">Pricing</a>
-                <a href="#faq" data-track-label="nav_faq" data-track-category="nav">FAQ</a>
             </div>
 
             <div class="nav-cta">
-                <a href="#pricing" class="btn btn-primary" data-cta="true" data-track-label="nav_start_trial" data-track-category="cta" data-track-manual="true">Start Free Trial</a>
+                <a href="#pricing" class="btn btn-primary" data-cta="true" data-track-label="nav_get_app" data-track-category="cta" data-track-manual="true">Get the App</a>
             </div>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -2162,164 +2648,281 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#prediction-lab" data-track-label="mobile_nav_prediction" data-track-category="nav">2026 Prediction</a>
+        <a href="prediction-results.html" data-track-label="mobile_nav_results" data-track-category="nav">Prediction Results</a>
+        <a href="#prediction-lab" data-track-label="mobile_nav_prediction" data-track-category="nav">2027 Predictions</a>
         <a href="#features" data-track-label="mobile_nav_features" data-track-category="nav">Features</a>
         <a href="#pricing" data-track-label="mobile_nav_pricing" data-track-category="nav">Pricing</a>
-        <a href="#faq" data-track-label="mobile_nav_faq" data-track-category="nav">FAQ</a>
-        <a href="#pricing" style="color: var(--primary);" data-cta="true" data-track-label="mobile_nav_start_trial" data-track-category="cta" data-track-manual="true">Start Free Trial</a>
+        <a href="#pricing" style="color: var(--primary);" data-cta="true" data-track-label="mobile_nav_get_app" data-track-category="cta" data-track-manual="true">Get the App Free</a>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Victory Announcement -->
+    <section class="hero hero-victory">
+        <div class="victory-particles">
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+            <div class="victory-particle"></div>
+        </div>
+        
+        <!-- Interactive Formulas Background -->
+        <div class="formula-bg" id="formulaBg">
+            <span class="formula-item" style="left: 5%; top: 10%;">E = mc²</span>
+            <span class="formula-item large" style="left: 15%; top: 35%;">F = ma</span>
+            <span class="formula-item small" style="left: 8%; top: 60%;">PV = nRT</span>
+            <span class="formula-item" style="left: 20%; top: 80%;">v = u + at</span>
+            <span class="formula-item small" style="left: 3%; top: 45%;">ΔG = ΔH - TΔS</span>
+            <span class="formula-item" style="right: 5%; top: 12%;">∫ dx</span>
+            <span class="formula-item large" style="right: 12%; top: 38%;">τ = Iα</span>
+            <span class="formula-item small" style="right: 8%; top: 65%;">λ = h/p</span>
+            <span class="formula-item" style="right: 18%; top: 85%;">∇ × E = -∂B/∂t</span>
+            <span class="formula-item small" style="right: 3%; top: 50%;">K = ½mv²</span>
+            <span class="formula-item" style="left: 25%; top: 15%;">sin²θ + cos²θ = 1</span>
+            <span class="formula-item small" style="right: 22%; top: 25%;">pH = -log[H⁺]</span>
+            <span class="formula-item" style="left: 12%; top: 90%;">d/dx(eˣ) = eˣ</span>
+            <span class="formula-item large" style="right: 25%; top: 75%;">Σ F = 0</span>
+        </div>
+
+        <!-- Floating Questions Background -->
+        <div class="floating-questions" id="floatingQuestions">
+            <div class="floating-question" style="left: 2%; top: 18%; animation: float-question 6s ease-in-out infinite;">
+                <div class="q-preview"><span class="q-tag">PHY</span> Projectile at 60° angle...</div>
+                <span class="q-tag q-tag-hover">Physics</span>
+                <div class="q-full">A projectile is thrown upward at an angle 60° with the horizontal. The speed of the projectile is 20 m/s when its direction of motion is 45°. Find the initial velocity.</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 80.9% match with our prediction</span>
+            </div>
+            <div class="floating-question" style="right: 4%; top: 22%; animation: float-question 7s ease-in-out infinite 1s;">
+                <div class="q-preview"><span class="q-tag">CHEM</span> Group 15 Hydrides EH₃...</div>
+                <span class="q-tag q-tag-hover">Chemistry</span>
+                <div class="q-full">Regarding the hydrides of group 15 elements EH₃ (E = N, P, As, Sb), select the correct statement about their properties and bonding.</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 84.7% match with our prediction</span>
+            </div>
+            <div class="floating-question" style="left: 5%; top: 55%; animation: float-question 5s ease-in-out infinite 0.5s;">
+                <div class="q-preview"><span class="q-tag">MATH</span> Differential equation x dy...</div>
+                <span class="q-tag q-tag-hover">Mathematics</span>
+                <div class="q-full">Let y = y(x) be the solution of the differential equation x dy − y dx = √(x² + y²) dx with y(1) = 0. Find y(e).</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 66.6% match with our prediction</span>
+            </div>
+            <div class="floating-question" style="right: 2%; top: 58%; animation: float-question 8s ease-in-out infinite 2s;">
+                <div class="q-preview"><span class="q-tag">PHY</span> Young's Double Slit λ=600nm...</div>
+                <span class="q-tag q-tag-hover">Physics</span>
+                <div class="q-full">In Young's double-slit experiment with monochromatic light of wavelength 600 nm, find the fringe width when the screen is placed at distance D from the slits.</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 84.6% match with our prediction</span>
+            </div>
+            <div class="floating-question" style="left: 1%; top: 82%; animation: float-question 6s ease-in-out infinite 1.5s;">
+                <div class="q-preview"><span class="q-tag">CHEM</span> Osmotic pressure solution...</div>
+                <span class="q-tag q-tag-hover">Chemistry</span>
+                <div class="q-full">A solution is prepared by dissolving 0.3 g of solute A (molar mass 60 g/mol) in 100 mL H₂O at 27°C. Calculate the osmotic pressure.</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 77.9% match with our prediction</span>
+            </div>
+            <div class="floating-question" style="right: 6%; top: 80%; animation: float-question 7s ease-in-out infinite 0.8s;">
+                <div class="q-preview"><span class="q-tag">PHY</span> Simple Harmonic Motion...</div>
+                <span class="q-tag q-tag-hover">Physics</span>
+                <div class="q-full">A particle executes SHM with amplitude A and time period T. Find the time taken by the particle to move from x = A/2 to x = A.</div>
+                <span class="match-badge"><i class="fa-solid fa-check-circle"></i> 80.4% match with our prediction</span>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="victory-content">
+                <div class="victory-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    JEE Main 2026 (Jan) — Prediction Verified
+                </div>
+                
+                <h1 class="victory-headline">
+                    We Predicted <span class="victory-number">83%</span> of JEE 2026
+                </h1>
+                
+                <p class="victory-subtext">
+                    605 out of 728 questions matched our predictions. 63 were almost exact.
+                </p>
+
+                <div class="victory-stats">
+                    <div class="victory-stat">
+                        <div class="victory-stat-number">92%</div>
+                        <div class="victory-stat-label">Physics</div>
+                    </div>
+                    <div class="victory-stat">
+                        <div class="victory-stat-number">87%</div>
+                        <div class="victory-stat-label">Chemistry</div>
+                    </div>
+                    <div class="victory-stat">
+                        <div class="victory-stat-number">69%</div>
+                        <div class="victory-stat-label">Maths</div>
+                    </div>
+                    <div class="victory-stat victory-stat-highlight">
+                        <div class="victory-stat-number">63</div>
+                        <div class="victory-stat-label">Almost Exact</div>
+                    </div>
+                </div>
+
+                <div class="victory-actions">
+                    <a href="prediction-results.html" class="btn btn-primary btn-large" data-track-label="hero_see_proof" data-track-category="cta">
+                        See The Full Analysis <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                    <a href="#pricing" class="btn btn-secondary btn-large" data-cta="true" data-track-label="hero_get_app" data-track-category="cta" data-track-manual="true">
+                        Get JEE 2027 Predictions
+                    </a>
+                </div>
+
+                <div class="victory-proof">
+                    <span class="victory-proof-text">
+                        <i class="fa-solid fa-shield-check"></i>
+                        Verified against actual JEE Main 2026 January Session paper
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OLD HERO SECTION - COMMENTED FOR FUTURE USE
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Left Content -->
                 <div class="hero-content">
                     <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
                         <div class="hero-badge">
-                            <i class="fa-solid fa-sparkles" style="color: #F59E0B;"></i>
-                            Special JEE-Trained AI
+                            <i class="fa-solid fa-trophy" style="color: #22C55E;"></i>
+                            Proven Prediction Accuracy
                         </div>
                         <div class="hero-badge">
-                            Built by IITians with Love ❤️
+                            Built by IITians
                         </div>
                     </div>
 
                     <h1>
-                        2026 JEE Paper Predictions. <br>
-                        <span>One Kota-Level AI Mentor.</span>
+                        The AI That Predicted<br>
+                        <span>83% of JEE 2026.</span>
                     </h1>
 
                     <p class="hero-desc">
-                        JEEnius AI is a JEE-only model trained on 20+ years of solved papers, Kota notes, and proven
-                        formulas—so answers land like a real mentor explaining the why.
+                        Our prediction engine analyzed 20+ years of JEE patterns and predicted 605 out of 728 questions 
+                        in JEE Main 2026 (Jan). Now preparing predictions for JEE 2027.
                     </p>
-
-                    <p class="hero-desc" style="margin-top: 12px;">
-                        <strong>Solve 500+ questions likely to appear in the next JEE Main 2026 paper</strong>—fresh
-                        mocks, drills, and topic mixes generated daily. Upload any JEE PDF (notes, PYQs, coaching
-                        modules) and JEEnius AI will analyze it, answer every question, and spin up fresh DPPs. Unlock
-                        2026 Prediction to view the complete JEE 2026 forecast.
-                    </p>
-
 
                     <div class="hero-actions">
-                        <a href="#prediction-lab" class="btn btn-primary" data-cta="true" data-track-label="hero_unlock_prediction" data-track-category="cta" data-track-manual="true">
-                            Unlock 2026 Prediction <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                        <a href="prediction-results.html" class="btn btn-primary" data-track-label="hero_see_proof" data-track-category="cta">
+                            See The Proof <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
                         </a>
-                        <a href="#pricing" class="btn btn-secondary" data-track-label="hero_browse_plans" data-track-category="cta">
-                            Browse Plans
+                        <a href="#pricing" class="btn btn-secondary" data-cta="true" data-track-label="hero_get_app" data-track-category="cta" data-track-manual="true">
+                            Use the App Free
                         </a>
                     </div>
 
                     <div class="trust-anchors">
                         <div class="trust-item">
+                            <div class="number">83%</div>
+                            <div class="label">Topic Coverage</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="number">63</div>
+                            <div class="label">Almost Exact Questions</div>
+                        </div>
+                        <div class="trust-item">
                             <div class="number">10,000+</div>
-                            <div class="label">Active Aspirants</div>
-                        </div>
-                        <div class="trust-item">
-                            <div class="number">50,000+</div>
-                            <div class="label">Doubts Solved</div>
-                        </div>
-                        <div class="trust-item">
-                            <div class="number">70,000+</div>
-                            <div class="label">Questions Attempted</div>
+                            <div class="label">Active Students</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Content: Prediction Card -->
                 <div class="hero-card-wrapper">
                     <div class="hero-card-glow"></div>
                     <div class="hero-card">
                         <div class="card-header">
                             <div class="flex items-center" style="gap: 12px;">
-                                <div class="card-icon">
-                                    <i class="fa-solid fa-microchip"></i>
+                                <div class="card-icon" style="background: var(--secondary); color: var(--primary);">
+                                    <i class="fa-solid fa-circle-check"></i>
                                 </div>
                                 <div>
-                                    <h3 style="font-size: 1.1rem; margin: 0;">Prediction Engine 2026</h3>
-                                    <span style="font-size: 0.8rem; color: var(--text-muted);">System Active</span>
+                                    <h3 style="font-size: 1.1rem; margin: 0;">JEE 2026 Results</h3>
+                                    <span style="font-size: 0.8rem; color: var(--text-muted);">Verified Analysis</span>
                                 </div>
                             </div>
-                            <div class="live-badge">
-                                <div class="live-dot"></div>
-                                Live Analysis
+                            <div class="live-badge" style="background: var(--secondary); border-color: var(--accent); color: var(--primary);">
+                                <div class="live-dot" style="background-color: var(--primary);"></div>
+                                Verified
                             </div>
                         </div>
 
                         <div class="card-stats">
                             <div class="stat-row">
-                                <span class="stat-label">Target Exam Cycle</span>
-                                <span class="stat-value">JEE 2026</span>
+                                <span class="stat-label">Actual Questions</span>
+                                <span class="stat-value">728</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">Model Stack</span>
-                                <span class="stat-value">JEEnius AI + {GPT-5 • Gemini 3 Pro • Fathomn AI}</span>
+                                <span class="stat-label">Our Predictions</span>
+                                <span class="stat-value">686</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">Data Points Analyzed</span>
-                                <span class="stat-value">20+ Years (2002-2025)</span>
+                                <span class="stat-label">Similar Questions</span>
+                                <span class="stat-value" style="color: var(--primary);">605 (83.1%)</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">Next-Year Predicted Questions</span>
-                                <span class="stat-value" style="color: var(--primary);">500+</span>
+                                <span class="stat-label">Almost Exact Questions</span>
+                                <span class="stat-value" style="color: var(--primary);">63</span>
                             </div>
                         </div>
 
-                        <div class="insight-box">
-                            <div class="insight-header">
-                                <i class="fa-solid fa-lightbulb" style="color: #F59E0B;"></i>
-                                Latest Insights
+                        <div class="insight-box" style="background: linear-gradient(135deg, rgba(27, 59, 54, 0.05), rgba(27, 59, 54, 0.1)); border-color: rgba(27, 59, 54, 0.2);">
+                            <div class="insight-header" style="color: var(--primary);">
+                                <i class="fa-solid fa-chart-line" style="color: var(--primary);"></i>
+                                Subject-wise Accuracy
                             </div>
-                            <div class="insight-slider">
-                                <div class="insight-text" id="insightText">
-                                    "High probability of <strong>Rotation + Electrostatics</strong> mixed concept
-                                    question in Paper 1 based on 2021-2024 trend shift."
+                            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: 600; color: var(--text-main);">Physics</span>
+                                    <span style="font-weight: 700; color: var(--primary);">92.4%</span>
                                 </div>
-                                <div class="tags" id="insightTags">
-                                    <span class="tag">#Physics</span>
-                                    <span class="tag">#HighYield</span>
+                                <div style="height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 92.4%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
                                 </div>
-                            </div>
-                            <div class="insight-controls">
-                                <button class="insight-nav" id="insightPrev" data-track-label="insight_prev" data-track-category="insight" data-track-manual="true">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button class="insight-nav" id="insightNext" style="margin-left: 8px;" data-track-label="insight_next" data-track-category="insight" data-track-manual="true">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: 600; color: var(--text-main);">Chemistry</span>
+                                    <span style="font-weight: 700; color: var(--primary);">87.3%</span>
+                                </div>
+                                <div style="height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 87.3%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-weight: 600; color: var(--text-main);">Mathematics</span>
+                                    <span style="font-weight: 700; color: var(--primary);">69.4%</span>
+                                </div>
+                                <div style="height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 69.4%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+                                </div>
                             </div>
                         </div>
-                        <a href="prediction-engine.html" target="_blank" class="learn-more-link" data-track-label="prediction_engine_learn_more" data-track-category="link" data-track-manual="true">
-                            Learn how we predict <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <a href="prediction-results.html" class="learn-more-link" data-track-label="hero_card_see_details" data-track-category="link">
+                            View detailed analysis <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    END OLD HERO SECTION -->
 
-    <!-- 2026 Prediction Section -->
+    <!-- 2027 Prediction Section -->
     <section id="prediction-lab" class="usp-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Why 2026 Prediction Wins</span>
-                <h2>The Only AI Mentored on 20+ Years of JEE</h2>
-                <p style="margin-top: 16px; font-size: 1.1rem;">Tap into 25-year solved papers, high-quality notes,
-                    formulas, and strategies. No tech jargon, just clear guidance that shows why each step works.</p>
+                <span class="section-subtitle">Now Predicting JEE 2027</span>
+                <h2>The Same Engine. Now Targeting Your Exam.</h2>
+                <p style="margin-top: 16px; font-size: 1.1rem;">We predicted 83% of JEE 2026. Our AI is already analyzing patterns for JEE 2027. Start practicing with predicted questions today.</p>
             </div>
 
             <div class="usp-grid">
                 <!-- Card 1 -->
                 <div class="usp-card">
-                    <div class="usp-icon">
-                        <i class="fa-solid fa-bullseye"></i>
+                    <div class="usp-icon" style="background: rgba(34, 197, 94, 0.1); color: #22C55E;">
+                        <i class="fa-solid fa-circle-check"></i>
                     </div>
-                    <h3>The 2026 Prediction Engine</h3>
-                    <p style="margin-top: 12px;">Runs probability models on 25-year data to create <strong>500+
-                            questions likely to appear next year</strong>. Built on the best SOTA model engine tuned
-                        just for JEE, so every set feels like the actual paper.</p>
+                    <h3>Proven 83% Accuracy</h3>
+                    <p style="margin-top: 12px;">Our prediction engine was tested against JEE Main 2026 (Jan) and achieved <strong>83% topic coverage</strong>. Physics hit 92%, Chemistry 87%. Same methodology now applied to JEE 2027.</p>
                 </div>
 
                 <!-- Card 2 -->
@@ -2332,19 +2935,16 @@
                         then supercharged by GPT-5 series, o-series, Gemini 2.5 & 3 Pro, plus <a
                             href="https://huggingface.co/FractalAIResearch/Fathom-R1-14B?trk=public_post_comment-text"
                             style="color: var(--primary); text-decoration: underline;">Fathom AI (perfect score JEE Adv
-                            2025)</a>. The result feels like one specialist model that borrows the best instincts from
-                        every powerhouse.</p>
+                            2025)</a>.</p>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="usp-card">
                     <div class="usp-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    <h3>Practice Control Room</h3>
-                    <p style="margin-top: 12px;">Search any PYQ with normal keywords, mix topics, or <strong>generate
-                            brand-new custom questions matched to your exact need</strong>. It highlights misconception
-                        traps and shows FBDs, graphs, and formulas so you never repeat the same slip.</p>
+                    <h3>500+ Predicted Questions</h3>
+                    <p style="margin-top: 12px;">Practice with <strong>500+ questions likely to appear in JEE 2027</strong>. Same concepts, same methods—just like the 63 almost exact questions we predicted for JEE 2026.</p>
                 </div>
             </div>
         </div>
@@ -2381,8 +2981,7 @@
                         </li>
                         <li class="feature-item">
                             <div class="check-icon"><i class="fa-solid fa-check"></i></div>
-                            <div><strong>Next Paper Predictions:</strong> Preview likely question formats for the
-                                upcoming attempt, refreshed from 2026 Prediction daily.</div>
+                            <div><strong>Proven Predictions:</strong> We predicted 83% of JEE 2026. Practice with 500+ predicted questions for JEE 2027.</div>
                         </li>
                         <li class="feature-item">
                             <div class="check-icon"><i class="fa-solid fa-check"></i></div>
@@ -2859,12 +3458,11 @@
         <div class="container">
             <div class="footer-cta">
                 <div>
-                    <h2 style="color: white; margin-bottom: 12px;">The 2026 Exam Paper is Being Written.</h2>
-                    <p style="color: var(--accent); font-size: 1.1rem;">Join 5,000+ students who are already solving it.
+                    <h2 style="color: white; margin-bottom: 12px;">We Predicted 83% of JEE 2026. Ready for 2027?</h2>
+                    <p style="color: var(--accent); font-size: 1.1rem;">Join 10,000+ students preparing with AI-predicted questions.
                     </p>
                 </div>
-                <a href="#prediction-lab" class="btn btn-secondary" style="border: none;" data-cta="true" data-track-label="footer_view_prediction" data-track-category="cta" data-track-manual="true">View 2026
-                    Prediction</a>
+                <a href="#pricing" class="btn btn-secondary" style="border: none;" data-cta="true" data-track-label="footer_get_app" data-track-category="cta" data-track-manual="true">Download the App Free</a>
             </div>
 
             <div class="footer-grid">
@@ -2876,8 +3474,7 @@
                         JEEnius AI
                     </div>
                     <p style="color: rgba(255,255,255,0.6); max-width: 300px;">
-                        The only engine fine-tuned on 20+ years of papers, Kota-level notes, and winning strategies.
-                        Built for the future of learning.
+                        The only AI that predicted 83% of JEE 2026. Fine-tuned on 20+ years of papers, Kota-level notes, and winning strategies.
                     </p>
                 </div>
 
@@ -2885,10 +3482,10 @@
                     <div class="footer-link-col">
                         <h4>Product</h4>
                         <ul>
-                            <li><a href="#prediction-lab">2026 Prediction</a></li>
+                            <li><a href="prediction-results.html">Prediction Results</a></li>
+                            <li><a href="#prediction-lab">2027 Predictions</a></li>
                             <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#features">AI Tutor</a></li>
-                            <li><a href="#adaptive-flow">Adaptive Flow</a></li>
                         </ul>
                     </div>
                     <div class="footer-link-col">
@@ -3253,6 +3850,97 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             trackInteraction('page_loaded', 'page');
+        });
+
+        // Confetti Animation
+        function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            if (!container) return;
+
+            const colors = [
+                '#1B3B36',
+                '#22C55E',
+                '#15803D',
+                '#FFD700',
+                '#DCEFD8',
+                '#244A44',
+                '#34D399',
+            ];
+
+            const animations = ['confetti-fall-1', 'confetti-fall-2', 'confetti-fall-3'];
+            const confettiCount = 120;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const animation = animations[Math.floor(Math.random() * animations.length)];
+                const size = 8 + Math.random() * 12;
+                const isRect = Math.random() > 0.5;
+                
+                confetti.style.cssText = `
+                    left: ${Math.random() * 100}%;
+                    width: ${isRect ? size * 0.4 : size}px;
+                    height: ${isRect ? size * 1.5 : size}px;
+                    background-color: ${color};
+                    border-radius: ${isRect ? '2px' : '50%'};
+                    animation: ${animation} ${3 + Math.random() * 3}s ease-out forwards;
+                    animation-delay: ${Math.random() * 1.5}s;
+                `;
+                
+                container.appendChild(confetti);
+            }
+
+            setTimeout(() => {
+                container.style.transition = 'opacity 1s ease';
+                container.style.opacity = '0';
+                setTimeout(() => {
+                    container.remove();
+                }, 1000);
+            }, 6000);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => setTimeout(createConfetti, 200));
+        } else {
+            setTimeout(createConfetti, 200);
+        }
+
+        // Interactive parallax on mouse move for questions and formulas
+        const floatingContainer = document.getElementById('floatingQuestions');
+        const formulaBg = document.getElementById('formulaBg');
+        
+        document.addEventListener('mousemove', (e) => {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const moveX = (e.clientX - centerX) / centerX;
+            const moveY = (e.clientY - centerY) / centerY;
+            
+            // Move floating questions
+            if (floatingContainer) {
+                const questions = floatingContainer.querySelectorAll('.floating-question');
+                questions.forEach((q, i) => {
+                    if (!q.matches(':hover')) {
+                        const depth = 0.5 + (i % 3) * 0.3;
+                        const x = moveX * 25 * depth;
+                        const y = moveY * 20 * depth;
+                        q.style.transform = `translate(${x}px, ${y}px)`;
+                    }
+                });
+            }
+            
+            // Move formulas with different depths
+            if (formulaBg) {
+                const formulas = formulaBg.querySelectorAll('.formula-item');
+                formulas.forEach((f, i) => {
+                    const depth = 0.3 + (i % 4) * 0.25;
+                    const x = moveX * 40 * depth;
+                    const y = moveY * 30 * depth;
+                    const rotate = moveX * 5 * depth;
+                    f.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+                });
+            }
         });
     </script>
 </body>

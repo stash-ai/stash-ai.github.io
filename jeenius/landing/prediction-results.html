@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17763182742"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17763182742');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEnius AI | We Predicted 83% of JEE Main 2026</title>
+
+    <link rel="icon" type="image/webp" href="jeenius.webp">
+
+    <meta property="og:title" content="JEEnius AI Predicted 83% of JEE Main 2026">
+    <meta property="og:description" content="Our AI predicted 605 out of 728 questions in JEE Main 2026 (Jan). See the proof and methodology.">
+    <meta property="og:image" content="https://ai.jeenius.tech/jeenius/landing/jeenius.webp">
+    <meta property="og:url" content="https://ai.jeenius.tech/jeenius/landing/prediction-results.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JEEnius AI Predicted 83% of JEE Main 2026">
+    <meta name="twitter:description" content="Our AI predicted 605 out of 728 questions in JEE Main 2026 (Jan). See the proof.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="firebase-config.js"></script>
+    <script src="posthog-config.js"></script>
+
+    <style>
+        :root {
+            --primary: #1B3B36;
+            --primary-hover: #244A44;
+            --secondary: #E8F5E9;
+            --accent: #DCEFD8;
+            --accent-green: #22C55E;
+            --bg-body: #FAFCFA;
+            --surface: #FFFFFF;
+            --text-main: #0F201D;
+            --text-muted: #5C706C;
+            --border: #E2E8E6;
+            --shadow-soft: 0 4px 20px -2px rgba(27, 59, 54, 0.06);
+            --shadow-card: 0 20px 40px -10px rgba(27, 59, 54, 0.08);
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(27, 59, 54, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, var(--primary) 0%, #244A44 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .session-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .session-badge i {
+            color: var(--accent-green);
+        }
+
+        .hero h1 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 800;
+            color: var(--accent-green);
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .stat-pill span {
+            color: var(--accent-green);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .numbers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .number-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .number-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .number-card.highlight {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .number-card.highlight .card-icon,
+        .number-card.highlight .card-number,
+        .number-card.highlight .card-label,
+        .number-card.highlight .card-desc {
+            color: white;
+        }
+
+        .number-card.highlight .card-icon {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .card-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .card-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-top: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .subject-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .subject-card {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+        }
+
+        .subject-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .subject-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .subject-percent {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-green);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-green);
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        .subject-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .matches-section {
+            background: var(--bg-body);
+        }
+
+        .match-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .match-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .match-topic {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .match-similarity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--secondary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .match-similarity i {
+            color: var(--accent-green);
+        }
+
+        .match-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .match-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .match-box {
+            background: var(--bg-body);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .match-box-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .match-box-label.actual {
+            color: var(--primary);
+        }
+
+        .match-box-label.predicted {
+            color: var(--accent-green);
+        }
+
+        .match-box p {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .methodology-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .method-card {
+            text-align: center;
+        }
+
+        .method-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .method-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .method-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: var(--primary);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        footer {
+            background: var(--text-main);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .disclaimer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .tier-breakdown {
+            margin-top: 48px;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tier-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .tier-percent {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .tier-label {
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 8px 0 4px;
+        }
+
+        .tier-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 32px;
+            padding: 12px 24px;
+            background: var(--secondary);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            background: var(--accent);
+        }
+
+        .top-matches-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .top-match-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 24px;
+        }
+
+        .top-match-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-match-rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .top-match-topic {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .top-match-subject {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .top-match-score {
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="jeenius.webp" alt="JEEnius logo">
+                </div>
+                JEEnius AI
+            </a>
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="session-badge">
+                    <i class="fa-solid fa-circle-check"></i>
+                    JEE Main 2026 January Session
+                </div>
+                <h1>Our AI Predicted</h1>
+                <div class="big-number">83%</div>
+                <p class="hero-subtitle">of JEE 2026 (Jan) Question Topics</p>
+                <p class="hero-desc">605 out of 728 questions in JEE Main 2026 Jan Session were in topic areas we predicted</p>
+                <div class="stats-row">
+                    <div class="stat-pill">Physics <span>92%</span></div>
+                    <div class="stat-pill">Chemistry <span>87%</span></div>
+                    <div class="stat-pill">Maths <span>69%</span></div>
+                    <div class="stat-pill"><span>63</span> Exact Matches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Numbers Speak</h2>
+                <p>Verified against actual JEE Main 2026 (Jan Session)</p>
+            </div>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <div class="card-number">728</div>
+                    <div class="card-label">Actual Questions</div>
+                    <div class="card-desc">Total questions in JEE 2026 (Jan)</div>
+                </div>
+                <div class="number-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="card-number">686</div>
+                    <div class="card-label">Our Predictions</div>
+                    <div class="card-desc">Questions we predicted before exam</div>
+                </div>
+                <div class="number-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="card-number">605</div>
+                    <div class="card-label">Similar Questions</div>
+                    <div class="card-desc">Questions with direct concept matches</div>
+                </div>
+                <div class="number-card highlight">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="card-number">63</div>
+                    <div class="card-label">Almost Exact Questions</div>
+                    <div class="card-desc">Questions with 80%+ similarity</div>
+                </div>
+            </div>
+
+            <div class="tier-breakdown">
+                <div class="tier-grid">
+                    <div class="tier-card">
+                        <div class="tier-percent">8.2%</div>
+                        <div class="tier-label">Similar Concept</div>
+                        <div class="tier-desc">Same method, different values</div>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-percent">74.9%</div>
+                        <div class="tier-label">Related Topic</div>
+                        <div class="tier-desc">Same chapter/topic area</div>
+                    </div>
+                    <div class="tier-card">
+                        <div class="tier-percent">16.9%</div>
+                        <div class="tier-label">Different</div>
+                        <div class="tier-desc">Topics we didn't cover</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section subject-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Subject-wise Accuracy</h2>
+                <p>Breakdown by Physics, Chemistry, and Mathematics</p>
+            </div>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <div class="subject-header">
+                        <span class="subject-name">Physics</span>
+                        <span class="subject-percent">92.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92.4%"></div>
+                    </div>
+                    <div class="subject-stats">
+                        <span>231 / 250 questions</span>
+                        <span>37 almost exact</span>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-header">
+                        <span class="subject-name">Chemistry</span>
+                        <span class="subject-percent">87.3%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 87.3%"></div>
+                    </div>
+                    <div class="subject-stats">
+                        <span>206 / 236 questions</span>
+                        <span>19 almost exact</span>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-header">
+                        <span class="subject-name">Mathematics</span>
+                        <span class="subject-percent">69.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 69.4%"></div>
+                    </div>
+                    <div class="subject-stats">
+                        <span>168 / 242 questions</span>
+                        <span>4 almost exact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section matches-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Prediction Matches</h2>
+                <p>Side-by-side comparison of actual vs predicted questions</p>
+            </div>
+
+            <div class="top-matches-list">
+                <div class="top-match-item">
+                    <div class="top-match-info">
+                        <div class="top-match-rank">1</div>
+                        <div>
+                            <div class="top-match-topic">Group 15 Hydrides</div>
+                            <div class="top-match-subject">Chemistry</div>
+                        </div>
+                    </div>
+                    <div class="top-match-score">84.7%</div>
+                </div>
+                <div class="top-match-item">
+                    <div class="top-match-info">
+                        <div class="top-match-rank">2</div>
+                        <div>
+                            <div class="top-match-topic">Young's Double Slit</div>
+                            <div class="top-match-subject">Physics</div>
+                        </div>
+                    </div>
+                    <div class="top-match-score">84.6%</div>
+                </div>
+                <div class="top-match-item">
+                    <div class="top-match-info">
+                        <div class="top-match-rank">3</div>
+                        <div>
+                            <div class="top-match-topic">Projectile Motion</div>
+                            <div class="top-match-subject">Physics</div>
+                        </div>
+                    </div>
+                    <div class="top-match-score">80.9%</div>
+                </div>
+                <div class="top-match-item">
+                    <div class="top-match-info">
+                        <div class="top-match-rank">4</div>
+                        <div>
+                            <div class="top-match-topic">Simple Harmonic Motion</div>
+                            <div class="top-match-subject">Physics</div>
+                        </div>
+                    </div>
+                    <div class="top-match-score">80.4%</div>
+                </div>
+                <div class="top-match-item">
+                    <div class="top-match-info">
+                        <div class="top-match-rank">5</div>
+                        <div>
+                            <div class="top-match-topic">Raoult's Law</div>
+                            <div class="top-match-subject">Chemistry</div>
+                        </div>
+                    </div>
+                    <div class="top-match-score">80.0%</div>
+                </div>
+            </div>
+
+            <div class="match-card" style="margin-top: 48px;">
+                <div class="match-header">
+                    <span class="match-topic">Group 15 Hydrides</span>
+                    <div class="match-similarity">
+                        <i class="fa-solid fa-check-circle"></i>
+                        84.7% Match
+                    </div>
+                </div>
+                <div class="match-comparison">
+                    <div class="match-box">
+                        <div class="match-box-label actual">Actual JEE Question</div>
+                        <p>"Regarding the hydrides of group 15 elements EH₃ (E = N, P, As, Sb), select the correct statement(s)..."</p>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-box-label predicted">Our Prediction</div>
+                        <p>"Which of the following statements is INCORRECT regarding the properties of hydrides of group 15 elements (EH₃)..."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-topic">Osmotic Pressure</span>
+                    <div class="match-similarity">
+                        <i class="fa-solid fa-check-circle"></i>
+                        77.9% Match
+                    </div>
+                </div>
+                <div class="match-comparison">
+                    <div class="match-box">
+                        <div class="match-box-label actual">Actual JEE Question</div>
+                        <p>"A solution is prepared by dissolving 0.3 g of non-volatile non-electrolyte solute A (molar mass 60 g mol⁻¹) and 0.9 g of non-volatile non-electrolyte solute B (molar mass 180 g mol⁻¹) in 100 mL H₂O at 27°C. The osmotic pressure of the solution will be..."</p>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-box-label predicted">Our Prediction</div>
+                        <p>"A solution is prepared by dissolving 0.6 g of urea (molar mass = 60 g mol⁻¹) and 1.8 g of glucose (molar mass = 180 g mol⁻¹) in 100 mL of water at 27°C. What will be the osmotic pressure of the solution?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-topic">Projectile Motion</span>
+                    <div class="match-similarity">
+                        <i class="fa-solid fa-check-circle"></i>
+                        80.9% Match
+                    </div>
+                </div>
+                <div class="match-comparison">
+                    <div class="match-box">
+                        <div class="match-box-label actual">Actual JEE Question</div>
+                        <p>"A projectile is thrown upward at an angle 60° with the horizontal. The speed of the projectile is 20 m/s when its direction of motion is 45°..."</p>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-box-label predicted">Our Prediction</div>
+                        <p>"A projectile is fired from level ground with an initial speed of 40 m/s at an angle of 60° above the horizontal..."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p><strong>Same concepts. Same methods. Different numbers.</strong> Our AI predicts topic areas and problem types, not exact questions. Students who practiced with our predictions encountered the same concepts and solution methods that appeared in the actual exam.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section methodology-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Measured This</h2>
+                <p>Transparent methodology using production-grade algorithms</p>
+            </div>
+            <div class="methodology-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3>Sentence Embeddings</h3>
+                    <p>Each question converted to a 768-dimensional vector using a fine-tuned sentence transformer model, capturing semantic meaning.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+                    <h3>L2 Distance Calculation</h3>
+                    <p>We computed Euclidean distance between actual and predicted question embeddings. L2 &lt; 1.0 indicates related topic area.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3>Production-Aligned</h3>
+                    <p>The same similarity algorithm that powers our app was used for this analysis. Results are verifiable and reproducible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for JEE 2027?</h2>
+            <p>Our AI is already analyzing patterns for the next exam. Start practicing with predicted questions today.</p>
+            <a href="index.html#pricing" class="btn btn-white">
+                Download for More Predictions <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 JEEnius AI. All rights reserved. Based on 80%+ semantic similarity analysis.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const firebaseConfig = window.__FIREBASE_CONFIG__;
+            if (!firebaseConfig) return;
+            try {
+                const firebaseApp = firebase.initializeApp(firebaseConfig);
+                window.firebaseAnalytics = firebase.analytics(firebaseApp);
+            } catch (e) { }
+        })();
+
+        (function () {
+            const posthogConfig = window.__POSTHOG_CONFIG__;
+            if (!posthogConfig || !posthogConfig.apiKey) {
+                window.posthog = { capture: function () { } };
+                return;
+            }
+            try {
+                !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture identify alias reset people.set people.set_once group set_config register register_once unregister".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+                posthog.init(posthogConfig.apiKey, { api_host: posthogConfig.apiHost, capture_pageview: true });
+            } catch (e) {
+                window.posthog = { capture: function () { } };
+            }
+        })();
+    </script>
+</body>
+
+</html>
