@@ -463,8 +463,23 @@
             line-height: 1.15;
             margin-bottom: 20px;
             letter-spacing: -0.03em;
-            word-break: keep-all;
-            overflow-wrap: normal;
+            overflow-wrap: break-word;
+        }
+
+        .victory-headline-line1 {
+            display: block;
+        }
+
+        .victory-headline-line2 {
+            display: block;
+            margin-top: 0.1em;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 480px) {
+            .victory-headline-line2 {
+                white-space: nowrap;
+            }
         }
 
         .victory-number {
@@ -779,7 +794,7 @@
                 padding-bottom: 60px;
             }
             .victory-headline {
-                font-size: 2rem;
+                font-size: clamp(1.45rem, 5.4vw, 2rem);
             }
             .victory-subtext {
                 font-size: 1rem;
@@ -802,6 +817,12 @@
             .btn-large {
                 width: 100%;
                 max-width: 300px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .victory-headline {
+                font-size: clamp(1.28rem, 5.1vw, 1.7rem);
             }
         }
 
@@ -1169,9 +1190,16 @@
             position: relative;
         }
 
+        .features-section .feature-content h3,
+        .features-section .feature-content > p {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
         .feature-block {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 80px;
             align-items: center;
             margin-bottom: 120px;
@@ -1187,6 +1215,11 @@
 
         .feature-block.reverse .feature-visual {
             order: 1;
+        }
+
+        .feature-content {
+            min-width: 0;
+            max-width: 100%;
         }
 
         .feature-list {
@@ -1223,6 +1256,8 @@
 
         .feature-visual {
             position: relative;
+            min-width: 0;
+            max-width: 100%;
         }
 
         .visual-card {
@@ -1233,6 +1268,8 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             transform: rotate(-2deg);
             transition: transform 0.3s;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .feature-block:hover .visual-card {
@@ -1249,15 +1286,20 @@
             align-items: center;
             justify-content: center;
             border: 1px dashed rgba(27, 59, 54, 0.1);
-            max-width: 520px;
+            max-width: min(520px, 100%);
+            width: 100%;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .ai-visual {
             width: 100%;
+            max-width: 100%;
+            min-width: 0;
             display: flex;
             flex-direction: column;
             gap: 18px;
+            box-sizing: border-box;
         }
 
         .ai-chat {
@@ -1267,6 +1309,11 @@
             box-shadow: 0 12px 30px rgba(27, 59, 54, 0.12);
             border: 1px solid rgba(27, 59, 54, 0.08);
             font-family: 'IBM Plex Mono', 'Plus Jakarta Sans', sans-serif;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .ai-status {
@@ -1291,6 +1338,8 @@
         .ai-question {
             font-weight: 600;
             margin-bottom: 8px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .ai-typing {
@@ -1298,14 +1347,18 @@
             color: var(--muted);
             white-space: nowrap;
             overflow: hidden;
+            max-width: 100%;
             border-right: 2px solid rgba(27, 59, 54, 0.6);
             animation: typing 5s steps(60, end) infinite alternate, caretBlink 0.75s step-end infinite;
         }
 
         .ai-panels {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
             gap: 14px;
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
         }
 
 
@@ -1319,6 +1372,9 @@
             flex-direction: column;
             gap: 8px;
             font-size: 0.8rem;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .ai-panel h5 {
@@ -1985,7 +2041,7 @@
             }
 
             .feature-block {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 40px;
             }
 
@@ -2062,6 +2118,10 @@
             section {
                 max-width: 100vw;
                 overflow-x: hidden;
+            }
+
+            .features-section {
+                overflow-x: clip;
             }
 
             .usp-grid {
@@ -2187,6 +2247,18 @@
             .ai-chat {
                 padding: 14px;
                 font-size: 0.85rem;
+            }
+
+            .ai-typing {
+                white-space: normal;
+                overflow: visible;
+                border-right: none;
+                animation: none;
+            }
+
+            .visual-card,
+            .feature-block:hover .visual-card {
+                transform: none;
             }
 
             .ai-panels {
@@ -2560,6 +2632,65 @@
             font-weight: 600;
             color: var(--text-main);
         }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1B3B36;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 32px rgba(255, 165, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            animation: float-cta 3s ease-in-out infinite;
+            max-width: calc(100vw - 32px);
+            box-sizing: border-box;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 165, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-cta i {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .floating-cta .countdown {
+            background: rgba(27, 59, 54, 0.15);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        @keyframes float-cta {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+                font-size: 0.9rem;
+                padding: 14px 20px;
+            }
+        }
     </style>
 
     <!-- Firebase & Analytics -->
@@ -2730,7 +2861,8 @@
                 </div>
                 
                 <h1 class="victory-headline">
-                    We predicted <span class="victory-number">83%</span> of Shift 1.<br><span style="white-space: nowrap;">Here's what's coming in Shift 2.</span>
+                    <span class="victory-headline-line1">We predicted <span class="victory-number">83%</span> of Shift 1.</span>
+                    <span class="victory-headline-line2">Here's what's coming in Shift&nbsp;2.</span>
                 </h1>
                 
                 <p class="victory-subtext">
@@ -3483,16 +3615,26 @@
         </div>
     </footer>
 
+    <a href="#" class="floating-cta" id="floatingCta" aria-label="Get April JEE Main 2026 predictions in the app">
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        <span>Get April JEE Main 2026 Predictions</span>
+        <span class="countdown" id="floatingCountdown"></span>
+    </a>
+
     <script>
         // Countdown Timer to April 2, 2026
         function updateCountdown() {
             const targetDate = new Date('2026-04-02T00:00:00+05:30');
             const now = new Date();
             const diff = targetDate - now;
+            const floatingEl = document.getElementById('floatingCountdown');
             
             if (diff <= 0) {
-                document.getElementById('countdown-timer').textContent = 'Today!';
-                document.getElementById('countdown-days-text').textContent = 'today';
+                const timerEl = document.getElementById('countdown-timer');
+                const daysTextEl = document.getElementById('countdown-days-text');
+                if (timerEl) timerEl.textContent = 'Today!';
+                if (daysTextEl) daysTextEl.textContent = 'today';
+                if (floatingEl) floatingEl.textContent = 'Live Now!';
                 return;
             }
             
@@ -3518,6 +3660,14 @@
                     daysTextEl.textContent = '1 day';
                 } else {
                     daysTextEl.textContent = `${hours} hours`;
+                }
+            }
+
+            if (floatingEl) {
+                if (days > 0) {
+                    floatingEl.textContent = `${days}d ${hours}h left`;
+                } else {
+                    floatingEl.textContent = `${hours}h left`;
                 }
             }
         }
@@ -3855,6 +4005,15 @@
                 window.open(targetUrl, '_blank');
             });
         });
+
+        const floatingCta = document.getElementById('floatingCta');
+        if (floatingCta) {
+            floatingCta.addEventListener('click', event => {
+                event.preventDefault();
+                trackInteraction('floating_april_predictions', 'cta');
+                window.open(getRedirectUrl(), '_blank');
+            });
+        }
 
         document.querySelectorAll('button, a').forEach(el => {
             el.addEventListener('click', () => {
