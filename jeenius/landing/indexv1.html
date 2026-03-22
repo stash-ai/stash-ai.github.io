@@ -460,11 +460,9 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             color: white;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -0.03em;
-            word-break: keep-all;
-            overflow-wrap: normal;
         }
 
         .victory-number {
@@ -751,12 +749,18 @@
             position: absolute;
             font-family: 'Times New Roman', serif;
             font-style: italic;
-            color: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.08);
             font-size: 1.2rem;
             transition: all 0.5s ease;
-            pointer-events: none;
+            pointer-events: auto;
             cursor: default;
             user-select: none;
+        }
+
+        .formula-item:hover {
+            color: rgba(255, 215, 0, 0.4);
+            transform: scale(1.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
         .formula-item.large {
@@ -2626,12 +2630,14 @@
             </a>
 
             <div class="nav-links">
-                <a href="prediction-results.html" data-track-label="nav_results" data-track-category="nav">How we predicted 83%</a>
+                <a href="prediction-results.html" data-track-label="nav_results" data-track-category="nav">Prediction Results</a>
+                <a href="#prediction-lab" data-track-label="nav_prediction" data-track-category="nav">2027 Predictions</a>
+                <a href="#features" data-track-label="nav_features" data-track-category="nav">Features</a>
                 <a href="#pricing" data-track-label="nav_pricing" data-track-category="nav">Pricing</a>
             </div>
 
             <div class="nav-cta">
-                <a href="#pricing" class="btn btn-primary" data-cta="true" data-track-label="nav_get_app" data-track-category="cta" data-track-manual="true">Start practising free</a>
+                <a href="#pricing" class="btn btn-primary" data-cta="true" data-track-label="nav_get_app" data-track-category="cta" data-track-manual="true">Get the App</a>
             </div>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -2642,9 +2648,11 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="prediction-results.html" data-track-label="mobile_nav_results" data-track-category="nav">How we predicted 83%</a>
+        <a href="prediction-results.html" data-track-label="mobile_nav_results" data-track-category="nav">Prediction Results</a>
+        <a href="#prediction-lab" data-track-label="mobile_nav_prediction" data-track-category="nav">2027 Predictions</a>
+        <a href="#features" data-track-label="mobile_nav_features" data-track-category="nav">Features</a>
         <a href="#pricing" data-track-label="mobile_nav_pricing" data-track-category="nav">Pricing</a>
-        <a href="#pricing" style="color: var(--primary);" data-cta="true" data-track-label="mobile_nav_get_app" data-track-category="cta" data-track-manual="true">Start practising free</a>
+        <a href="#pricing" style="color: var(--primary);" data-cta="true" data-track-label="mobile_nav_get_app" data-track-category="cta" data-track-manual="true">Get the App Free</a>
     </div>
 
     <!-- Hero Section - Victory Announcement -->
@@ -2720,21 +2728,17 @@
         
         <div class="container">
             <div class="victory-content">
-                <div class="victory-eyebrow" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.05em;">
-                    JEE Main 2026 · Shift 2 · <span id="countdown-timer" style="color: #FFD700; font-weight: 600;"></span>
-                </div>
-
                 <div class="victory-badge">
                     <i class="fa-solid fa-trophy"></i>
-                    Shift 1 Prediction Verified
+                    JEE Main 2026 (Jan) — Prediction Verified
                 </div>
                 
                 <h1 class="victory-headline">
-                    We predicted <span class="victory-number">83%</span> of Shift 1.<br><span style="white-space: nowrap;">Here's what's coming in Shift 2.</span>
+                    We Predicted <span class="victory-number">83%</span> of JEE 2026
                 </h1>
                 
                 <p class="victory-subtext">
-                    Shift 2 is in <span id="countdown-days-text"></span>. Practise 500+ predicted questions free — with an AI tutor that explains every step.
+                    605 out of 728 questions matched our predictions. 63 were almost exact.
                 </p>
 
                 <div class="victory-stats">
@@ -2761,7 +2765,7 @@
                         See The Full Analysis <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
                     </a>
                     <a href="#pricing" class="btn btn-secondary btn-large" data-cta="true" data-track-label="hero_get_app" data-track-category="cta" data-track-manual="true">
-                        Start practising free
+                        Get JEE 2027 Predictions
                     </a>
                 </div>
 
@@ -2907,7 +2911,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">Now Predicting JEE 2027</span>
-                <h2>JEE 2027 predictions</h2>
+                <h2>The Same Engine. Now Targeting Your Exam.</h2>
                 <p style="margin-top: 16px; font-size: 1.1rem;">We predicted 83% of JEE 2026. Our AI is already analyzing patterns for JEE 2027. Start practicing with predicted questions today.</p>
             </div>
 
@@ -2967,13 +2971,32 @@
                         </li>
                         <li class="feature-item">
                             <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                            <div><strong>Quality Over Speed:</strong> Our AI "thinks" deeply to ensure pedagogical
+                                accuracy.</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="check-icon"><i class="fa-solid fa-check"></i></div>
                             <div><strong>Misconception Alerts:</strong> The tutor highlights traps, fixes the formula
                                 step, and shows the corrected diagram before you move on.</div>
                         </li>
                         <li class="feature-item">
                             <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                            <div><strong>Proven Predictions:</strong> We predicted 83% of JEE 2026. Practice with 500+ predicted questions for JEE 2027.</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="check-icon"><i class="fa-solid fa-check"></i></div>
                             <div><strong>24/7 Kota Doubt Partner:</strong> Ask with text, voice, or images any
                                 time—responses stay teacher-grade even if they take a few extra seconds.</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                            <div><strong>Instant Question Generation:</strong> Tell it “mix Rotation + Electrostatics +
+                                Gauss Law” and get ready-to-solve variations on the spot.</div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                            <div><strong>JEEnius Studio:</strong> Upload any JEE PDF (notes, PYQ, mocks) and the AI
+                                analyzes it, answers questions, builds DPPs, and solves step-by-step.</div>
                         </li>
                     </ul>
                 </div>
@@ -3105,36 +3128,6 @@
         </div>
     </section>
 
-    <!-- Testimonials (moved above pricing) -->
-    <section class="testimonial-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Students We've Guided</h2>
-                <p style="margin-top: 16px;">Every win is different, but the confidence is the same.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"JEEnius told me exactly which PYQs to redo. My mock score jumped 32 marks in just 4 weeks."</p>
-                    <span>— Riya, Class 12 Aspirant</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The Live Duels made revision addictive. I logged in for 5 minutes and ended up solving 40
-                        questions."</p>
-                    <span>— Anirudh, Dropper</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The PYQs library is amazing. I can filter by difficulty and topic which helps me focus on weak
-                        areas."</p>
-                    <span>— Priya S., Class 12, Delhi</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The mock tests feel exactly like the real exam. It helped me tackle the exam fear on D-day."</p>
-                    <span>— Anita K., Class 12, Bangalore</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
         <div class="container">
@@ -3156,7 +3149,7 @@
                     <h3>Free</h3>
                     <div class="price">₹0</div>
                     <p style="font-size: 0.9rem; margin-bottom: 24px;">Get a taste of most of JEEnius AI features.</p>
-                    <a href="#" class="btn btn-secondary btn-full" data-cta="true" data-track-label="pricing_free_get_started" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                    <a href="#" class="btn btn-secondary btn-full" data-cta="true" data-track-label="pricing_free_get_started" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Get Started</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics">
@@ -3170,10 +3163,10 @@
                         </div>
                         <div class="plan-exclusions">
                             <ul>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Study Plan Generation <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Performance Analytics <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Misconception Fixes <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Priority Support <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Study Plan Generation</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Performance Analytics</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Misconception Fixes</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Priority Support</li>
                             </ul>
                         </div>
                         <div class="plan-details-content" data-plan-details="free">
@@ -3198,7 +3191,7 @@
                     <p style="font-size: 0.9rem; margin-bottom: 24px; color: rgba(255,255,255,0.8);">Serious prep with
                         every limit expanded.</p>
                     <a href="#" class="btn btn-secondary btn-full" style="color: var(--primary); border: none;"
-                        data-cta="true" data-track-label="pricing_pro_monthly_start" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                        data-cta="true" data-track-label="pricing_pro_monthly_start" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start your dream IIT Prep today</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics"
@@ -3242,7 +3235,7 @@
                     <h3>Pro+</h3>
                     <div class="price">₹999 <span>/month</span></div>
                     <p style="font-size: 0.9rem; margin-bottom: 24px;">Droppers + Advanced prep with no caps.</p>
-                    <a href="#" class="btn btn-primary btn-full" data-cta="true" data-track-label="pricing_pro_plus_monthly_upgrade" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                    <a href="#" class="btn btn-primary btn-full" data-cta="true" data-track-label="pricing_pro_plus_monthly_upgrade" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Upgrade Now</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics">
@@ -3270,7 +3263,7 @@
                     <h3>Free</h3>
                     <div class="price">₹0</div>
                     <p style="font-size: 0.9rem; margin-bottom: 24px;">Get a taste of most of JEEnius AI features.</p>
-                    <a href="#" class="btn btn-secondary btn-full" data-cta="true" data-track-label="pricing_free_annual_get_started" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                    <a href="#" class="btn btn-secondary btn-full" data-cta="true" data-track-label="pricing_free_annual_get_started" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Get Started</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics">
@@ -3284,10 +3277,10 @@
                         </div>
                         <div class="plan-exclusions">
                             <ul>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Study Plan Generation <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Performance Analytics <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Misconception Fixes <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
-                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Priority Support <span style="color: #9CA3AF; font-size: 0.8rem;">— Not included</span></li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Study Plan Generation</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Performance Analytics</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Misconception Fixes</li>
+                                <li><i class="fa-solid fa-xmark" style="color: #EF4444;"></i> Priority Support</li>
                             </ul>
                         </div>
                         <div class="plan-details-content" data-plan-details="free-annual">
@@ -3314,7 +3307,7 @@
                     <p style="font-size: 0.9rem; margin-bottom: 24px; color: rgba(255,255,255,0.8);">50% off when billed
                         annually.</p>
                     <a href="#" class="btn btn-secondary btn-full" style="color: var(--primary); border: none;"
-                        data-cta="true" data-track-label="pricing_pro_annual_start" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                        data-cta="true" data-track-label="pricing_pro_annual_start" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start Yearly Plan</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics"
@@ -3335,6 +3328,8 @@
                                 <li><i class="fa-solid fa-check"></i>Formula Analogy Walkthroughs: 100/mo</li>
                                 <li><i class="fa-solid fa-check"></i>Daily Practice Paper Attempts: 60/mo</li>
                                 <li><i class="fa-solid fa-check"></i>Keyword PYQ Search: 500 queries/mo</li>
+                                <li><i class="fa-solid fa-check"></i>Image Doubt Uploads: 200</li>
+                                <li><i class="fa-solid fa-check"></i>JEEnius AI Doubt Solving: 10,000</li>
                                 <li><i class="fa-solid fa-check"></i>JEEnius Studio Forge Builds: 60</li>
                                 <li><i class="fa-solid fa-check"></i>Adaptive Practice Questions: 1,000</li>
                                 <li><i class="fa-solid fa-check"></i>Duel Matches: 600</li>
@@ -3358,7 +3353,7 @@
                         ₹499.5 <span>/month (₹5,994/year)</span>
                     </div>
                     <p style="font-size: 0.9rem; margin-bottom: 24px;">Droppers + Advanced prep with no caps.</p>
-                    <a href="#" class="btn btn-primary btn-full" data-cta="true" data-track-label="pricing_pro_plus_annual_upgrade" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Start practising free</a>
+                    <a href="#" class="btn btn-primary btn-full" data-cta="true" data-track-label="pricing_pro_plus_annual_upgrade" data-track-category="cta" data-track-manual="true" onclick="return gtagSendEvent(this.href || '#');">Upgrade Yearly</a>
 
                     <div class="plan-body">
                         <div class="plan-metrics">
@@ -3382,6 +3377,37 @@
             </div>
         </div>
     </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Students We’ve Guided</h2>
+                <p style="margin-top: 16px;">Every win is different, but the confidence is the same.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"JEEnius told me exactly which PYQs to redo. My mock score jumped 32 marks in just 4 weeks."</p>
+                    <span>— Riya, Class 12 Aspirant</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The Live Duels made revision addictive. I logged in for 5 minutes and ended up solving 40
+                        questions."</p>
+                    <span>— Anirudh, Dropper</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The PYQs library is amazing. I can filter by difficulty and topic which helps me focus on weak
+                        areas."</p>
+                    <span>— Priya S., Class 12, Delhi</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The mock tests feel exactly like the real exam. It helped me tackle the exam fear on D-day."</p>
+                    <span>— Anita K., Class 12, Bangalore</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <div class="container">
@@ -3436,7 +3462,7 @@
                     <p style="color: var(--accent); font-size: 1.1rem;">Join 10,000+ students preparing with AI-predicted questions.
                     </p>
                 </div>
-                <a href="#pricing" class="btn btn-secondary" style="border: none;" data-cta="true" data-track-label="footer_get_app" data-track-category="cta" data-track-manual="true">Start practising free</a>
+                <a href="#pricing" class="btn btn-secondary" style="border: none;" data-cta="true" data-track-label="footer_get_app" data-track-category="cta" data-track-manual="true">Download the App Free</a>
             </div>
 
             <div class="footer-grid">
@@ -3484,47 +3510,6 @@
     </footer>
 
     <script>
-        // Countdown Timer to April 2, 2026
-        function updateCountdown() {
-            const targetDate = new Date('2026-04-02T00:00:00+05:30');
-            const now = new Date();
-            const diff = targetDate - now;
-            
-            if (diff <= 0) {
-                document.getElementById('countdown-timer').textContent = 'Today!';
-                document.getElementById('countdown-days-text').textContent = 'today';
-                return;
-            }
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            
-            const timerEl = document.getElementById('countdown-timer');
-            const daysTextEl = document.getElementById('countdown-days-text');
-            
-            if (timerEl) {
-                if (days > 0) {
-                    timerEl.textContent = `${days}d ${hours}h ${minutes}m`;
-                } else {
-                    timerEl.textContent = `${hours}h ${minutes}m`;
-                }
-            }
-            
-            if (daysTextEl) {
-                if (days > 1) {
-                    daysTextEl.textContent = `${days} days`;
-                } else if (days === 1) {
-                    daysTextEl.textContent = '1 day';
-                } else {
-                    daysTextEl.textContent = `${hours} hours`;
-                }
-            }
-        }
-        
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');

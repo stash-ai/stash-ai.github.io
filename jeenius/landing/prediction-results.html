@@ -699,6 +699,60 @@
             font-weight: 700;
             color: var(--accent-green);
         }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1B3B36;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 32px rgba(255, 165, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: float-cta 3s ease-in-out infinite;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 165, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-cta i {
+            font-size: 1.1rem;
+        }
+
+        .floating-cta .countdown {
+            background: rgba(27, 59, 54, 0.15);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        @keyframes float-cta {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+                justify-content: center;
+                font-size: 0.9rem;
+                padding: 14px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -1049,6 +1103,52 @@
                 window.posthog = { capture: function () { } };
             }
         })();
+    </script>
+
+    <!-- Floating CTA Button -->
+    <a href="#" class="floating-cta" id="floatingCta" onclick="openApp(event)">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Get April JEE Main 2026 Predictions</span>
+        <span class="countdown" id="floatingCountdown"></span>
+    </a>
+
+    <script>
+        function getRedirectUrl() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isAndroid = /android/i.test(userAgent);
+            return isAndroid ? 'https://play.google.com/store/apps/details?id=com.stash.jeenius&hl=en_IN' : 'https://jeenius.tech';
+        }
+
+        function openApp(event) {
+            event.preventDefault();
+            window.open(getRedirectUrl(), '_blank');
+        }
+
+        function updateFloatingCountdown() {
+            const targetDate = new Date('2026-04-02T00:00:00+05:30');
+            const now = new Date();
+            const diff = targetDate - now;
+            
+            const countdownEl = document.getElementById('floatingCountdown');
+            if (!countdownEl) return;
+            
+            if (diff <= 0) {
+                countdownEl.textContent = 'Live Now!';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            if (days > 0) {
+                countdownEl.textContent = `${days}d ${hours}h left`;
+            } else {
+                countdownEl.textContent = `${hours}h left`;
+            }
+        }
+        
+        updateFloatingCountdown();
+        setInterval(updateFloatingCountdown, 60000);
     </script>
 </body>
 
