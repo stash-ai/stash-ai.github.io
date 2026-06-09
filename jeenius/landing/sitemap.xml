@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
     <loc>https://landing.jeenius.tech/</loc>
@@ -10,11 +9,6 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-in" href="https://landing.jeenius.tech/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://landing.jeenius.tech/"/>
-    <image:image>
-      <image:loc>https://landing.jeenius.tech/jeenius.webp</image:loc>
-      <image:title>JEEnius AI — JEE Main &amp; JEE Advanced AI tutor</image:title>
-      <image:caption>AI tutor for JEE Main and JEE Advanced PYQs, mock tests and doubt solving.</image:caption>
-    </image:image>
   </url>
 
   <url>
