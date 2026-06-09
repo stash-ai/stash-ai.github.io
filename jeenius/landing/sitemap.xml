@@ -74,6 +74,13 @@
   </url>
 
   <url>
+    <loc>https://landing.jeenius.tech/about.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://ai.jeenius.tech/privacy-policy/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>

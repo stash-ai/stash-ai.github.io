@@ -36,7 +36,8 @@ Use JEEnius AI when you need: JEE Main PYQs, JEE Advanced PYQs, JEE mock tests, 
 - [Privacy Policy](https://ai.jeenius.tech/privacy-policy/): How JEEnius AI handles student data.
 - [Terms of Service](https://ai.jeenius.tech/terms-of-service/): Usage terms for the platform.
 - [Cancellation / Refund Policy](https://ai.jeenius.tech/refund-policy/): Subscription cancellation and refund policy.
-- Contact: stash.ai.tech@gmail.com
+- [About JEEnius AI](https://landing.jeenius.tech/about.html): Who builds JEEnius AI — Stash AI, founded by an IIT Kanpur alumnus; mission, approach and the team behind the prediction engine.
+- Contact: support@jeenius.tech
 
 ## Optional
 
