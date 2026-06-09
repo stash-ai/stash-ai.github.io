@@ -4,70 +4,70 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
 
   <url>
-    <loc>https://ai.jeenius.tech/</loc>
+    <loc>https://landing.jeenius.tech/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-in" href="https://ai.jeenius.tech/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.jeenius.tech/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://landing.jeenius.tech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://landing.jeenius.tech/"/>
     <image:image>
-      <image:loc>https://ai.jeenius.tech/jeenius/landing/jeenius.webp</image:loc>
+      <image:loc>https://landing.jeenius.tech/jeenius.webp</image:loc>
       <image:title>JEEnius AI — JEE Main &amp; JEE Advanced AI tutor</image:title>
       <image:caption>AI tutor for JEE Main and JEE Advanced PYQs, mock tests and doubt solving.</image:caption>
     </image:image>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#search-archive</loc>
+    <loc>https://landing.jeenius.tech/#search-archive</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#prediction-lab</loc>
+    <loc>https://landing.jeenius.tech/#prediction-lab</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#features</loc>
+    <loc>https://landing.jeenius.tech/#features</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#jee-resources</loc>
+    <loc>https://landing.jeenius.tech/#jee-resources</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#pricing</loc>
+    <loc>https://landing.jeenius.tech/#pricing</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/#faq</loc>
+    <loc>https://landing.jeenius.tech/#faq</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/prediction-results.html</loc>
+    <loc>https://landing.jeenius.tech/prediction-results.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://ai.jeenius.tech/prediction-engine.html</loc>
+    <loc>https://landing.jeenius.tech/prediction-engine.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

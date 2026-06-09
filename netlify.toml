@@ -1,23 +1,12 @@
 # Netlify configuration for the JEEnius landing site.
 #
-# Canonical host: https://ai.jeenius.tech  (matches every <link rel="canonical">)
-# All other hosts 301-redirect here so search/AI engines see a single domain
-# and link equity is not split across landing.* and ai.*
-
-# --- Force canonical host: landing.jeenius.tech -> ai.jeenius.tech (301) ---
-# Host-based redirect: matching on the full origin in `from` makes Netlify
-# apply this only to requests arriving on the landing.* host. `force = true`
-# ensures it fires even when a file exists at that path. `:splat` preserves
-# the full path + query so deep links land on the same page on ai.*
-[[redirects]]
-  from = "https://landing.jeenius.tech/*"
-  to = "https://ai.jeenius.tech/:splat"
-  status = 301
-  force = true
-
-# Same for the bare http:// landing host (before Netlify's HTTPS upgrade edge cases)
-[[redirects]]
-  from = "http://landing.jeenius.tech/*"
-  to = "https://ai.jeenius.tech/:splat"
-  status = 301
-  force = true
+# Canonical host: https://landing.jeenius.tech  (matches every <link rel="canonical">)
+#
+# NOTE: ai.jeenius.tech is the Django API backend (it returns 404 at / and 405
+# for /sitemap.xml and /llms.txt), NOT the marketing site. The landing page is
+# served only from landing.jeenius.tech, so there is no duplicate-content host
+# to redirect and NO host-level 301 is configured here. Do not add a
+# landing.* -> ai.* redirect: it would send users and crawlers into the API 404.
+#
+# The /privacy-policy/, /terms-of-service/ and /refund-policy/ pages are served
+# by the backend on ai.jeenius.tech and are linked there intentionally.
