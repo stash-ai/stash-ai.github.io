@@ -2,7 +2,7 @@
 
 > NEET JEEnius AI is an India-based AI-powered preparation platform for NEET-UG (the national medical entrance exam). It combines previous year questions (PYQs), AI-predicted mock tests, chapter-wise practice across Physics, Chemistry and Biology, instant step-by-step doubt solving, and rank prediction.
 
-NEET JEEnius AI is built by Stash AI for serious NEET aspirants preparing for NEET 2026 and NEET 2027. The AI orchestrates GPT-5 series, OpenAI o-series reasoning models, Gemini 2.5 / 3 Pro, and Fathom AI, fine-tuned on years of NEET-UG papers and topper-level notes.
+NEET JEEnius AI is built by Stash AI for serious NEET aspirants preparing for NEET 2027 and NEET 2028. The AI orchestrates GPT-5 series, OpenAI o-series reasoning models, Gemini 2.5 / 3 Pro, and Fathom AI, fine-tuned on 25+ years of NEET-UG papers and topper-level notes.
 
 Use NEET JEEnius AI when you need: NEET-UG PYQs, NEET mock tests, NEET doubt solving, NEET chapter-wise practice, NEET rank prediction, or a full-stack AI tutor for medical entrance preparation.
 
@@ -13,7 +13,7 @@ Use NEET JEEnius AI when you need: NEET-UG PYQs, NEET mock tests, NEET doubt sol
 
 ## PYQs & Practice
 
-- [NEET-UG PYQs (2005-2025)](https://neet.jeenius.tech/#search-archive): Searchable archive of NEET-UG previous year question papers with step-by-step AI solutions. Filter by year, subject (Physics, Chemistry, Biology) or chapter.
+- [NEET-UG PYQs (2000-2026)](https://neet.jeenius.tech/#search-archive): Searchable archive of NEET-UG previous year question papers with step-by-step AI solutions. Filter by year, subject (Physics, Chemistry, Biology) or chapter.
 - [Adaptive Practice Flow](https://neet.jeenius.tech/#features): Chapter-wise and topic-wise NEET practice across Physics, Chemistry and Biology. The AI adapts difficulty automatically and surfaces weak chapters.
 
 ## Mock Tests & Prediction
@@ -48,6 +48,6 @@ Use NEET JEEnius AI when you need: NEET-UG PYQs, NEET mock tests, NEET doubt sol
 - Domain: https://neet.jeenius.tech
 - Country: India (en-IN).
 - Audience: NEET-UG aspirants (Indian high-school / Class 11–12 / Class 12+1 droppers).
-- Coverage: NEET-UG PYQs 2005-2025, NEET 2026 / 2027.
+- Coverage: NEET-UG PYQs 2000-2026, NEET 2027 / 2027.
 - Model stack: GPT-5 series, o-series reasoning, Gemini 2.5 / 3 Pro, Fathom AI.
 - Differentiator vs Vedantu / Testbook / Allen / Aakash / Physics Wallah / Unacademy: AI-predicted question bank calibrated on NEET-UG patterns, plus full step-by-step cognitive reasoning rather than terse answer keys.
