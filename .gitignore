@@ -1,6 +1,12 @@
 # Ignore private runtime config files
-jeenius/landing/firebase-config.js
-jeenius/landing/posthog-config.js
-jeenius/landing/google-tag-config.js
-jeenius/landing/.env
+jee-jeenius/landing/firebase-config.js
+jee-jeenius/landing/posthog-config.js
+jee-jeenius/landing/google-tag-config.js
+jee-jeenius/landing/.env
+
+neet-jeenius/landing/firebase-config.js
+neet-jeenius/landing/posthog-config.js
+neet-jeenius/landing/google-tag-config.js
+neet-jeenius/landing/.env
+
 .DS_Store
