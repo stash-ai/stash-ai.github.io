@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jee-landing",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd jeenius/landing && python3 -m http.server 8753"],
+      "port": 8753
+    }
+  ]
+}
