@@ -514,22 +514,25 @@
         <div class="reveal">
           <div class="card" style="padding:24px;">
             <div class="flex items-center justify-between" style="margin-bottom:14px;">
-              <span class="pill" id="pred-tag">JEE Main 2027 · Physics</span>
+              <span class="pill" id="pred-tag">JEE Main 2027 · Physics • EMI</span>
               <span style="font-size:12px; font-weight:700; color:var(--gold-ink);">AI + faculty</span>
             </div>
             <div style="position:relative;">
-              <p id="pred-q" class="pred-q" style="font-weight:600; font-size:16.5px; line-height:1.5; margin:0 0 18px; min-height:96px;">A uniform disc of mass M and radius R rolls without slipping down an incline of angle θ. Find its linear acceleration.</p>
-              <button id="pred-overlay" class="pred-overlay" aria-label="Reveal a predicted 2027 question">
+              <div id="pred-reveal" class="pred-q" style="min-height:248px;">
+                <p id="pred-q-text" style="font-weight:600; font-size:15px; line-height:1.55; margin:0 0 14px;">A non-conducting ring of mass m and radius R carries a uniform linear charge density λ and rests on a rough surface (friction μ). A magnetic field B(t) = B₀ + αt², confined to a circular region of radius r (r &lt; R) concentric with the ring, is switched on. Find the time t at which the ring just starts to rotate.</p>
+                <div id="pred-options" style="display:flex; flex-direction:column; gap:8px;"></div>
+              </div>
+              <button id="pred-overlay" class="pred-overlay" aria-label="Reveal a real predicted 2027 question">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.46 12C3.73 7.94 7.52 5 12 5s8.27 2.94 9.54 7c-1.27 4.06-5.06 7-9.54 7s-8.27-2.94-9.54-7z"></path></svg>
-                Tap to reveal a 2027 prediction
+                Tap to reveal a real 2027 prediction
               </button>
             </div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin:16px 0 8px;">
               <span style="font-size:12px; font-weight:700; color:var(--ink-soft);" id="pred-prob">94% match likelihood</span>
               <button id="pred-next" class="hidden" style="font-size:12.5px; font-weight:700; color:var(--green); background:none; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">Show another <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M5 19a9 9 0 0114-5M19 5a9 9 0 00-14 5"></path></svg></button>
             </div>
             <div style="height:8px; background:var(--mint); border-radius:999px; overflow:hidden;"><div id="pred-probbar" style="width:94%; height:100%; background:var(--green); border-radius:999px; transition:width .5s var(--ease);"></div></div>
-            <p style="font-size:11.5px; color:var(--ink-faint); margin:14px 0 0;">One of 1,000+ AI-predicted questions for JEE Main 2027.</p>
+            <p style="font-size:11.5px; color:var(--ink-faint); margin:14px 0 0;">Real predicted question · one of 1,000+ for JEE Main 2027.</p>
           </div>
         </div>
       </div>
@@ -995,22 +998,40 @@
       document.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
     })();
 
-    // Interactive "reveal a 2027 prediction" card
+    // Interactive "reveal a 2027 prediction" card — real predicted questions
     (function () {
+      function fr(n, d) { return '<span class="frac"><span>' + n + '</span><span>' + d + '</span></span>'; }
       var preds = [
-        { tag: 'JEE Main 2027 · Physics', p: 94, q: 'A uniform disc of mass M and radius R rolls without slipping down an incline of angle θ. Find its linear acceleration.' },
-        { tag: 'JEE Main 2027 · Chemistry', p: 91, q: 'For a first-order reaction, 75% completion takes 60 minutes. Find the rate constant k.' },
-        { tag: 'JEE Main 2027 · Mathematics', p: 89, q: 'Evaluate the definite integral of sin²x from 0 to π/2.' }
+        {
+          tag: 'JEE Main 2027 · Physics • EMI', p: 94,
+          q: 'A non-conducting ring of mass m and radius R carries a uniform linear charge density λ and rests on a rough surface (friction μ). A magnetic field B(t) = B₀ + αt², confined to a circular region of radius r (r &lt; R) concentric with the ring, is switched on. Find the time t at which the ring just starts to rotate.',
+          opts: [ { h: fr('μmg', '2πλr²α'), c: true }, { h: fr('μmg', 'πλr²α') }, { h: fr('μmg', '2πλR²α') }, { h: fr('μmgR', '2πλr³α') } ]
+        },
+        {
+          tag: 'JEE Main 2027 · Maths • Definite Integration', p: 91,
+          q: 'Let f(x) be a differentiable function satisfying f′(x) = f(x) + ∫₀¹ f(t)dt with f(0) = 1. Evaluate&nbsp; lim<sub>n→∞</sub> Σ<sub>k=1</sub><sup>n</sup> (k ∕ n²)·f(k ∕ n).',
+          opts: [ { h: fr('5 − e', '2(3 − e)'), c: true }, { h: fr('e − 1', '3 − e') }, { h: fr('5 + e', '2(3 + e)') }, { h: fr('3 − e', '2(5 − e)') } ]
+        }
       ];
-      var i = 0;
-      var q = document.getElementById('pred-q'), tag = document.getElementById('pred-tag'),
+      var i = 0, L = ['A', 'B', 'C', 'D'];
+      var wrap = document.getElementById('pred-reveal'), qt = document.getElementById('pred-q-text'),
+          optsEl = document.getElementById('pred-options'), tag = document.getElementById('pred-tag'),
           prob = document.getElementById('pred-prob'), bar = document.getElementById('pred-probbar'),
           overlay = document.getElementById('pred-overlay'), next = document.getElementById('pred-next');
-      if (!q) return;
-      function render() { var p = preds[i]; q.textContent = p.q; tag.textContent = p.tag; prob.textContent = p.p + '% match likelihood'; bar.style.width = p.p + '%'; }
+      if (!wrap) return;
+      function render() {
+        var pr = preds[i];
+        tag.textContent = pr.tag;
+        qt.innerHTML = pr.q;
+        optsEl.innerHTML = pr.opts.map(function (o, idx) {
+          return '<div class="pred-opt' + (o.c ? ' correct' : '') + '"><span class="opt-letter">' + L[idx] + '</span><span class="opt-body">' + o.h + '</span>' + (o.c ? '<svg class="opt-check" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>' : '') + '</div>';
+        }).join('');
+        prob.textContent = pr.p + '% match likelihood';
+        bar.style.width = pr.p + '%';
+      }
       render();
-      overlay.addEventListener('click', function () { q.classList.add('revealed'); overlay.classList.add('hidden'); next.classList.remove('hidden'); track('reveal_2027_prediction', 'interaction'); });
-      next.addEventListener('click', function () { i = (i + 1) % preds.length; render(); q.classList.add('revealed'); });
+      overlay.addEventListener('click', function () { wrap.classList.add('revealed'); overlay.classList.add('hidden'); next.classList.remove('hidden'); track('reveal_2027_prediction', 'interaction'); });
+      next.addEventListener('click', function () { i = (i + 1) % preds.length; render(); wrap.classList.add('revealed'); });
     })();
   </script>
 </body>
