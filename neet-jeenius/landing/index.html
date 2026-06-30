@@ -59,8 +59,8 @@
     <meta name="distribution" content="global">
     <meta name="revisit-after" content="3 days">
 
-    <link rel="icon" type="image/webp" href="neet-jeenius.webp">
-    <link rel="apple-touch-icon" href="neet-jeenius.webp">
+    <link rel="icon" type="image/webp" href="neet-jeenius.webp?v=2">
+    <link rel="apple-touch-icon" href="neet-jeenius.webp?v=2">
 
     <!-- Open Graph -->
     <meta property="og:locale" content="en_IN">
@@ -70,12 +70,11 @@
     <meta property="og:description"
         content="Practice NEET-UG PYQs (2000-2026) with step-by-step AI solutions, AI-predicted mock tests for NEET 2027 & 2028, and instant doubt solving. The smarter way to crack NEET-UG / MBBS.">
     <meta property="og:url" content="https://neet.jeenius.tech/">
-    <!-- TODO(NEET-OG): replace this square 1024x1024 logo with a purpose-built 1200x630 landscape og-cover.png (like JEE's /og-cover.png), then update src + type + width/height below. A square image gets center-cropped in social cards. -->
-    <meta property="og:image" content="https://neet.jeenius.tech/neet-jeenius.webp">
-    <meta property="og:image:secure_url" content="https://neet.jeenius.tech/neet-jeenius.webp">
-    <meta property="og:image:type" content="image/webp">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
+    <meta property="og:image" content="https://neet.jeenius.tech/og-cover.png">
+    <meta property="og:image:secure_url" content="https://neet.jeenius.tech/og-cover.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="NEET JEEnius AI: AI-powered NEET-UG preparation platform">
 
     <!-- Twitter / X -->
@@ -85,7 +84,7 @@
     <meta name="twitter:title" content="NEET JEEnius AI: NEET-UG PYQs, Mock Tests & AI Solutions">
     <meta name="twitter:description"
         content="Practice NEET-UG PYQs (2000-2026) with step-by-step AI solutions, AI-predicted mock tests for NEET 2027 & 2028 and instant doubt solving.">
-    <meta name="twitter:image" content="https://neet.jeenius.tech/neet-jeenius.webp">
+    <meta name="twitter:image" content="https://neet.jeenius.tech/og-cover.png">
     <meta name="twitter:image:alt" content="NEET JEEnius AI: AI-powered NEET preparation">
 
     <!-- Performance preconnects -->
@@ -108,7 +107,7 @@
           "name": "NEET JEEnius AI",
           "alternateName": ["NEET JEEnius", "NEETJEEnius", "NEET JEEnius AI"],
           "url": "https://neet.jeenius.tech/",
-          "logo": "https://neet.jeenius.tech/neet-jeenius.webp",
+          "logo": "https://neet.jeenius.tech/neet-jeenius.webp?v=2",
           "description": "AI-powered preparation platform for NEET-UG: practice PYQs, take AI-predicted mock tests and solve doubts step-by-step.",
           "sameAs": [],
           "parentOrganization": {
@@ -146,7 +145,7 @@
           "@id": "https://neet.jeenius.tech/#edu",
           "name": "NEET JEEnius AI",
           "url": "https://neet.jeenius.tech/",
-          "logo": "https://neet.jeenius.tech/neet-jeenius.webp",
+          "logo": "https://neet.jeenius.tech/neet-jeenius.webp?v=2",
           "description": "Online NEET coaching powered by AI. Specialised for NEET-UG (2000-2026) PYQs, mock tests, predictions and doubt solving.",
           "areaServed": "IN",
           "audience": {
@@ -185,7 +184,7 @@
           "name": "NEET JEEnius AI",
           "description": "AI tutor for NEET-UG. Practice NEET-UG PYQs with step-by-step solutions and AI-generated mock tests.",
           "brand": { "@id": "https://neet.jeenius.tech/#organization" },
-          "image": "https://neet.jeenius.tech/neet-jeenius.webp",
+          "image": "https://neet.jeenius.tech/neet-jeenius.webp?v=2",
           "category": "EducationalApplication",
           "offers": {
             "@type": "AggregateOffer",
@@ -378,9 +377,6 @@
       .solarpunk-glow {
         box-shadow: 0 0 40px -10px rgba(171, 206, 198, 0.5);
       }
-      .gold-glow {
-        box-shadow: 0 0 30px -5px rgba(255, 215, 0, 0.4);
-      }
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
@@ -425,40 +421,6 @@
       a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
       ul { list-style: none; }
       img { max-width: 100%; height: auto; }
-
-      .floating-cta {
-        position: fixed; bottom: 24px; right: 24px; z-index: 1002;
-        display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
-        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-        color: #006a65; padding: 16px 24px; border-radius: 50px;
-        font-weight: 700; font-size: 0.95rem;
-        box-shadow: 0 8px 32px rgba(255, 165, 0, 0.4), 0 4px 12px rgba(0,0,0,0.15);
-        cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-decoration: none; animation: float 3s ease-in-out infinite;
-        max-width: calc(100vw - 32px); box-sizing: border-box;
-      }
-      .floating-cta:hover {
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 0 12px 40px rgba(255, 165, 0, 0.5), 0 6px 16px rgba(0,0,0,0.2);
-      }
-      .floating-cta .countdown {
-        background: rgba(0, 106, 101, 0.15);
-        padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; flex-shrink: 0;
-      }
-      @media (max-width: 768px) {
-        .floating-cta { bottom: 16px; right: 16px; left: 16px; font-size: 0.9rem; padding: 14px 20px; }
-      }
-
-      .confetti-container {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        pointer-events: none; z-index: 9999; overflow: hidden;
-      }
-      .confetti-piece {
-        position: absolute; top: -20px; opacity: 0;
-      }
-      @keyframes confetti-fall-1 { 0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); } 100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.3); } }
-      @keyframes confetti-fall-2 { 0% { opacity: 1; transform: translateY(0) rotate(0deg) translateX(0); } 100% { opacity: 0; transform: translateY(100vh) rotate(-540deg) translateX(100px); } }
-      @keyframes confetti-fall-3 { 0% { opacity: 1; transform: translateY(0) rotate(0deg) translateX(0); } 100% { opacity: 0; transform: translateY(100vh) rotate(360deg) translateX(-80px); } }
 
       @keyframes float-particle {
         0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
@@ -948,12 +910,6 @@
         border-color: rgba(255,255,255,0.08) !important;
       }
 
-      .dark .animate-bounce .text-\[\#006a65\],
-      .dark .animate-bounce [style*="color: #006a65"],
-      .dark .animate-bounce span {
-        color: #006a65 !important;
-      }
-
       /* Dark mode: gold accents stay readable. */
       .dark .text-gold { color: #FFD700 !important; }
       .dark a[style*="color: #006a65"][style*="underline"] {
@@ -992,24 +948,6 @@
         box-shadow: 0 8px 24px -8px rgba(0,106,101,0.12);
       }
 
-      /* Floating CTA: beat the .dark span:not(.badge-text) specificity. */
-      .floating-cta,
-      .floating-cta span,
-      .floating-cta svg,
-      .dark .floating-cta,
-      .dark .floating-cta span,
-      .dark .floating-cta svg {
-        color: #006a65 !important;
-      }
-      .dark .floating-cta {
-        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
-        box-shadow: 0 8px 32px rgba(255,165,0,0.45), 0 4px 12px rgba(0,0,0,0.4) !important;
-      }
-      .dark .floating-cta .countdown {
-        background: rgba(0,106,101,0.2) !important;
-        color: #006a65 !important;
-      }
-
       /* Search Archive section: keep a distinct mid-shade in dark mode, like the
          light gray it uses in light mode. */
       .dark #search-archive {
@@ -1034,7 +972,7 @@
 
       /* Reduce motion preference */
       @media (prefers-reduced-motion: reduce) {
-        .animate-float, .animate-ping-slow, .animate-bounce, .floating-cta {
+        .animate-float, .animate-ping-slow {
           animation: none !important;
         }
         * { transition: none !important; }
@@ -1160,6 +1098,95 @@
         #medHeroSpotlight { transition: none !important; }
       }
     h1, h2, h3, h4, h5, h6, .font-outfit { font-family: 'Outfit', sans-serif; }
+
+      /* ============================================================
+         CLINICAL CALM RESTYLE (v2) — NEET JEEnius
+         A cohesive, low-FOMO medical look layered over the base.
+         Light-mode-only rules are scoped html:not(.dark) so the
+         existing dark-mode override block is never disturbed.
+         ============================================================ */
+      :root {
+        --teal: #006a65; --teal-deep: #00504c; --teal-bright: #14a89d;
+        --mint: #d3ece9; --mint-soft: #eaf6f4; --coral: #E63946;
+        --ink: #0f1b1a; --ink-soft: #3c4948; --line: #dfe6e4;
+      }
+
+      /* Calmer type rhythm */
+      h1, h2, h3, h4 { letter-spacing: -0.02em; }
+      section h2 { scroll-margin-top: 96px; }
+
+      /* Hero: quiet clinical accent instead of neon gold */
+      .hero-accent {
+        color: #7FE6DC !important;
+        position: relative;
+        white-space: nowrap;
+      }
+      .hero-accent::after {
+        content: "";
+        position: absolute; left: 0; right: 0; bottom: -6px; height: 3px;
+        background: linear-gradient(90deg, #7FE6DC, rgba(127,230,220,0));
+        border-radius: 2px;
+      }
+      /* Out-specify the .dark span:not(.badge-text) override so the accent stays mint in dark mode */
+      html.dark span.hero-accent { color: #7FE6DC !important; }
+
+      /* Hero eyebrow: frosted teal chip (was a loud gold gradient) */
+      .hero-badge {
+        background: rgba(255,255,255,0.07) !important;
+        color: #d9faf5 !important;
+        border: 1px solid rgba(127,230,220,0.35);
+        box-shadow: none !important;
+        backdrop-filter: blur(8px);
+        font-weight: 600; letter-spacing: 0.04em; text-transform: none;
+      }
+
+      /* Primary hero CTA: clean mint fill, dark ink — reads premium + calm */
+      .hero-cta-primary {
+        background: #7FE6DC !important;
+        color: #053b37 !important;
+        box-shadow: 0 14px 30px -12px rgba(127,230,220,0.6) !important;
+      }
+      .hero-cta-primary:hover { background: #9DF1E8 !important; }
+      .hero-cta-secondary { border-color: rgba(255,255,255,0.28); }
+
+      /* Glass cards: a touch cleaner / more clinical */
+      .glass-card { border-radius: 18px; }
+      .glass-card.solarpunk-glow { box-shadow: 0 24px 60px -28px rgba(0,0,0,0.55); }
+
+      /* Section eyebrow labels (e.g. "Built for NEET 2027") */
+      html:not(.dark) .section-eyebrow,
+      html:not(.dark) #prediction-lab span[style*="text-transform: uppercase"] {
+        color: var(--teal-bright) !important;
+        font-weight: 700;
+      }
+
+      /* Unified card lift across the body sections (light mode) */
+      html:not(.dark) #features > div > div > div,
+      html:not(.dark) #prediction-lab [style*="border-radius: 16px"] {
+        transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s cubic-bezier(.4,0,.2,1), border-color .3s ease;
+      }
+      html:not(.dark) #features > div > div > div:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 44px -22px rgba(0,106,101,0.30) !important;
+        border-color: rgba(20,168,157,0.45) !important;
+      }
+
+      /* Nav: calmer brand lockup + crisper CTA */
+      nav.navbar-base .med-pulse-ring { display: none; }
+      nav.navbar-base a[data-cta] {
+        box-shadow: 0 10px 22px -10px rgba(0,106,101,0.45);
+      }
+
+      /* Buttons: gentle tactile press everywhere */
+      .btn, .hero-cta-primary, .hero-cta-secondary, nav a[data-cta] {
+        transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+      }
+      .btn:active, .hero-cta-primary:active, nav a[data-cta]:active { transform: translateY(1px); }
+
+      /* Medical divider heartbeat: slightly quieter */
+      .med-divider .med-heartbeat svg path { opacity: 0.9; }
+
+      h1, h2, h3, h4, h5, h6, .font-outfit { font-family: 'Outfit', sans-serif; }
     </style>
 
     <!-- TODO(NEET-CONFIG): create firebase-config.js and posthog-config.js for a SEPARATE NEET Firebase project + PostHog key (copy the *.example.js files; these are gitignored, never commit real keys). -->
@@ -1208,7 +1235,6 @@
 </head>
 
 <body>
-    <div class="confetti-container" id="confettiContainer"></div>
 
     <!-- Navigation -->
     <nav class="navbar-base fixed top-0 left-0 w-full h-20 z-50 backdrop-blur-md border-b border-[rgba(0,106,101,0.05)]">
@@ -1217,13 +1243,13 @@
                 <span class="med-logo-wrap w-9 h-9">
                     <span class="med-pulse-ring" style="border-radius:0.75rem;"></span>
                     <span class="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-[#006a65] relative z-10">
-                        <img src="neet-jeenius.webp" alt="NEET JEEnius logo" class="w-full h-full object-cover">
+                        <img src="neet-jeenius.webp?v=2" alt="NEET JEEnius logo" class="w-full h-full object-cover">
                     </span>
                 </span>
                 NEET JEEnius AI
             </a>
             <div class="hidden md:flex gap-10">
-                <a href="prediction-results.html" class="text-sm font-medium text-[#3c4948] hover:text-[#006a65] transition-colors" data-track-label="nav_results" data-track-category="nav">Prediction Engine</a>
+                <a href="prediction-engine.html" class="text-sm font-medium text-[#3c4948] hover:text-[#006a65] transition-colors" data-track-label="nav_results" data-track-category="nav">Prediction Engine</a>
                 <a href="#search-archive" class="text-sm font-medium text-[#3c4948] hover:text-[#006a65] transition-colors" data-track-label="nav_pyqs" data-track-category="nav">PYQs</a>
                 <a href="#pricing" class="text-sm font-medium text-[#3c4948] hover:text-[#006a65] transition-colors" data-track-label="nav_pricing" data-track-category="nav">Pricing</a>
             </div>
@@ -1241,7 +1267,7 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="prediction-results.html" data-track-label="mobile_nav_results" data-track-category="nav">Prediction Engine</a>
+        <a href="prediction-engine.html" data-track-label="mobile_nav_results" data-track-category="nav">Prediction Engine</a>
         <a href="#search-archive" data-track-label="mobile_nav_pyqs" data-track-category="nav">PYQs</a>
         <a href="#pricing" data-track-label="mobile_nav_pricing" data-track-category="nav">Pricing</a>
         <a href="#pricing" style="color: #006a65;" data-cta="true" data-track-label="mobile_nav_get_app" data-track-category="cta" data-track-manual="true">Start practising free</a>
@@ -1302,13 +1328,13 @@
 
         <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-4">
-                    The smarter way to crack <span class="bg-gradient-to-r from-gold to-amber-500 bg-clip-text text-transparent">NEET-UG</span>.
-                </h1>
-
                 <div class="hero-badge">
-                    NEET-UG PYQs Now Available
+                    NEET-UG · Physics · Chemistry · Biology
                 </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                    The smarter way to crack <span class="hero-accent">NEET-UG</span>.
+                </h1>
 
                 <p class="text-lg text-white/80 mb-12 max-w-xl">
                     Practice NEET-UG PYQs with an AI tutor that explains every step across Physics, Chemistry and Biology. Calibrated mock tests, instant doubt solving and adaptive practice in one place.
@@ -1331,7 +1357,7 @@
                 </div>
 
                 <div class="flex flex-wrap gap-4 mb-8">
-                    <a href="prediction-results.html" class="hero-cta-primary" data-track-label="hero_see_proof" data-track-category="cta">
+                    <a href="prediction-engine.html" class="hero-cta-primary" data-track-label="hero_see_proof" data-track-category="cta">
                         Start Practising Free
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -1377,12 +1403,6 @@
                         <div class="h-2 w-3/4 bg-white/10 rounded"></div>
                         <div class="h-2 w-1/2 bg-gold/30 rounded"></div>
                     </div>
-                </div>
-
-                <!-- NEET-UG floating badge -->
-                <div class="absolute -bottom-6 -left-6 bg-gold px-6 py-4 rounded-full gold-glow z-30 flex items-center gap-4 animate-bounce">
-                    <span class="text-3xl font-black text-[#006a65]">NEET</span>
-                    <span class="text-xs font-bold text-[#006a65] leading-tight">2027<br/>READY</span>
                 </div>
             </div>
         </div>
@@ -1986,7 +2006,7 @@
                 <div>
                     <div class="logo" style="display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.25rem; color: white; margin-bottom: 20px;">
                         <div style="width: 36px; height: 36px; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1);">
-                            <img src="neet-jeenius.webp" alt="NEET JEEnius logo" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="neet-jeenius.webp?v=2" alt="NEET JEEnius logo" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         NEET JEEnius AI
                     </div>
@@ -1996,8 +2016,8 @@
                     <div>
                         <h4 style="color: white; margin-bottom: 24px; font-size: 1rem;">Product</h4>
                         <ul style="list-style: none;">
-                            <li style="margin-bottom: 12px;"><a href="prediction-results.html" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Prediction Results</a></li>
-                            <li style="margin-bottom: 12px;"><a href="#prediction-lab" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Prediction Engine</a></li>
+                            <li style="margin-bottom: 12px;"><a href="prediction-engine.html" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Prediction Engine</a></li>
+                            <li style="margin-bottom: 12px;"><a href="#prediction-lab" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Mock Tests</a></li>
                             <li style="margin-bottom: 12px;"><a href="#pricing" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Pricing</a></li>
                             <li style="margin-bottom: 12px;"><a href="#features" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">AI Tutor</a></li>
                         </ul>
@@ -2018,11 +2038,6 @@
             </div>
         </div>
     </footer>
-
-    <a href="#" class="floating-cta" id="floatingCta" aria-label="Start practicing in the app">
-        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-        <span>Start Practicing</span>
-    </a>
 
     <script>
         // Dark mode - default to system preference
@@ -2267,14 +2282,6 @@
             });
         });
 
-        const floatingCta = document.getElementById('floatingCta');
-        if (floatingCta) {
-            floatingCta.addEventListener('click', event => {
-                event.preventDefault();
-                trackInteraction('floating_cta', 'cta');
-                window.open(getRedirectUrl(), '_blank');
-            });
-        }
 
         document.querySelectorAll('button, a').forEach(el => {
             el.addEventListener('click', () => {
@@ -2356,43 +2363,6 @@
                 if (!raf) raf = requestAnimationFrame(apply);
             });
         })();
-
-                // Confetti
-        function createConfetti() {
-            const container = document.getElementById('confettiContainer');
-            if (!container) return;
-            const colors = ['#006a65', '#22C55E', '#15803D', '#FFD700', '#20b2aa', '#00504c', '#34D399'];
-            const animations = ['confetti-fall-1', 'confetti-fall-2', 'confetti-fall-3'];
-            for (let i = 0; i < 120; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti-piece';
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const animation = animations[Math.floor(Math.random() * animations.length)];
-                const size = 8 + Math.random() * 12;
-                const isRect = Math.random() > 0.5;
-                confetti.style.cssText = `
-                    left: ${Math.random() * 100}%;
-                    width: ${isRect ? size * 0.4 : size}px;
-                    height: ${isRect ? size * 1.5 : size}px;
-                    background-color: ${color};
-                    border-radius: ${isRect ? '2px' : '50%'};
-                    animation: ${animation} ${3 + Math.random() * 3}s ease-out forwards;
-                    animation-delay: ${Math.random() * 1.5}s;
-                `;
-                container.appendChild(confetti);
-            }
-            setTimeout(() => {
-                container.style.transition = 'opacity 1s ease';
-                container.style.opacity = '0';
-                setTimeout(() => container.remove(), 1000);
-            }, 6000);
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => setTimeout(createConfetti, 200));
-        } else {
-            setTimeout(createConfetti, 200);
-        }
     </script>
 </body>
 

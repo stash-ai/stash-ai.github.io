@@ -6,6 +6,12 @@
       "runtimeExecutable": "sh",
       "runtimeArgs": ["-c", "cd jee-jeenius/landing && python3 -m http.server 8753"],
       "port": 8753
+    },
+    {
+      "name": "neet-landing",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd neet-jeenius/landing && python3 -m http.server 8754"],
+      "port": 8754
     }
   ]
 }
