@@ -1,0 +1,4 @@
+# JEEnius brand site — host is provisional (TODO(confirm) final brand host)
+User-agent: *
+Allow: /
+Sitemap: https://jeenius.tech/sitemap.xml

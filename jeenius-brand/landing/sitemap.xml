@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO(confirm): update host when the final brand URL is decided -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jeenius.tech/</loc></url>
+  <url><loc>https://jeenius.tech/products.html</loc></url>
+  <url><loc>https://jeenius.tech/about.html</loc></url>
+  <url><loc>https://jeenius.tech/contact.html</loc></url>
+</urlset>
