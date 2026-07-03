@@ -12,6 +12,12 @@
       "runtimeExecutable": "sh",
       "runtimeArgs": ["-c", "cd neet-jeenius/landing && python3 -m http.server 8754"],
       "port": 8754
+    },
+    {
+      "name": "jeenius-brand-landing",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd jeenius-brand/landing && python3 -m http.server 8755"],
+      "port": 8755
     }
   ]
 }
