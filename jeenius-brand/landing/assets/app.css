@@ -312,11 +312,12 @@ img { max-width: 100%; display: block; }
   --jee: #1B3B36; --jee-gold: #FFD700;
   --neet: #006A65; --neet-bright: #14A89D; --neet-coral: #E63946;
 }
-.dark { --jee: #2E5A52; --neet: #14A89D; --neet-coral: #FF6470; }
+.dark { --jee: #2E5A52; --neet-coral: #FF6470; }
 
 .accent-jee  { --accent: var(--jee);  --accent-ink: var(--green); --accent-soft: var(--sage); }
-.accent-neet { --accent: var(--neet); --accent-ink: var(--neet);  --accent-soft: #D3ECE9; }
-.dark .accent-neet { --accent-soft: #0F2E2B; }
+.accent-neet { --accent: var(--neet); --accent-ink: #045049;      --accent-soft: #D3ECE9; }
+.dark .accent-jee  { --accent-ink: #A7DCC6; --accent-soft: #1E3A34; }
+.dark .accent-neet { --accent-ink: #7FE6DC; --accent-soft: #143733; }
 
 .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 680px) { .pick { grid-template-columns: 1fr; } }
@@ -330,5 +331,8 @@ img { max-width: 100%; display: block; }
   display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800;
   letter-spacing: .04em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-ink);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
 }
-.spotlight { background: var(--accent-soft); }
+.spotlight { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.dark .spotlight { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+.spotlight .stat-box .num { color: var(--accent); }
