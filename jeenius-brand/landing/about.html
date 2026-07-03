@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+
+  <title>About JEEnius — AI exam prep built by IITians</title>
+  <meta name="description" content="JEEnius builds AI-powered prep for JEE and NEET — real PYQs, step-by-step solutions and predicted mocks. A Stash AI product, built by IITians.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://jeenius.tech/about.html"><!-- TODO(confirm) final brand host -->
+  <meta name="theme-color" content="#1B3B36">
+  <link rel="icon" type="image/webp" href="jeenius.webp">
+  <link rel="apple-touch-icon" href="jeenius.webp">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JEEnius">
+  <meta property="og:title" content="About JEEnius — AI exam prep built by IITians">
+  <meta property="og:description" content="Why JEEnius exists: calmer, honest, AI-powered prep for JEE and NEET. A Stash AI product.">
+  <meta property="og:url" content="https://jeenius.tech/about.html"><!-- TODO(confirm) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@jeenius_ai">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: {
+      colors: { canvas:'var(--canvas)', surface:'var(--surface)', ink:'var(--ink)', green:'var(--green)', gold:'var(--gold)' },
+      fontFamily: { sans:['"Plus Jakarta Sans"','sans-serif'], display:['Fraunces','Georgia','serif'] },
+      maxWidth: { content:'1200px' }
+    } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css">
+  <script>(function(){try{var s=localStorage.getItem('jeenius-brand-dark-mode');if(s==='true'||(s===null&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark');}catch(e){}})();</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jeenius.tech/#organization",
+        "name": "JEEnius",
+        "url": "https://jeenius.tech/",
+        "logo": "https://jeenius.tech/jeenius.webp",
+        "description": "AI-powered exam prep for JEE and NEET, built by IITians. A Stash AI product.",
+        "parentOrganization": { "@type": "Organization", "name": "Stash AI", "url": "https://stash.ai/" },
+        "subOrganization": [
+          { "@type": "EducationalOrganization", "name": "JEE JEEnius", "url": "https://landing.jeenius.tech/" },
+          { "@type": "EducationalOrganization", "name": "NEET JEEnius", "url": "https://neet.jeenius.tech/" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jeenius.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://jeenius.tech/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+      <a href="index.html" class="brand"><img src="jeenius.webp" alt="JEEnius logo" width="32" height="32"> JEEnius</a>
+      <div class="hidden md:flex items-center" style="gap:30px;">
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center" style="gap:12px;">
+        <button id="darkModeToggle" class="icon-btn" aria-label="Toggle dark mode">
+          <svg id="sunIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36l-.7-.7M6.34 6.34l-.7-.7m12.72 0l-.7.7M6.34 17.66l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg id="moonIcon" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.35 15.35A9 9 0 018.65 3.65 9 9 0 1020.35 15.35z"></path></svg>
+        </button>
+        <a href="products.html" class="btn btn-primary hidden sm:inline-flex" style="padding:11px 20px; font-size:14.5px;">Choose your exam</a>
+        <button class="icon-btn md:hidden" id="mobileMenuBtn" aria-label="Open menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="products.html" class="btn btn-primary" style="margin-top:12px;">Choose your exam</a>
+  </div>
+
+  <main id="top">
+    <section class="section" style="padding-top:clamp(94px,11vw,140px);">
+      <div class="wrap" style="max-width:820px;">
+        <div class="reveal">
+          <span class="eyebrow">About JEEnius</span>
+          <h1 class="font-display" style="font-size:clamp(36px,5vw,54px); font-weight:500; margin:16px 0 20px; line-height:1.1;">Built by IITians, for future IITians and doctors.</h1>
+          <p class="lead">JEEnius exists because entrance-exam prep is stressful and often generic. We believe a calmer, more honest approach — grounded in real past papers and genuinely helpful AI — beats hype and fear.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:44px; display:flex; flex-direction:column; gap:30px;">
+          <div>
+            <h2 class="font-display" style="font-size:24px; font-weight:600; margin-bottom:8px;">One engine, tuned to each exam</h2>
+            <p style="color:var(--ink-soft);">JEE JEEnius and NEET JEEnius share the same core: real PYQs, step-by-step reasoning from models including Fathom AI (a perfect scorer on JEE Advanced 2025), and a prediction engine that studies decades of papers to build exam-realistic mocks.</p>
+          </div>
+          <div>
+            <h2 class="font-display" style="font-size:24px; font-weight:600; margin-bottom:8px;">Honest about what AI can do</h2>
+            <p style="color:var(--ink-soft);">Our prediction engine covered 92% of JEE Main 2026's topics — but we're clear about the limits. JEEnius predicts topic areas and question patterns, not the exact paper, and is not affiliated with NTA, NMC or any exam body.</p>
+          </div>
+          <div>
+            <h2 class="font-display" style="font-size:24px; font-weight:600; margin-bottom:8px;">Part of Stash AI</h2>
+            <p style="color:var(--ink-soft);">JEEnius is a product of <a href="https://stash.ai/" style="color:var(--gold-ink); font-weight:700;">Stash AI</a>, which builds human-centric AI tools that pair strong model stacks with real empathy for the people using them.</p>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:44px;">
+          <p class="eyebrow" style="margin-bottom:16px;">What we believe</p>
+          <div class="bento">
+            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Student-first</h3><p style="color:var(--ink-soft); font-size:14.5px;">Built for the aspirant, not the algorithm — calm, clear and focused on your rank.</p></div>
+            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Honest by default</h3><p style="color:var(--ink-soft); font-size:14.5px;">Real numbers, clear limits. We show our working instead of shouting accuracy.</p></div>
+            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Low-stress</h3><p style="color:var(--ink-soft); font-size:14.5px;">No countdowns or fear tactics — just steady, effective practice.</p></div>
+          </div>
+        </div>
+
+        <div class="reveal pick" style="margin-top:44px;">
+          <a href="https://landing.jeenius.tech/" class="product-card accent-jee" style="text-decoration:none;">
+            <span class="product-badge">JEE JEEnius</span>
+            <p style="margin:12px 0 0; color:var(--ink-soft);">For engineering aspirants — JEE Main &amp; Advanced <span style="color:var(--accent); font-weight:700;">→</span></p>
+          </a>
+          <a href="https://neet.jeenius.tech/" class="product-card accent-neet" style="text-decoration:none;">
+            <span class="product-badge">NEET JEEnius</span>
+            <p style="margin:12px 0 0; color:var(--ink-soft);">For medical aspirants — NEET-UG <span style="color:var(--accent); font-weight:700;">→</span></p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <div>
+          <a href="index.html" class="brand" style="color:#fff;"><img src="jeenius.webp" alt="JEEnius" width="32" height="32"> JEEnius</a>
+          <p style="margin:16px 0 20px; max-width:34ch; font-size:14.5px; color:#9FB5AE;">AI-powered prep for India's toughest entrance exams — built by IITians. A Stash AI product.</p>
+        </div>
+        <div>
+          <h4 style="color:#fff; font-size:14px; margin-bottom:14px;">Products</h4>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
+            <li><a href="https://landing.jeenius.tech/">JEE JEEnius</a></li>
+            <li><a href="https://neet.jeenius.tech/">NEET JEEnius</a></li>
+            <li><a href="products.html">Compare</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#fff; font-size:14px; margin-bottom:14px;">Company</h4>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://stash.ai/">Stash AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#fff; font-size:14px; margin-bottom:14px;">Legal</h4>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
+            <li><a href="https://ai.jeenius.tech/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://ai.jeenius.tech/terms-of-service/" target="_blank" rel="noopener">Terms of Service</a></li>
+            <li><a href="https://ai.jeenius.tech/refund-policy/" target="_blank" rel="noopener">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.1); margin-top:40px; padding-top:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size:13px; color:#9FB5AE;">
+        <span>© 2026 JEEnius · A Stash AI product</span>
+        <a href="mailto:support@jeenius.tech">support@jeenius.tech</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
