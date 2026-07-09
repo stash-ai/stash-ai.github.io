@@ -47,7 +47,29 @@
       if (!active) { active = true; requestAnimationFrame(tick); }
     }, { passive: true });
   }
-  function initTilt() {}
+  function initTilt() {
+    var els = document.querySelectorAll('[data-tilt]');
+    if (!els.length) return;
+    els.forEach(function (el) {
+      var max = parseFloat(el.getAttribute('data-tilt')) || 6;
+      var rect = null;
+      var glare = el.querySelector('.tilt-glare');
+      if (!glare) { glare = document.createElement('span'); glare.className = 'tilt-glare'; el.appendChild(glare); }
+      var move = rafThrottle(function (e) {
+        if (!rect) rect = el.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        var ry = (px - 0.5) * 2 * max;
+        var rx = -(py - 0.5) * 2 * max;
+        el.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+        glare.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+        glare.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+      });
+      el.addEventListener('pointerenter', function () { rect = el.getBoundingClientRect(); el.classList.add('tilting'); });
+      el.addEventListener('pointermove', move, { passive: true });
+      el.addEventListener('pointerleave', function () { el.classList.remove('tilting'); el.style.transform = ''; rect = null; });
+    });
+  }
   function initMagnetic() {}
   function initSpotlight() {}
   function initScrollChoreography() {}

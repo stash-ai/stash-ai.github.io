@@ -325,3 +325,14 @@ img { max-width: 100%; display: block; }
 .dark .aurora__blob--1 { opacity: .30; }
 .dark .aurora__blob--2 { opacity: .20; }
 .dark .aurora__blob--3 { opacity: .24; }
+
+/* ---------- 3D tilt & depth ---------- */
+[data-tilt] { position: relative; transform-style: preserve-3d; transition: transform .5s var(--ease); }
+[data-tilt].tilting { transition: transform .1s linear; will-change: transform; }
+[data-tilt-layer] { transform: translateZ(var(--tz, 24px)); }
+.tilt-glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  transform: translateZ(60px); opacity: 0; transition: opacity .3s var(--ease);
+  background: radial-gradient(240px circle at var(--gx,50%) var(--gy,50%), rgba(255,255,255,.22), rgba(255,215,0,.09) 42%, transparent 62%);
+}
+[data-tilt].tilting .tilt-glare { opacity: 1; }
