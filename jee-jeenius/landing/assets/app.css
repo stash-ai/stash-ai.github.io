@@ -311,3 +311,17 @@ img { max-width: 100%; display: block; }
    Living calm — motion layer (aurora / tilt / choreography / magnetic / spotlight)
    Added progressively; see docs/superpowers/plans/2026-07-10-jee-living-calm-motion.md
    ========================================================================== */
+
+/* ---------- living aurora (hero) ---------- */
+.aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.aurora__group { position: absolute; inset: -12%; will-change: transform; }
+.aurora__blob { position: absolute; border-radius: 50%; filter: blur(82px); will-change: transform; }
+.aurora__blob--1 { width: 520px; height: 520px; top: -120px; right: -60px; background: var(--sage); opacity: .5; animation: auroraDrift1 26s var(--ease) infinite alternate; }
+.aurora__blob--2 { width: 360px; height: 360px; bottom: -120px; left: -70px; background: var(--gold-soft); opacity: .38; animation: auroraDrift2 31s var(--ease) infinite alternate; }
+.aurora__blob--3 { width: 320px; height: 320px; top: 34%; left: 44%; background: var(--mint); opacity: .42; animation: auroraDrift3 22s var(--ease) infinite alternate; }
+@keyframes auroraDrift1 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-34px,26px,0) scale(1.08); } }
+@keyframes auroraDrift2 { from { transform: translate3d(0,0,0) scale(1.05); } to { transform: translate3d(30px,-22px,0) scale(1); } }
+@keyframes auroraDrift3 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(22px,20px,0) scale(1.12); } }
+.dark .aurora__blob--1 { opacity: .30; }
+.dark .aurora__blob--2 { opacity: .20; }
+.dark .aurora__blob--3 { opacity: .24; }
