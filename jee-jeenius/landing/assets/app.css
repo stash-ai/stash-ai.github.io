@@ -353,6 +353,18 @@ img { max-width: 100%; display: block; }
 .write-on { clip-path: inset(0 100% 0 0); transition: clip-path .8s var(--ease) .5s; }
 .reveal.is-visible .write-on, .write-on.is-visible { clip-path: inset(0 0 0 0); }
 
+/* ---------- magnetic CTA + cursor spotlight ---------- */
+[data-magnetic] { will-change: transform; }
+[data-spotlight] { position: relative; }
+[data-spotlight]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mx, -200px) var(--my, -200px), rgba(255,215,0,.09), transparent 60%);
+  opacity: 0; transition: opacity .4s var(--ease);
+}
+[data-spotlight].spot-on::before { opacity: 1; }
+.footer .wrap { position: relative; z-index: 1; }
+.mock > * { position: relative; z-index: 1; }
+
 /* reduced-motion: neutralize all new motion */
 @media (prefers-reduced-motion: reduce) {
   .aurora__blob { animation: none !important; }
