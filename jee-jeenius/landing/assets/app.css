@@ -336,3 +336,29 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(240px circle at var(--gx,50%) var(--gy,50%), rgba(255,255,255,.22), rgba(255,215,0,.09) 42%, transparent 62%);
 }
 [data-tilt].tilting .tilt-glare { opacity: 1; }
+
+/* ---------- scroll choreography ---------- */
+[data-stagger] > * { opacity: 0; transform: translateY(16px) scale(.995); filter: blur(6px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease), filter .6s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms); }
+[data-stagger].stagger-in > * { opacity: 1; transform: none; filter: none; }
+
+.hl-sweep { color: var(--green);
+  background-image: linear-gradient(transparent 72%, rgba(255,215,0,.5) 72%);
+  background-repeat: no-repeat; background-size: 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 1px;
+  transition: background-size .9s var(--ease) .3s; }
+.reveal.is-visible .hl-sweep, .hl-sweep.is-visible { background-size: 100% 100%; }
+
+.write-on { clip-path: inset(0 100% 0 0); transition: clip-path .8s var(--ease) .5s; }
+.reveal.is-visible .write-on, .write-on.is-visible { clip-path: inset(0 0 0 0); }
+
+/* reduced-motion: neutralize all new motion */
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob { animation: none !important; }
+  [data-stagger] > * { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+  .hl-sweep { background-size: 100% 100% !important; transition: none !important; }
+  .write-on { clip-path: none !important; transition: none !important; }
+  [data-tilt], [data-tilt-layer], [data-magnetic] { transform: none !important; }
+  .tilt-glare, [data-spotlight]::before { display: none !important; }
+}

@@ -72,7 +72,21 @@
   }
   function initMagnetic() {}
   function initSpotlight() {}
-  function initScrollChoreography() {}
+  function initScrollChoreography() {
+    var groups = document.querySelectorAll('[data-stagger]');
+    if (!groups.length) return;
+    groups.forEach(function (g) {
+      for (var k = 0; k < g.children.length; k++) g.children[k].style.setProperty('--i', k);
+    });
+    if (state.reduce || !('IntersectionObserver' in window)) {
+      groups.forEach(function (g) { g.classList.add('stagger-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('stagger-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    groups.forEach(function (g) { io.observe(g); });
+  }
 
   ready(function () {
     initAurora(state);
