@@ -607,35 +607,31 @@
   <!-- ===================== HOW: SEE THE AI THINK ===================== -->
   <section id="how" class="section" style="background:var(--surface-2);">
     <div class="wrap">
-      <div class="grid lg:grid-cols-2 items-center" style="gap:56px;">
-        <div class="reveal">
-          <span class="eyebrow">How it works</span>
-          <h2 class="section-title font-display" style="margin:14px 0 14px;">See how the AI thinks — not just the answer</h2>
-          <p class="lead">Every solution is worked out step by step using reasoning models, so you learn the method. Tap a step to expand it; collapse the rest to stay focused.</p>
-          <ul data-stagger style="list-style:none; padding:0; margin:26px 0 0; display:flex; flex-direction:column; gap:14px;">
-            <li style="display:flex; gap:12px; align-items:flex-start;"><svg width="20" height="20" fill="none" stroke="var(--green)" viewBox="0 0 24 24" style="flex:none; margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span style="color:var(--ink-soft);">Restates the question, then reveals the answer.</span></li>
-            <li style="display:flex; gap:12px; align-items:flex-start;"><svg width="20" height="20" fill="none" stroke="var(--green)" viewBox="0 0 24 24" style="flex:none; margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span style="color:var(--ink-soft);">Numbered steps you can expand one at a time.</span></li>
-            <li style="display:flex; gap:12px; align-items:flex-start;"><svg width="20" height="20" fill="none" stroke="var(--green)" viewBox="0 0 24 24" style="flex:none; margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span style="color:var(--ink-soft);">Includes Fathom AI — a perfect scorer on JEE Advanced 2025.</span></li>
-          </ul>
-        </div>
+      <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto 34px;">
+        <span class="eyebrow">How it works</span>
+        <h2 class="section-title font-display" style="margin:14px 0 12px;">See how it thinks — not just the answer</h2>
+        <p class="lead" style="margin:0 auto;">Pick an answer, or just watch — JEEnius reasons every problem step by step, with the diagram drawing itself as it goes.</p>
+      </div>
 
-        <div class="card reveal" style="padding:24px;">
-          <span class="pill" style="background:var(--gold-soft); color:var(--gold-ink);">JEE Main 2023 · Mathematics</span>
-          <p style="font-weight:600; font-size:16px; line-height:1.5; margin:16px 0 16px;">Evaluate the integral of x² from 0 to 1.</p>
-          <div style="background:var(--mint); border-radius:14px; padding:13px 16px; font-weight:700; margin-bottom:8px;">Answer&nbsp;&nbsp;<span style="color:var(--green);">= 1/3</span></div>
-          <details class="step" open>
-            <summary><span class="num">1</span> Use the power rule <svg class="chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-            <div class="body">∫xⁿ dx = xⁿ⁺¹ / (n+1). With n = 2, the antiderivative is x³/3.</div>
-          </details>
-          <details class="step">
-            <summary><span class="num">2</span> Apply the limits 0 → 1 <svg class="chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-            <div class="body">[x³/3] from 0 to 1 = 1³/3 − 0 = 1/3.</div>
-          </details>
-          <details class="step">
-            <summary><span class="num">3</span> Why this matters <svg class="chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
-            <div class="body">Definite integrals like this are the building block for area, work and probability questions across the JEE syllabus.</div>
-          </details>
+      <div class="reveal rt" id="rt">
+        <div class="rt-head">
+          <span class="pill" id="rt-subject">JEE Main · Physics</span>
+          <div class="rt-headr">
+            <label class="rt-skip"><input type="checkbox" id="rt-skip"> Skip animation</label>
+            <span id="rt-count" class="rt-count">1 / 4</span>
+            <button id="rt-next" class="rt-nextbtn" type="button">Try another →</button>
+          </div>
         </div>
+        <h3 class="rt-q font-display" id="rt-q"></h3>
+        <div class="rt-opts" id="rt-opts"></div>
+        <button class="btn btn-primary rt-solve" id="rt-solve" type="button">Watch JEEnius solve it
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+        <div class="rt-body">
+          <div class="rt-diagram" id="rt-diagram"></div>
+          <div class="rt-steps" id="rt-steps"></div>
+        </div>
+        <div class="rt-answer" id="rt-answer"></div>
       </div>
     </div>
   </section>
@@ -1081,6 +1077,7 @@
   <script defer src="assets/motion.js"></script>
   <script defer src="assets/constellation.js"></script>
   <script defer src="assets/physics-sim.js"></script>
+  <script defer src="assets/reasoning.js"></script>
 </body>
 
 </html>
