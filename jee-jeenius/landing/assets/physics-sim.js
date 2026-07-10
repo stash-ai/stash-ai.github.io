@@ -62,9 +62,21 @@
         ctx.closePath(); ctx.fill();
       }
       ctx.globalAlpha = 1;
-      // alpha arc at top
-      ctx.strokeStyle = ink; ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(cx, cy, R + 26, -2.4, -0.9, false); ctx.stroke();
+      // angular-acceleration arc at top, with an arrowhead showing the spin direction
+      ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineWidth = 2;
+      var aR = R + 26;
+      ctx.beginPath(); ctx.arc(cx, cy, aR, -2.4, -0.9, false); ctx.stroke();
+      var pos = dBdt >= 0 ? -0.9 : -2.4, dir = dBdt >= 0 ? 1 : -1;
+      var ex = cx + aR * Math.cos(pos), ey = cy + aR * Math.sin(pos);
+      var tx = -Math.sin(pos) * dir, ty = Math.cos(pos) * dir;
+      ctx.beginPath();
+      ctx.moveTo(ex, ey);
+      ctx.lineTo(ex - tx * 9 - ty * 5, ey - ty * 9 + tx * 5);
+      ctx.lineTo(ex - tx * 9 + ty * 5, ey - ty * 9 - tx * 5);
+      ctx.closePath(); ctx.fill();
+      ctx.font = '600 14px "Plus Jakarta Sans", system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('α', cx, cy - aR - 8);
     }
     // ring of charges
     ctx.strokeStyle = dark ? 'rgba(255,215,0,.35)' : 'rgba(180,150,0,.35)'; ctx.lineWidth = 2;
