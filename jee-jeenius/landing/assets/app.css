@@ -484,6 +484,11 @@ img { max-width: 100%; display: block; }
 @keyframes rtbob { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(44px); } }
 .dark .rt-svg .rt-field { fill: rgba(127,216,190,.06); }
 .dark .rt-svg .rt-area { fill: rgba(127,216,190,.16); }
+.dark .rt-svg .rt-draw, .dark .rt-svg .rt-vec { stroke: #7FD8BE; }
+.dark .rt-svg .rt-node, .dark .rt-svg .rt-fill { fill: #7FD8BE; }
+.dark .rt-av { color: var(--ink); }
+.dark .rt-sh .num { color: #7FD8BE; }
+.dark .fp-row .fp-k, .dark .fp-big #fp-omega { color: #7FD8BE; }
 @media (prefers-reduced-motion: reduce) {
   .rt-mass.on .rt-box { animation: none !important; }
   .rt-svg .rt-draw { transition: none !important; }
