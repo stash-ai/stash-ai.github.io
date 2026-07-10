@@ -387,6 +387,27 @@ img { max-width: 100%; display: block; }
 .hc-tip .hc-t { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15.5px; margin: 5px 0 2px; color: var(--ink); }
 .hc-tip .hc-l { font-size: 11.5px; font-weight: 700; color: var(--gold-ink); }
 
+/* ---------- feel the physics section ---------- */
+.fp-panel { margin-top: 26px; }
+.fp-eq { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 20px 22px; box-shadow: var(--shadow-sm); }
+.fp-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 16px; color: var(--ink); font-weight: 600; }
+.fp-row .fp-k { font-family: 'Fraunces', serif; font-size: 20px; color: var(--green); }
+.fp-big { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.fp-big #fp-omega { font-family: 'Fraunces', serif; font-size: 30px; color: var(--green); }
+.fp-cap { font-size: 13px; color: var(--ink-soft); margin: 6px 0 0; }
+.fp-chips { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.fp-chips b { color: var(--ink); }
+.fp-slider { display: block; margin-top: 18px; }
+.fp-slider > span { display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 700; color: var(--ink-soft); margin-bottom: 8px; }
+.fp-slider > span b { color: var(--gold-ink); }
+.fp-slider input[type=range] { width: 100%; height: 8px; -webkit-appearance: none; appearance: none; background: var(--mint); border-radius: 999px; outline: none; }
+.fp-slider input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--green); border: 3px solid var(--surface); box-shadow: var(--shadow-sm); cursor: pointer; }
+.fp-slider input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--green); border: 3px solid var(--surface); cursor: pointer; }
+.fp-stage { position: relative; }
+.fp-tag { position: absolute; top: 16px; left: 16px; z-index: 2; }
+.fp-tag span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; color: var(--ink-soft); background: var(--surface-2); border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; }
+#fp-canvas { width: 100%; display: block; }
+
 /* reduced-motion: neutralize all new motion */
 @media (prefers-reduced-motion: reduce) {
   .aurora__blob { animation: none !important; }

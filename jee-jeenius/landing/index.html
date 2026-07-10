@@ -640,6 +640,39 @@
     </div>
   </section>
 
+  <!-- ===================== FEEL THE PHYSICS ===================== -->
+  <section id="feel-physics" class="section">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-2 items-center" style="gap:56px;">
+        <div class="reveal">
+          <span class="eyebrow">Feel it — don't memorise it</span>
+          <h2 class="section-title font-display" style="margin:14px 0 14px;">Drag the field. Watch the physics happen.</h2>
+          <p class="lead">A real JEE problem — a charged ring in a changing magnetic field. Most students just memorise ω = qB/2m. Here you can feel where it comes from: change the field, and an induced electric field appears that spins the ring.</p>
+
+          <div class="fp-panel">
+            <div class="fp-eq">
+              <div class="fp-row"><span class="fp-k">α</span> = <span class="frac"><span>q</span><span>2m</span></span> · <span class="frac"><span>dB</span><span>dt</span></span> = <b><span id="fp-alpha">0.00</span></b> rad/s²</div>
+              <div class="fp-cap">Angular acceleration — spikes while you drag.</div>
+              <div class="fp-row fp-big"><span class="fp-k">ω</span> = <span class="frac"><span>qB</span><span>2m</span></span> = <b id="fp-omega">0.30</b> rad/s</div>
+              <div class="fp-chips"><span class="chip"><span class="dot"></span>B <b id="fp-bval">0.60</b> T</span><span class="chip">dB/dt <b id="fp-dbdt">0.00</b> T/s</span></div>
+            </div>
+            <label class="fp-slider">
+              <span>Magnetic field B <b>← drag me</b></span>
+              <input type="range" id="fp-b" min="0" max="2" step="0.01" value="0.6" aria-label="Magnetic field strength">
+            </label>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="card fp-stage" style="padding:20px;">
+            <div class="fp-tag"><span>B ⊙ field out of screen · drag the slider</span></div>
+            <canvas id="fp-canvas" aria-label="Charged ring in a magnetic field"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PREDICTED MOCKS ===================== -->
   <section id="prediction-lab" class="section">
     <div class="wrap">
@@ -1047,6 +1080,7 @@
   </script>
   <script defer src="assets/motion.js"></script>
   <script defer src="assets/constellation.js"></script>
+  <script defer src="assets/physics-sim.js"></script>
 </body>
 
 </html>
