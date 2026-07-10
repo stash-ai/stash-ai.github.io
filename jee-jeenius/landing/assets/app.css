@@ -365,6 +365,28 @@ img { max-width: 100%; display: block; }
 .footer .wrap { position: relative; z-index: 1; }
 .mock > * { position: relative; z-index: 1; }
 
+/* ---------- hero constellation (exam universe) ---------- */
+#hero-constellation { position: absolute; inset: 0; z-index: 0; display: block; }
+.hc-glow {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(520px 380px at 82% 10%, var(--sage), transparent 60%),
+    radial-gradient(440px 320px at 12% 22%, var(--gold-soft), transparent 62%);
+  opacity: .5;
+}
+.dark .hc-glow { opacity: .2; }
+.hc-tip {
+  position: absolute; z-index: 3; width: 190px; pointer-events: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 13px; padding: 11px 13px;
+  box-shadow: var(--shadow); opacity: 0; transform: translateY(5px);
+  transition: opacity .18s var(--ease), transform .18s var(--ease);
+}
+.hc-tip.show { opacity: 1; transform: none; }
+.hc-tip .hc-s { display: inline-flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.hc-tip .hc-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.hc-tip .hc-t { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15.5px; margin: 5px 0 2px; color: var(--ink); }
+.hc-tip .hc-l { font-size: 11.5px; font-weight: 700; color: var(--gold-ink); }
+
 /* reduced-motion: neutralize all new motion */
 @media (prefers-reduced-motion: reduce) {
   .aurora__blob { animation: none !important; }

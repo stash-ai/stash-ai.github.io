@@ -423,12 +423,12 @@
 
   <!-- ===================== HERO ===================== -->
   <header id="top" class="section" style="position:relative; padding-top:clamp(94px, 11vw, 140px); overflow:hidden;">
-    <div class="aurora" data-aurora aria-hidden="true">
-      <div class="aurora__group" data-aurora-group>
-        <span class="aurora__blob aurora__blob--1"></span>
-        <span class="aurora__blob aurora__blob--2"></span>
-        <span class="aurora__blob aurora__blob--3"></span>
-      </div>
+    <div class="hc-glow" aria-hidden="true"></div>
+    <canvas id="hero-constellation" aria-hidden="true"></canvas>
+    <div id="hc-tip" class="hc-tip" role="tooltip" aria-hidden="true">
+      <span class="hc-s"><span class="hc-dot"></span><span class="hc-ss"></span></span>
+      <div class="hc-t"></div>
+      <div class="hc-l"></div>
     </div>
 
     <div class="wrap" style="position:relative; z-index:1;">
@@ -1046,6 +1046,7 @@
     })();
   </script>
   <script defer src="assets/motion.js"></script>
+  <script defer src="assets/constellation.js"></script>
 </body>
 
 </html>
