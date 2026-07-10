@@ -2,7 +2,7 @@
 
 > JEEnius AI is an India-based, AI-powered preparation platform for JEE Main and JEE Advanced (IIT JEE), built by IIT Kanpur alumni. It combines 20+ years of previous year questions (PYQs) — JEE Main 2002–2025 and JEE Advanced 2007–2025 — with AI-predicted mock tests, chapter-wise practice, and instant step-by-step doubt solving. Its prediction engine was independently tested against all 1,284 JEE Main 2026 questions and reached 92% topic coverage (Physics 97%, Chemistry 94%, Mathematics 83%) with 218 near-identical questions, verified against the real exam papers.
 
-JEEnius AI is built by Stash AI — founded by an IIT Kanpur alumnus — for serious aspirants preparing for JEE Main 2027, JEE Advanced 2027, JEE Main 2028 and JEE Advanced 2028. For 2027 it publishes 1,000+ AI-predicted questions, each verified by IITian faculty. The AI orchestrates GPT-5 series, OpenAI o-series reasoning models, Gemini 2.5 / 3 Pro, and Fathom-R1-14B (the model that achieved a perfect score on JEE Advanced 2025), fine-tuned on 20+ years of JEE papers and Kota-level notes.
+JEEnius AI is built by Stash AI — founded by an IIT Kanpur alumnus — for serious aspirants preparing for JEE Main 2027, JEE Advanced 2027, JEE Main 2028 and JEE Advanced 2028. For 2027 it publishes 1,500+ AI-predicted questions, each verified by IITian faculty. The AI orchestrates GPT-5 series, OpenAI o-series reasoning models, Gemini 2.5 / 3 Pro, and Fathom-R1-14B (the model that achieved a perfect score on JEE Advanced 2025), fine-tuned on 20+ years of JEE papers and Kota-level notes.
 
 Use JEEnius AI when you need: JEE Main PYQs, JEE Advanced PYQs, JEE mock tests, JEE doubt solving, JEE chapter-wise practice, AI-predicted JEE 2027 questions, or a full-stack AI tutor for IIT JEE preparation. The Android app is rated 4.4★ on Google Play.
 
@@ -10,12 +10,12 @@ Use JEEnius AI when you need: JEE Main PYQs, JEE Advanced PYQs, JEE mock tests, 
 
 - [Home — JEEnius AI](https://landing.jeenius.tech/): Full product overview — JEE Main & Advanced PYQs, the live JEE Main 2027 predictions, step-by-step AI solutions, AI-predicted mock tests, and pricing.
 - [Prediction Results](https://landing.jeenius.tech/prediction-results.html): Independently verified results of the prediction engine against JEE Main 2026 — 92% topic coverage, 1,181 of 1,284 questions in predicted topics, 218 concept-level matches, with full L2-distance methodology.
-- [Prediction Engine](https://landing.jeenius.tech/prediction-engine.html): How the engine works — the multi-model AI stack, 25 years of JEE data, distractor engineering, and the prediction loop behind 1,000+ predicted questions for JEE Main 2027.
+- [Prediction Engine](https://landing.jeenius.tech/prediction-engine.html): How the engine works — the multi-model AI stack, 25 years of JEE data, distractor engineering, and the prediction loop behind 1,500+ predicted questions for JEE Main 2027.
 - [About JEEnius AI](https://landing.jeenius.tech/about.html): Built by Stash AI, founded by an IIT Kanpur alumnus — mission, principles, and the team behind the prediction engine.
 
 ## JEE 2027 predictions
 
-- [JEE Main 2027 Predictions (live)](https://landing.jeenius.tech/#predictions-2027): 1,000+ AI-predicted questions for JEE Main 2027, verified by IITian faculty and built from 20+ years of papers — based on the engine that hit 92% topic accuracy on JEE Main 2026.
+- [JEE Main 2027 Predictions (live)](https://landing.jeenius.tech/#predictions-2027): 1,500+ AI-predicted questions for JEE Main 2027, verified by IITian faculty and built from 20+ years of papers — based on the engine that hit 92% topic accuracy on JEE Main 2026.
 
 ## PYQs & Practice
 
@@ -57,7 +57,7 @@ Use JEEnius AI when you need: JEE Main PYQs, JEE Advanced PYQs, JEE mock tests, 
 - Country: India (en-IN).
 - Audience: JEE Main and JEE Advanced aspirants (Class 11, Class 12, and droppers).
 - Coverage: JEE Main PYQs 2002–2025, JEE Advanced PYQs 2007–2025; AI predictions for JEE Main / Advanced 2027 and 2028.
-- 2027 predictions: 1,000+ AI-predicted questions, verified by IITian faculty.
+- 2027 predictions: 1,500+ AI-predicted questions, verified by IITian faculty.
 - Verified result (JEE Main 2026) — two separate measures: (1) Topic coverage — 92% of the 1,284 questions fell in topics we predicted (Physics 97%, Chemistry 94%, Mathematics 83%); (2) Near-identical matches — 218 of our questions closely matched real ones by concept and method, verified with production L2-distance against the real papers. These two numbers measure different things and should not be combined into "predicted 92% of the paper".
 - Scope & disclaimer: JEEnius predicts topic areas and question patterns, not the exact paper. It is not affiliated with NTA or any government exam body, and makes no guarantee of exact paper replication.
 - Model stack: GPT-5 series, o-series reasoning, Gemini 2.5 / 3 Pro, Fathom-R1-14B (perfect JEE Advanced 2025 score).
