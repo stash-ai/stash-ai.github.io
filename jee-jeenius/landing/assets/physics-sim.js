@@ -11,7 +11,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
   var W = 0, R = 0, cx = 0, cy = 0, Q = 24;
-  var B = reduce ? 1.2 : 0.6, target = B, dBdt = 0, omega = B / 2, angle = -0.4, lastT = 0, raf = null, pulse = 0;
+  var B = reduce ? 1.2 : 0.6, target = B, dBdt = 0, omega = B / 2, angle = -0.4, lastT = 0, raf = null, pulse = 0, visible = false, running = false;
 
   function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || v; }
 
@@ -97,8 +97,10 @@
     angle += omega * 0.5 * dt + 0.02 * dt; // gentle spin ∝ ω
     if (Math.abs(dBdt) < 0.05 && Math.abs(target - B) < 0.002) pulse = Math.max(0, pulse - dt); else pulse = 0.6;
     draw(); readouts();
-    raf = requestAnimationFrame(frame);
+    if (visible && !reduce) raf = requestAnimationFrame(frame); else running = false;
   }
+  function start() { if (running || reduce || !visible) return; running = true; lastT = 0; raf = requestAnimationFrame(frame); }
+  function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = null; }
 
   if (slider) {
     slider.value = B;
@@ -108,6 +110,11 @@
     });
   }
   window.addEventListener('resize', resize, { passive: true });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+  if ('IntersectionObserver' in window) {
+    var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { visible = e.isIntersecting; if (visible) start(); else stop(); }); });
+    vo.observe(cv);
+  } else { visible = true; }
   resize(); readouts();
-  if (!reduce) raf = requestAnimationFrame(frame);
+  if (!reduce) start();
 })();

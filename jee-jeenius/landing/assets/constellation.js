@@ -95,7 +95,7 @@
     glow = { phys: makeGlow(p.glow.phys, p.glowA), chem: makeGlow(p.glow.chem, p.glowA), math: makeGlow(p.glow.math, p.glowA) };
   }
 
-  var par = { x: 0, y: 0, tx: 0, ty: 0 }, hovered = null, raf = null;
+  var par = { x: 0, y: 0, tx: 0, ty: 0 }, hovered = null, raf = null, visible = true, running = false;
 
   function resize() {
     W = host.clientWidth; H = host.clientHeight;
@@ -139,8 +139,10 @@
       }
     }
     ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-    if (!reduce) raf = requestAnimationFrame(draw);
+    if (visible && !reduce) raf = requestAnimationFrame(draw); else running = false;
   }
+  function start() { if (running || reduce || !visible) return; running = true; raf = requestAnimationFrame(draw); }
+  function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = null; }
 
   // tooltip
   function pick(mx, my) {
@@ -190,6 +192,11 @@
   mo.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
   window.addEventListener('resize', resize, { passive: true });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+  if ('IntersectionObserver' in window) {
+    var vo = new IntersectionObserver(function (es) { es.forEach(function (e) { visible = e.isIntersecting; if (visible) start(); else stop(); }); });
+    vo.observe(host);
+  }
   resize();
-  if (!reduce) { raf = requestAnimationFrame(draw); }
+  if (!reduce) start();
 })();
