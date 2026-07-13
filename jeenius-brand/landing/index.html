@@ -98,36 +98,59 @@
   <main id="top">
 
     <header class="section" style="position:relative; padding-top:clamp(94px,11vw,140px); overflow:hidden;">
-      <div class="glow" style="width:520px; height:520px; background:var(--sage); top:-140px; right:-120px;"></div>
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__group" data-aurora-group>
+          <span class="aurora__blob aurora__blob--1"></span>
+          <span class="aurora__blob aurora__blob--2"></span>
+          <span class="aurora__blob aurora__blob--3"></span>
+        </div>
+      </div>
       <div class="wrap" style="position:relative; z-index:1;">
         <div class="reveal" style="text-align:center; max-width:760px; margin:0 auto;">
           <span class="eyebrow" style="justify-content:center;">Built by IITians · AI-powered prep</span>
           <h1 class="font-display" style="font-size:clamp(40px,6vw,66px); margin:18px 0 0; font-weight:500;">
-            One home for <span style="color:var(--green); background:linear-gradient(transparent 72%, rgba(255,215,0,.5) 72%);">JEE and NEET</span>
+            One home for <span class="hl-sweep">JEE and NEET</span>
           </h1>
           <p class="lead" style="margin:22px auto 0;">Real previous-year questions, step-by-step AI solutions and predicted mocks — for India's two toughest entrance exams. Pick your path.</p>
         </div>
 
-        <div id="pick" class="pick reveal" style="margin:44px auto 0; max-width:820px; scroll-margin-top:90px;">
-          <div class="product-card accent-jee">
+        <div id="pick" class="pick reveal" style="margin:44px auto 0; max-width:860px; scroll-margin-top:90px;">
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <div class="product-card accent-jee" data-tilt-layer style="--tz:14px; flex:1;">
             <span class="product-badge">Engineering · IIT</span>
             <h2 class="font-display" style="font-size:26px; font-weight:600; margin:14px 0 6px;">JEE JEEnius</h2>
-            <p style="color:var(--ink-soft); font-size:15px; margin:0 0 18px;">JEE Main &amp; Advanced. 20+ years of PYQs (2002–2025), AI-predicted mocks and 24×7 doubt solving.</p>
-            <a href="https://landing.jeenius.tech/" class="btn btn-primary" style="background:var(--accent);">Explore JEE JEEnius
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <p style="color:var(--ink-soft); font-size:15px; margin:0 0 14px;">JEE Main &amp; Advanced. 20+ years of PYQs (2002–2025), AI-predicted mocks and 24×7 doubt solving.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin:0 0 18px;">
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Physics</span>
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Chemistry</span>
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Maths</span>
+            </div>
+            <p style="font-size:12.5px; font-weight:700; color:var(--gold-ink); margin:0 0 18px;">92% of JEE 2026 topics predicted</p>
+            <a href="https://landing.jeenius.tech/" class="btn btn-primary" data-cta="true" data-track-label="pick_jee" style="background:var(--accent);">Explore JEE JEEnius
+              <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
           </div>
-          <div class="product-card accent-neet">
+          </div>
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <div class="product-card accent-neet" data-tilt-layer style="--tz:14px; flex:1;">
             <span class="product-badge">Medical · MBBS</span>
             <h2 class="font-display" style="font-size:26px; font-weight:600; margin:14px 0 6px;">NEET JEEnius</h2>
-            <p style="color:var(--ink-soft); font-size:15px; margin:0 0 18px;">NEET-UG across Biology, Physics and Chemistry. Real PYQs, predicted mocks and step-by-step AI solutions.</p>
-            <a href="https://neet.jeenius.tech/" class="btn btn-primary" style="background:var(--accent);">Explore NEET JEEnius
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <p style="color:var(--ink-soft); font-size:15px; margin:0 0 14px;">NEET-UG across Biology, Physics and Chemistry. Real PYQs, predicted mocks and step-by-step AI solutions.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin:0 0 18px;">
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Biology</span>
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Physics</span>
+              <span class="pill" style="background:var(--accent-soft); color:var(--accent-ink);">Chemistry</span>
+            </div>
+            <p style="font-size:12.5px; font-weight:700; color:var(--accent-ink); margin:0 0 18px;">Clinical-calm interface · biology-led</p>
+            <a href="https://neet.jeenius.tech/" class="btn btn-primary" data-cta="true" data-track-label="pick_neet" style="background:var(--accent);">Explore NEET JEEnius
+              <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+          </div>
           </div>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center reveal" style="gap:12px; margin-top:28px;">
+        <div class="flex flex-wrap items-center justify-center" data-stagger style="gap:12px; margin-top:28px;">
           <span class="chip"><span class="dot"></span>Same AI engine · two exams</span>
-          <span class="chip">92% of JEE 2026 topics predicted</span>
+          <span class="chip">Free to start · no card needed</span>
+          <span class="chip">No countdowns, no fear tactics</span>
         </div>
       </div>
     </header>
@@ -139,11 +162,53 @@
           <h2 class="section-title font-display" style="margin:14px 0 12px;">The same AI does the heavy lifting</h2>
           <p class="lead" style="margin:0 auto;">Whichever exam you're preparing for, JEEnius runs on one engine — grounded in real papers, not generic content.</p>
         </div>
-        <div class="bento reveal">
-          <div class="tile col-6"><span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M4 7l2-3h12l2 3M4 7h16M9 12h6"></path></svg></span><h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Real PYQs</h3><p style="color:var(--ink-soft); font-size:15px;">Decades of actual previous-year questions, searchable by year, subject and topic.</p></div>
-          <div class="tile col-6"><span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.66 17h4.68M12 3a6 6 0 00-3.6 10.8c.37.28.6.7.6 1.15V16h6v-1.05c0-.45.23-.87.6-1.15A6 6 0 0012 3z"></path></svg></span><h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Step-by-step AI solutions</h3><p style="color:var(--ink-soft); font-size:15px;">See the reasoning, not just the answer — powered by reasoning models including Fathom AI.</p></div>
-          <div class="tile col-6"><span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></span><h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Predicted mocks</h3><p style="color:var(--ink-soft); font-size:15px;">Full-length mocks in a real exam-style interface, focused on what's most likely to appear.</p></div>
-          <div class="tile col-6"><span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.35 15.35A9 9 0 018.65 3.65 9 9 0 1020.35 15.35z"></path></svg></span><h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Focus &amp; dark mode</h3><p style="color:var(--ink-soft); font-size:15px;">A calm, distraction-free space designed for long, late-night study sessions.</p></div>
+        <div class="bento" data-stagger>
+          <div class="tile col-8" data-tilt="4">
+            <span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.66 17h4.68M12 3a6 6 0 00-3.6 10.8c.37.28.6.7.6 1.15V16h6v-1.05c0-.45.23-.87.6-1.15A6 6 0 0012 3z"></path></svg></span>
+            <h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Step-by-step AI solutions</h3>
+            <p style="color:var(--ink-soft); font-size:15px;">See the reasoning, not just the answer — powered by reasoning models including Fathom AI, a perfect scorer on JEE Advanced 2025.</p>
+            <div class="mini-sol">
+              <p style="font-weight:600; font-size:13.5px; line-height:1.5; margin:0 0 10px; color:var(--ink);">A charged ring in a magnetic field that's switched on — find the angular acceleration.</p>
+              <div class="ans">
+                <span class="tick"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                <div><div class="lbl">ANSWER</div><div class="val">α = qB / 2m</div></div>
+              </div>
+              <details class="step">
+                <summary><span class="num">1</span> Find the induced electric field <svg class="chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="body">A changing B creates a circular induced field E along the ring, giving a tangential force on the charge.</div>
+              </details>
+              <details class="step">
+                <summary><span class="num">2</span> Apply torque = Iα <svg class="chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="body">The torque from that force equals the moment of inertia mR² times the angular acceleration α.</div>
+              </details>
+            </div>
+          </div>
+          <div class="tile col-4" data-tilt="4" style="display:flex; flex-direction:column;">
+            <span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M4 7l2-3h12l2 3M4 7h16M9 12h6"></path></svg></span>
+            <h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Real PYQs</h3>
+            <p style="color:var(--ink-soft); font-size:15px;">Actual previous-year questions, searchable by year, subject and topic.</p>
+            <div style="margin-top:auto; padding-top:18px;">
+              <div style="font-family:'Fraunces',Georgia,serif; font-size:44px; font-weight:600; color:var(--green); line-height:1;">20<span style="font-size:26px;">+</span></div>
+              <div style="font-size:12.5px; color:var(--ink-soft); margin-top:4px;">years of real papers</div>
+            </div>
+          </div>
+          <div class="tile col-6" data-tilt="4">
+            <span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></span>
+            <h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Predicted mocks</h3>
+            <p style="color:var(--ink-soft); font-size:15px;">Full-length mocks in a real exam-style interface, focused on what's most likely to appear.</p>
+            <div class="mini-palette" aria-hidden="true">
+              <span class="q q-ans">1</span><span class="q q-ans">2</span><span class="q q-mark">3</span><span class="q q-ans">4</span><span class="q q-not">5</span><span class="q q-cur">6</span><span class="q q-ans">7</span><span class="q q-not">8</span>
+            </div>
+          </div>
+          <div class="tile col-6" data-tilt="4">
+            <span class="tile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.35 15.35A9 9 0 018.65 3.65 9 9 0 1020.35 15.35z"></path></svg></span>
+            <h3 style="font-size:20px; font-weight:600; margin-bottom:8px;">Focus &amp; dark mode</h3>
+            <p style="color:var(--ink-soft); font-size:15px;">A calm, distraction-free space designed for long, late-night study sessions — no countdowns, no noise.</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <span class="chip" style="font-size:12.5px;">☀️ Day study</span>
+              <span class="chip" style="font-size:12.5px; background:var(--green-deep); color:#EAF3EF; border-color:transparent;">🌙 Night study</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -155,13 +220,17 @@
             <span class="product-badge">JEE JEEnius · Engineering</span>
             <h2 class="section-title font-display" style="margin:14px 0 14px;">Walk into JEE knowing what to study</h2>
             <p class="lead">JEE Main (2002–2025) and Advanced (2007–2025) PYQs, AI-predicted mocks and step-by-step solutions. On JEE Main 2026 our predictions covered <strong>92% of the topics</strong> that appeared (Physics 97%, Chemistry 94%, Maths 83%), with 218 near-identical questions.</p>
-            <a href="https://landing.jeenius.tech/" class="btn btn-primary" style="background:var(--accent); margin-top:24px;">Explore JEE JEEnius
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <a href="https://landing.jeenius.tech/" class="btn btn-primary" data-magnetic data-cta="true" data-track-label="spotlight_jee" style="background:var(--accent); margin-top:24px;">Explore JEE JEEnius
+              <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
           </div>
-          <div class="reveal grid grid-cols-3" style="gap:12px;">
-            <div class="stat-box"><div class="num">92%</div><div class="lbl">JEE 2026 topic coverage</div></div>
-            <div class="stat-box"><div class="num">218</div><div class="lbl">Near-identical questions</div></div>
-            <div class="stat-box"><div class="num">20+</div><div class="lbl">Years of PYQs</div></div>
+          <div class="reveal">
+            <div data-tilt="4" style="border-radius:var(--radius-lg);">
+              <div class="grid grid-cols-3" data-tilt-layer style="--tz:12px; gap:12px;">
+                <div class="stat-box"><div class="num" data-count="92" data-suffix="%">0%</div><div class="lbl">JEE 2026 topic coverage</div></div>
+                <div class="stat-box"><div class="num" data-count="218">0</div><div class="lbl">Near-identical questions</div></div>
+                <div class="stat-box"><div class="num" data-count="20" data-suffix="+">0</div><div class="lbl">Years of PYQs</div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -174,14 +243,16 @@
             <span class="product-badge">NEET JEEnius · Medical</span>
             <h2 class="section-title font-display" style="margin:14px 0 14px;">Precise, trustworthy NEET practice</h2>
             <p class="lead">NEET-UG across Biology, Physics and Chemistry — real PYQs, predicted mocks and step-by-step AI solutions, in a clean, clinical-calm interface built for medical aspirants.</p>
-            <a href="https://neet.jeenius.tech/" class="btn btn-primary" style="background:var(--accent); margin-top:24px;">Explore NEET JEEnius
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            <a href="https://neet.jeenius.tech/" class="btn btn-primary" data-magnetic data-cta="true" data-track-label="spotlight_neet" style="background:var(--accent); margin-top:24px;">Explore NEET JEEnius
+              <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
           </div>
           <div class="reveal" style="order:1;">
-            <div class="grid grid-cols-3" style="gap:12px;">
-              <div class="stat-box"><div class="num">3</div><div class="lbl">Subjects: Bio · Phys · Chem</div></div>
-              <div class="stat-box"><div class="num">PYQs</div><div class="lbl">Real previous papers</div></div>
-              <div class="stat-box"><div class="num">AI</div><div class="lbl">Step-by-step solutions</div></div>
+            <div data-tilt="4" style="border-radius:var(--radius-lg);">
+              <div class="grid grid-cols-3" data-tilt-layer style="--tz:12px; gap:12px;">
+                <div class="stat-box"><div class="num">3</div><div class="lbl">Subjects: Bio · Phys · Chem</div></div>
+                <div class="stat-box"><div class="num">PYQs</div><div class="lbl">Real previous papers</div></div>
+                <div class="stat-box"><div class="num">AI</div><div class="lbl">Step-by-step solutions</div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -216,7 +287,7 @@
 
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-spotlight>
     <div class="wrap">
       <div class="footer-cols">
         <div>
@@ -256,5 +327,6 @@
   </footer>
 
   <script src="assets/app.js"></script>
+  <script defer src="assets/motion.js"></script>
 </body>
 </html>

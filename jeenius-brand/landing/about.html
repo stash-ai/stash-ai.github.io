@@ -118,28 +118,32 @@
 
         <div class="reveal" style="margin-top:44px;">
           <p class="eyebrow" style="margin-bottom:16px;">What we believe</p>
-          <div class="bento">
-            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Student-first</h3><p style="color:var(--ink-soft); font-size:14.5px;">Built for the aspirant, not the algorithm — calm, clear and focused on your rank.</p></div>
-            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Honest by default</h3><p style="color:var(--ink-soft); font-size:14.5px;">Real numbers, clear limits. We show our working instead of shouting accuracy.</p></div>
-            <div class="tile col-4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Low-stress</h3><p style="color:var(--ink-soft); font-size:14.5px;">No countdowns or fear tactics — just steady, effective practice.</p></div>
+          <div class="bento" data-stagger>
+            <div class="tile col-4" data-tilt="4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Student-first</h3><p style="color:var(--ink-soft); font-size:14.5px;">Built for the aspirant, not the algorithm — calm, clear and focused on your rank.</p></div>
+            <div class="tile col-4" data-tilt="4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Honest by default</h3><p style="color:var(--ink-soft); font-size:14.5px;">Real numbers, clear limits. We show our working instead of shouting accuracy.</p></div>
+            <div class="tile col-4" data-tilt="4"><h3 style="font-size:18px; font-weight:600; margin-bottom:6px;">Low-stress</h3><p style="color:var(--ink-soft); font-size:14.5px;">No countdowns or fear tactics — just steady, effective practice.</p></div>
           </div>
         </div>
 
         <div class="reveal pick" style="margin-top:44px;">
-          <a href="https://landing.jeenius.tech/" class="product-card accent-jee" style="text-decoration:none;">
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <a href="https://landing.jeenius.tech/" class="product-card accent-jee" data-tilt-layer data-cta="true" data-track-label="about_jee" style="--tz:14px; flex:1; text-decoration:none;">
             <span class="product-badge">JEE JEEnius</span>
             <p style="margin:12px 0 0; color:var(--ink-soft);">For engineering aspirants — JEE Main &amp; Advanced <span style="color:var(--accent); font-weight:700;">→</span></p>
           </a>
-          <a href="https://neet.jeenius.tech/" class="product-card accent-neet" style="text-decoration:none;">
+          </div>
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <a href="https://neet.jeenius.tech/" class="product-card accent-neet" data-tilt-layer data-cta="true" data-track-label="about_neet" style="--tz:14px; flex:1; text-decoration:none;">
             <span class="product-badge">NEET JEEnius</span>
             <p style="margin:12px 0 0; color:var(--ink-soft);">For medical aspirants — NEET-UG <span style="color:var(--accent); font-weight:700;">→</span></p>
           </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-spotlight>
     <div class="wrap">
       <div class="footer-cols">
         <div>
@@ -179,5 +183,6 @@
   </footer>
 
   <script src="assets/app.js"></script>
+  <script defer src="assets/motion.js"></script>
 </body>
 </html>

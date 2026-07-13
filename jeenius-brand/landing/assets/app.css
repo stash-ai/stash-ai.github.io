@@ -339,3 +339,96 @@ img { max-width: 100%; display: block; }
 .spotlight { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
 .dark .spotlight { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
 .spotlight .stat-box .num { color: var(--accent); }
+.dark .spotlight .stat-box .num { color: var(--accent-ink); }
+.dark .tile-icon { color: #7FD8BE; }
+
+/* ==========================================================================
+   Living calm — motion layer (aurora / tilt / choreography / magnetic / spotlight)
+   Ported from jee-jeenius/landing/assets/app.css; driven by assets/motion.js
+   ========================================================================== */
+
+/* ---------- living aurora (hero) ---------- */
+.aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.aurora__group { position: absolute; inset: -12%; will-change: transform; }
+.aurora__blob { position: absolute; border-radius: 50%; filter: blur(82px); will-change: transform; }
+.aurora__blob--1 { width: 520px; height: 520px; top: -120px; right: -60px; background: var(--sage); opacity: .5; animation: auroraDrift1 26s var(--ease) infinite alternate; }
+.aurora__blob--2 { width: 360px; height: 360px; bottom: -120px; left: -70px; background: var(--gold-soft); opacity: .38; animation: auroraDrift2 31s var(--ease) infinite alternate; }
+.aurora__blob--3 { width: 320px; height: 320px; top: 34%; left: 44%; background: var(--mint); opacity: .42; animation: auroraDrift3 22s var(--ease) infinite alternate; }
+@keyframes auroraDrift1 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-34px,26px,0) scale(1.08); } }
+@keyframes auroraDrift2 { from { transform: translate3d(0,0,0) scale(1.05); } to { transform: translate3d(30px,-22px,0) scale(1); } }
+@keyframes auroraDrift3 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(22px,20px,0) scale(1.12); } }
+.dark .aurora__blob--1 { opacity: .30; }
+.dark .aurora__blob--2 { opacity: .20; }
+.dark .aurora__blob--3 { opacity: .24; }
+
+/* ---------- 3D tilt & depth ---------- */
+[data-tilt] { position: relative; transform-style: preserve-3d; transition: transform .5s var(--ease); }
+[data-tilt].tilting { transition: transform .1s linear; will-change: transform; }
+[data-tilt-layer] { transform: translateZ(var(--tz, 24px)); }
+.tilt-glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  transform: translateZ(60px); opacity: 0; transition: opacity .3s var(--ease);
+  background: radial-gradient(240px circle at var(--gx,50%) var(--gy,50%), rgba(255,255,255,.22), rgba(255,215,0,.09) 42%, transparent 62%);
+}
+[data-tilt].tilting .tilt-glare { opacity: 1; }
+/* inside a tilt wrapper the wrapper owns the motion — keep the card's depth on hover */
+[data-tilt] .product-card:hover, [data-tilt] .tile:hover { transform: translateZ(var(--tz, 14px)); box-shadow: var(--shadow); }
+
+/* ---------- scroll choreography ---------- */
+[data-stagger] > * { opacity: 0; transform: translateY(16px) scale(.995); filter: blur(6px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease), filter .6s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms); }
+[data-stagger].stagger-in > * { opacity: 1; transform: none; filter: none; }
+
+.hl-sweep { color: var(--green);
+  background-image: linear-gradient(transparent 72%, rgba(255,215,0,.5) 72%);
+  background-repeat: no-repeat; background-size: 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 1px;
+  transition: background-size .9s var(--ease) .3s; }
+.reveal.is-visible .hl-sweep, .hl-sweep.is-visible { background-size: 100% 100%; }
+.dark .hl-sweep { color: #7FD8BE; }
+
+.write-on { clip-path: inset(0 100% 0 0); transition: clip-path .8s var(--ease) .5s; }
+.reveal.is-visible .write-on, .write-on.is-visible { clip-path: inset(0 0 0 0); }
+
+/* ---------- magnetic CTA + cursor spotlight ---------- */
+[data-magnetic] { will-change: transform; }
+[data-spotlight] { position: relative; }
+[data-spotlight]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mx, -200px) var(--my, -200px), rgba(255,215,0,.09), transparent 60%);
+  opacity: 0; transition: opacity .4s var(--ease);
+}
+[data-spotlight].spot-on::before { opacity: 1; }
+.footer .wrap { position: relative; z-index: 1; }
+
+/* ---------- micro-interactions ---------- */
+.btn .arr { transition: transform .3s var(--ease); }
+.btn:hover .arr { transform: translateX(3px); }
+
+/* mini worked solution (engine bento featured tile) */
+.mini-sol { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin-top: 16px; }
+.mini-sol .ans { display: flex; align-items: center; gap: 10px; background: var(--mint); border-radius: 10px; padding: 9px 12px; margin-bottom: 4px; }
+.mini-sol .ans .tick { width: 24px; height: 24px; flex: none; border-radius: 7px; background: var(--green); color: #fff; display: grid; place-items: center; }
+.mini-sol .ans .tick svg { width: 14px; height: 14px; }
+.mini-sol .ans .lbl { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; color: var(--green); }
+.mini-sol .ans .val { font-weight: 700; font-size: 14px; color: var(--ink); }
+.dark .mini-sol .ans .lbl { color: #7FD8BE; }
+.mini-sol .step .body { font-size: 13.5px; padding-bottom: 12px; }
+.mini-sol .step summary { padding: 11px 0; font-size: 14px; }
+
+/* mini mock palette (engine bento tile) */
+.mini-palette { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-top: 16px; max-width: 340px; }
+.mini-palette .q { aspect-ratio: 1; border-radius: 6px; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+.mini-palette .q-not { background: var(--mint); color: var(--ink-faint); border: 1px solid var(--line); }
+.dark .mini-palette .q-not { background: rgba(255,255,255,.07); color: #9FB5AE; border-color: transparent; }
+
+/* ---------- reduced-motion: neutralize all motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob { animation: none !important; }
+  [data-stagger] > * { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+  .hl-sweep { background-size: 100% 100% !important; transition: none !important; }
+  .write-on { clip-path: none !important; transition: none !important; }
+  [data-tilt], [data-tilt-layer], [data-magnetic] { transform: none !important; }
+  .tilt-glare, [data-spotlight]::before { display: none !important; }
+}

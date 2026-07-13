@@ -101,7 +101,8 @@
         </div>
 
         <div id="pick" class="pick reveal" style="max-width:900px; margin:0 auto; scroll-margin-top:90px;">
-          <div class="product-card accent-jee">
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <div class="product-card accent-jee" data-tilt-layer style="--tz:14px; flex:1;">
             <span class="product-badge">JEE JEEnius</span>
             <h2 class="font-display" style="font-size:24px; font-weight:600; margin:12px 0 14px;">Engineering · IIT</h2>
             <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:12px;">
@@ -110,9 +111,11 @@
               <li style="display:flex; gap:10px;"><b style="min-width:96px; color:var(--ink-soft); font-weight:600;">PYQs</b><span>Main 2002–2025 · Advanced 2007–2025</span></li>
               <li style="display:flex; gap:10px;"><b style="min-width:96px; color:var(--ink-soft); font-weight:600;">Proof</b><span>92% of JEE 2026 topics predicted</span></li>
             </ul>
-            <a href="https://landing.jeenius.tech/" class="btn btn-primary btn-block" style="background:var(--accent);">Explore JEE JEEnius</a>
+            <a href="https://landing.jeenius.tech/" class="btn btn-primary btn-block" data-cta="true" data-track-label="compare_jee" style="background:var(--accent);">Explore JEE JEEnius</a>
           </div>
-          <div class="product-card accent-neet">
+          </div>
+          <div data-tilt="5" style="border-radius:var(--radius-lg); display:flex;">
+          <div class="product-card accent-neet" data-tilt-layer style="--tz:14px; flex:1;">
             <span class="product-badge">NEET JEEnius</span>
             <h2 class="font-display" style="font-size:24px; font-weight:600; margin:12px 0 14px;">Medical · MBBS</h2>
             <ul style="list-style:none; padding:0; margin:0 0 20px; display:flex; flex-direction:column; gap:12px;">
@@ -121,13 +124,14 @@
               <li style="display:flex; gap:10px;"><b style="min-width:96px; color:var(--ink-soft); font-weight:600;">PYQs</b><span>Real NEET-UG previous papers</span></li>
               <li style="display:flex; gap:10px;"><b style="min-width:96px; color:var(--ink-soft); font-weight:600;">Style</b><span>Clinical-calm, biology-led</span></li>
             </ul>
-            <a href="https://neet.jeenius.tech/" class="btn btn-primary btn-block" style="background:var(--accent);">Explore NEET JEEnius</a>
+            <a href="https://neet.jeenius.tech/" class="btn btn-primary btn-block" data-cta="true" data-track-label="compare_neet" style="background:var(--accent);">Explore NEET JEEnius</a>
+          </div>
           </div>
         </div>
 
         <div class="reveal" style="max-width:900px; margin:40px auto 0; text-align:center;">
           <p class="eyebrow" style="justify-content:center; margin-bottom:16px;">What's the same in both</p>
-          <div class="flex flex-wrap items-center justify-center" style="gap:10px;">
+          <div class="flex flex-wrap items-center justify-center" data-stagger style="gap:10px;">
             <span class="chip"><span class="dot"></span>Real PYQs</span>
             <span class="chip"><span class="dot"></span>Step-by-step AI solutions</span>
             <span class="chip"><span class="dot"></span>Predicted mocks</span>
@@ -144,7 +148,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" data-spotlight>
     <div class="wrap">
       <div class="footer-cols">
         <div>
@@ -184,5 +188,6 @@
   </footer>
 
   <script src="assets/app.js"></script>
+  <script defer src="assets/motion.js"></script>
 </body>
 </html>

@@ -38,6 +38,28 @@
   });
 })();
 
+/* Count-up stats when scrolled into view (elements with data-count) */
+(function () {
+  var els = document.querySelectorAll('[data-count]');
+  if (!els.length) return;
+  function countUp(el) {
+    var target = +el.dataset.count, suf = el.dataset.suffix || '', dur = 1100, t0 = null;
+    function step(ts) { t0 = t0 || ts; var p = Math.min((ts - t0) / dur, 1); var e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(e * target) + suf; if (p < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.textContent = el.dataset.count + (el.dataset.suffix || ''); });
+    return;
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { countUp(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
 /* FAQ accordion (brand pages) */
 (function () {
   document.querySelectorAll('.faq-q').forEach(function (q) {
