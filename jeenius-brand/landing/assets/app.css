@@ -459,12 +459,26 @@ html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
 .mq-d { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: .75; flex: none; }
 @media (prefers-reduced-motion: reduce) { .marquee__track { transform: none !important; } }
 
-/* ---------- product spotlight stack (pinned on desktop) ---------- */
+/* ---------- product spotlight stack (CSS sticky on desktop) ----------
+   Pure position:sticky stack — reliable, no ScrollTrigger pin. Each section
+   sticks to the top and the next slides over it. Explicit z-index guarantees
+   the incoming section always covers the previous one (no transparent bleed),
+   and both sections are fully opaque. */
 @media (min-width: 900px) {
-  .stack > .section { min-height: 90svh; display: flex; align-items: center; }
-  .stack > .section + .section {
-    position: relative; z-index: 2;
-    border-radius: 32px 32px 0 0;
-    box-shadow: 0 -20px 60px -20px rgba(15, 32, 29, .25);
+  .stack > .section {
+    position: sticky; top: 0; min-height: 100svh;
+    display: flex; align-items: center;
+    /* .spotlight already sets an opaque tinted background; make it explicit */
+    background: color-mix(in srgb, var(--accent) 8%, var(--surface));
   }
+  .dark .stack > .section { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+  .stack > #jee { z-index: 1; }
+  .stack > #neet {
+    z-index: 2;
+    border-radius: 34px 34px 0 0;
+    box-shadow: 0 -30px 70px -30px rgba(10, 23, 20, .5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack > .section { position: static; min-height: 0; }
 }

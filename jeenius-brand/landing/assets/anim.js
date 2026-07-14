@@ -182,25 +182,21 @@
      Own matchMedia context: crossing 900px reverts ONLY this, never the hero.
      ========================================================================== */
   mm.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', function () {
+    // The stack itself is CSS position:sticky (reliable, opaque, z-layered).
+    // Here we only add depth: the outgoing card's CONTENT eases back as the
+    // next section slides over it. We transform the inner .wrap (never the
+    // section) so the sticky/opacity/z-index of the section is never touched —
+    // that's what prevents any transparent overlap.
     var stack = document.querySelector('.stack');
     if (stack && stack.children.length === 2) {
-      var first = stack.children[0], second = stack.children[1];
-      ScrollTrigger.create({
-        trigger: first,
-        start: 'top top',
-        endTrigger: second,
-        end: 'top top',
-        pin: true,
-        pinSpacing: false,
-        anticipatePin: 1
-      });
-      gsap.to(first, {
-        scale: 0.94,
-        autoAlpha: 0.3,
-        transformOrigin: 'center 30%',
-        ease: 'none',
-        scrollTrigger: { trigger: second, start: 'top bottom', end: 'top top', scrub: true }
-      });
+      var firstInner = stack.children[0].querySelector('.wrap');
+      if (firstInner) {
+        gsap.to(firstInner, {
+          scale: 0.94, y: -20, autoAlpha: 0.35,
+          transformOrigin: 'center center', ease: 'none',
+          scrollTrigger: { trigger: stack.children[1], start: 'top bottom', end: 'top top', scrub: true }
+        });
+      }
     }
 
     // hero aurora drifts up slightly as you scroll away
