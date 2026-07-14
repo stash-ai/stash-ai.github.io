@@ -285,20 +285,42 @@
     <div class="stack-dwell" aria-hidden="true"></div>
     </div>
 
-    <!-- ===================== IMMERSIVE: DNA of understanding ===================== -->
-    <section class="dna-section accent-neet" data-dna-section aria-label="How JEEnius connects every concept">
-      <div class="dna-sticky">
-        <div class="dna-stage" data-dna aria-hidden="true">
-          <div class="dna-fallback"></div>
+    <!-- ===================== IMMERSIVE: the structure behind engineering (JEE) ===================== -->
+    <section class="imx-section accent-jee" data-lattice-section aria-label="The structure behind every engineering problem">
+      <div class="imx-sticky">
+        <div class="imx-stage" data-lattice aria-hidden="true">
+          <div class="imx-fallback"></div>
         </div>
-        <div class="dna-overlay">
-          <div class="dna-copy">
+        <div class="imx-overlay">
+          <div class="imx-copy">
+            <h2 class="section-title font-display" style="margin:0 0 16px;">Every problem, built from first principles</h2>
+            <p class="lead" style="margin:0 0 26px;">Physics, Chemistry and Maths aren't separate silos. JEE JEEnius shows how each concept locks into the next, so you solve from structure, not memory.</p>
+            <div class="imx-beats">
+              <span class="imx-beat" data-lattice-beat><span class="imx-dot" style="background:var(--mint);"></span>Physics</span>
+              <span class="imx-beat" data-lattice-beat><span class="imx-dot" style="background:var(--sage);"></span>Chemistry</span>
+              <span class="imx-beat" data-lattice-beat><span class="imx-dot" style="background:var(--gold);"></span>Mathematics</span>
+            </div>
+            <a href="https://landing.jeenius.tech/" class="btn btn-primary" data-magnetic data-cta="true" data-track-label="lattice_jee" style="background:var(--accent); margin-top:30px;">Explore JEE JEEnius
+              <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IMMERSIVE: DNA of understanding (NEET) ===================== -->
+    <section class="imx-section accent-neet" data-dna-section aria-label="How JEEnius connects every concept">
+      <div class="imx-sticky">
+        <div class="imx-stage" data-dna aria-hidden="true">
+          <div class="imx-fallback"></div>
+        </div>
+        <div class="imx-overlay">
+          <div class="imx-copy">
             <h2 class="section-title font-display" style="margin:0 0 16px;">Understanding, built strand by strand</h2>
             <p class="lead" style="margin:0 0 26px;">From Biology to Physics to Chemistry, every concept links to the next. NEET JEEnius teaches the connections, not just the facts.</p>
-            <div class="dna-beats">
-              <span class="dna-beat" data-dna-beat><span class="dna-dot" style="background:var(--neet-bright);"></span>Biology</span>
-              <span class="dna-beat" data-dna-beat><span class="dna-dot" style="background:var(--neet);"></span>Physics</span>
-              <span class="dna-beat" data-dna-beat><span class="dna-dot" style="background:var(--neet-coral);"></span>Chemistry</span>
+            <div class="imx-beats">
+              <span class="imx-beat" data-dna-beat><span class="imx-dot" style="background:var(--neet-bright);"></span>Biology</span>
+              <span class="imx-beat" data-dna-beat><span class="imx-dot" style="background:var(--neet);"></span>Physics</span>
+              <span class="imx-beat" data-dna-beat><span class="imx-dot" style="background:var(--neet-coral);"></span>Chemistry</span>
             </div>
             <a href="https://neet.jeenius.tech/" class="btn btn-primary" data-magnetic data-cta="true" data-track-label="dna_neet" style="background:var(--accent); margin-top:30px;">Explore NEET JEEnius
               <svg class="arr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
@@ -378,6 +400,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script defer src="assets/anim.js"></script>
   <script type="module" src="assets/scene.js"></script>
+  <script type="module" src="assets/lattice.js"></script>
   <script type="module" src="assets/dna.js"></script>
 </body>
 </html>
