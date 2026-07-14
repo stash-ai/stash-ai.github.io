@@ -347,6 +347,14 @@ img { max-width: 100%; display: block; }
    Ported from jee-jeenius/landing/assets/app.css; driven by assets/motion.js
    ========================================================================== */
 
+/* ---------- WebGL knowledge field (hero) ---------- */
+.field { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  opacity: 0; transition: opacity 1.4s var(--ease); }
+.field-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* once the WebGL field is live: fade it in, retire the CSS aurora (the fallback) */
+html.webgl .field { opacity: 1; }
+html.webgl .aurora { opacity: 0; transition: opacity .8s var(--ease); }
+
 /* ---------- living aurora (hero) ---------- */
 .aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .aurora__group { position: absolute; inset: -12%; will-change: transform; }

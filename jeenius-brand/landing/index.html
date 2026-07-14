@@ -34,6 +34,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/app.css">
   <script>(function(){try{var s=localStorage.getItem('jeenius-brand-dark-mode');if(s==='true'||(s===null&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark');}catch(e){}})();</script>
+  <script type="importmap">
+  { "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -98,6 +104,7 @@
   <main id="top">
 
     <header class="section" style="position:relative; padding-top:clamp(94px,11vw,140px); overflow:hidden;">
+      <div class="field" data-field aria-hidden="true"></div>
       <div class="aurora" aria-hidden="true">
         <div class="aurora__group" data-aurora-group>
           <span class="aurora__blob aurora__blob--1"></span>
@@ -347,5 +354,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script defer src="assets/anim.js"></script>
+  <script type="module" src="assets/scene.js"></script>
 </body>
 </html>
