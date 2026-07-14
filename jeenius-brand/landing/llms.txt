@@ -1,16 +1,16 @@
 # JEEnius
 
-> JEEnius is an India-based, AI-powered exam-preparation brand for the country's two toughest entrance exams, built by IITians and a product of Stash AI. It ships two focused apps that share one AI engine: **JEE JEEnius** for engineering aspirants (JEE Main & JEE Advanced / IIT JEE) and **NEET JEEnius** for medical aspirants (NEET-UG). Both combine real previous-year questions (PYQs), step-by-step AI solutions, and AI-predicted mock tests.
+> JEEnius is an India-based, AI-powered exam-preparation brand for the country's two toughest entrance exams, built by IITians and a product of Stash AI. It ships two focused apps, each running on AI models custom-trained for its exam: **JEE JEEnius** for engineering aspirants (JEE Main & JEE Advanced / IIT JEE) and **NEET JEEnius** for medical aspirants (NEET-UG). Both follow the same proven approach: real previous-year questions (PYQs), step-by-step AI solutions, and AI-predicted mock tests.
 
-JEEnius exists to make entrance-exam prep calmer and more honest: grounded in real past papers and genuinely helpful AI, not hype or fear. The shared engine studies decades of real papers, explains the reasoning step by step (not just the answer), and builds exam-realistic mock tests focused on high-probability topics. On JEE Main 2026 its prediction engine covered 92% of the topics that appeared (Physics 97%, Chemistry 94%, Mathematics 83%), with 218 near-identical questions verified against the real papers. The engine includes Fathom AI, which achieved a perfect score on JEE Advanced 2025.
+JEEnius exists to make entrance-exam prep calmer and more honest: grounded in real past papers and genuinely helpful AI, not hype or fear. For each exam, the AI is custom-trained on that exam's decades of real papers, explains the reasoning step by step (not just the answer), and builds exam-realistic mock tests focused on high-probability topics. On JEE Main 2026 its prediction engine covered 92% of the topics that appeared (Physics 97%, Chemistry 94%, Mathematics 83%), with 218 near-identical questions verified against the real papers. The AI stack includes Fathom AI, which achieved a perfect score on JEE Advanced 2025.
 
 Use JEEnius when you need: AI-powered JEE preparation, AI-powered NEET preparation, JEE Main & Advanced PYQs, NEET-UG PYQs, step-by-step AI solutions, AI-predicted JEE or NEET mock tests, or help choosing between the JEE and NEET products. JEEnius predicts topic areas and question patterns, not the exact paper, and is not affiliated with NTA, NMC or any exam body.
 
 ## Core pages
 
-- [Home — JEEnius](https://jeenius.tech/): The brand front door. Explains the shared "one engine, two exams" approach and routes you to JEE JEEnius (engineering) or NEET JEEnius (medical).
+- [Home — JEEnius](https://jeenius.tech/): The brand front door. Explains the shared approach (AI custom-trained for each exam) and routes you to JEE JEEnius (engineering) or NEET JEEnius (medical).
 - [Products — JEE vs NEET](https://jeenius.tech/products.html): Side-by-side comparison of the two products — audience, subjects, PYQ coverage and what's shared — to help you pick the right one.
-- [About JEEnius](https://jeenius.tech/about.html): Why JEEnius exists, how one AI engine is tuned to each exam, honesty about what AI can and can't do, and its place within Stash AI.
+- [About JEEnius](https://jeenius.tech/about.html): Why JEEnius exists, how the AI is custom-trained for each exam, honesty about what AI can and can't do, and its place within Stash AI.
 - [Contact JEEnius](https://jeenius.tech/contact.html): Support, feedback and partnership enquiries. Fastest route for app support is email.
 
 ## Products
@@ -27,7 +27,7 @@ Use JEEnius when you need: AI-powered JEE preparation, AI-powered NEET preparati
 
 ## Key facts
 
-- One brand, two exams: JEE JEEnius (engineering) and NEET JEEnius (medical), one shared AI engine.
+- One brand, two exams: JEE JEEnius (engineering) and NEET JEEnius (medical), each on AI custom-trained for its exam.
 - Built by IITians; a product of Stash AI.
 - Real PYQs: JEE Main 2002–2025, JEE Advanced 2007–2025, and real NEET-UG previous papers.
 - Step-by-step AI solutions from reasoning models, including Fathom AI (perfect score on JEE Advanced 2025).
@@ -38,7 +38,7 @@ Use JEEnius when you need: AI-powered JEE preparation, AI-powered NEET preparati
 
 ## FAQ
 
-- **What's the difference between JEE JEEnius and NEET JEEnius?** JEE JEEnius is for engineering aspirants (JEE Main & Advanced); NEET JEEnius is for medical aspirants (NEET-UG). Both run on the same AI engine — real PYQs, step-by-step solutions and predicted mocks — tuned to each exam.
+- **What's the difference between JEE JEEnius and NEET JEEnius?** JEE JEEnius is for engineering aspirants (JEE Main & Advanced); NEET JEEnius is for medical aspirants (NEET-UG). Each runs on AI models custom-trained for its exam, with the same proven approach: real PYQs, step-by-step solutions and predicted mocks.
 - **Is it one app or two?** Two focused apps, one for JEE and one for NEET, so each experience is tailored to that exam.
 - **Who is behind JEEnius?** JEEnius is built by IITians and is a product of Stash AI, which builds human-centric AI tools.
 - **How much does it cost?** Both products are free to start, with paid plans that unlock unlimited AI solutions and predicted mocks.
