@@ -485,6 +485,60 @@ html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
   .stack-dwell { height: 60svh; }
 }
 @media (max-width: 899px) { .stack-dwell { height: 0; } }
+
+/* ---------- immersive DNA section (scroll-scrubbed 3D helix) ---------- */
+.dna-section { position: relative; }
+.dna-sticky {
+  position: sticky; top: 0; min-height: 100svh;
+  display: flex; align-items: center; overflow: hidden;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+}
+.dark .dna-sticky { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+@media (min-width: 900px) { .dna-section { height: 260svh; } }
+.dna-stage { position: absolute; inset: 0; z-index: 0; }
+.dna-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1s var(--ease); }
+html.dna-live .dna-canvas { opacity: 1; }
+/* static fallback until (or unless) WebGL runs */
+.dna-fallback {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 60% at 72% 42%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 70%),
+    radial-gradient(40% 50% at 60% 70%, rgba(255,215,0,.14), transparent 70%);
+  opacity: .8;
+}
+html.dna-live .dna-fallback { display: none; }
+/* readability scrim behind the copy */
+.dna-sticky::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(90deg, var(--surface) 0%, color-mix(in srgb, var(--surface) 55%, transparent) 34%, transparent 62%);
+}
+.dark .dna-sticky::before {
+  background: linear-gradient(90deg, #07201d 0%, color-mix(in srgb, #07201d 55%, transparent) 36%, transparent 64%);
+}
+.dna-overlay { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.dna-copy { max-width: 440px; }
+.dna-beats { display: flex; flex-wrap: wrap; gap: 10px; }
+.dna-beat {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700; color: var(--ink-faint);
+  padding: 9px 15px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface);
+  opacity: .55; transition: opacity .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease), transform .4s var(--ease);
+}
+.dna-beat .dna-dot { width: 8px; height: 8px; border-radius: 50%; opacity: .5; transition: opacity .4s var(--ease), box-shadow .4s var(--ease); }
+.dna-beat.on { opacity: 1; color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 40%, transparent); transform: translateY(-2px); }
+.dna-beat.on .dna-dot { opacity: 1; box-shadow: 0 0 10px 1px currentColor; }
+@media (max-width: 899px) {
+  .dna-section { min-height: 100svh; }
+  .dna-copy { max-width: 100%; }
+  .dna-sticky::before { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface) 70%, transparent) 55%, var(--surface) 100%); }
+  .dark .dna-sticky::before { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #07201d 70%, transparent) 55%, #07201d 100%); }
+  .dna-overlay { display: flex; align-items: flex-end; min-height: 100svh; padding-bottom: 12vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dna-sticky { position: static; min-height: 0; padding: 96px 0; }
+  .dna-section { height: auto; }
+}
 @media (prefers-reduced-motion: reduce) {
   .stack > .section { position: static; min-height: 0; }
 }
