@@ -546,6 +546,9 @@ html.lattice-live [data-lattice-section] .imx-fallback { display: none; }
   .imx-sticky::before { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface) 70%, transparent) 55%, var(--surface) 100%); }
   .dark .imx-sticky::before { background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, #07201d 70%, transparent) 55%, #07201d 100%); }
   .imx-overlay { display: flex; align-items: flex-end; min-height: 100svh; padding-bottom: 12vh; }
+  /* mobile: all subjects read as selected (no scroll-cycle) */
+  .imx-beat { opacity: 1; color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+  .imx-beat .imx-dot { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   .imx-sticky { position: static; min-height: 0; padding: 96px 0; }

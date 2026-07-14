@@ -111,6 +111,14 @@ function boot(host, section) {
   const textEl = valueEl && valueEl.querySelector('.imx-vtext');
   let lastActive = -1;
 
+  // mobile has no scroll-scrub room → don't cycle subjects; show them all
+  // selected with one general value line
+  const cycle = window.matchMedia('(min-width: 900px)').matches;
+  if (!cycle && beats.length) {
+    beats.forEach(function (b) { b.classList.add('on'); });
+    if (leadEl && valueEl.dataset.leadAll) { leadEl.textContent = valueEl.dataset.leadAll; textEl.textContent = valueEl.dataset.textAll; }
+  }
+
   let mx = 0, my = 0, tmx = 0, tmy = 0;
   addEventListener('pointermove', function (e) { tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; }, { passive: true });
 
@@ -156,7 +164,7 @@ function boot(host, section) {
       pr.mat.emissiveIntensity = pr.base + smooth(0.14, 0, d) * 1.5; // brighten near the scan line
     }
 
-    if (beats.length) {
+    if (cycle && beats.length) {
       const active = Math.min(beats.length - 1, Math.floor(p * beats.length + 0.0001));
       if (active !== lastActive) {
         lastActive = active;
