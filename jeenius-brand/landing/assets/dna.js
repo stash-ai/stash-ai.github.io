@@ -107,8 +107,8 @@ function boot(host, section) {
   // subject beats highlight in sync with scroll
   const beats = Array.prototype.slice.call(document.querySelectorAll('[data-dna-beat]'));
   const valueEl = document.querySelector('[data-dna-value]');
-  const numEl = valueEl && valueEl.querySelector('.imx-num');
-  const labelEl = valueEl && valueEl.querySelector('.imx-vlabel');
+  const leadEl = valueEl && valueEl.querySelector('.imx-vlead');
+  const textEl = valueEl && valueEl.querySelector('.imx-vtext');
   let lastActive = -1;
 
   let mx = 0, my = 0, tmx = 0, tmy = 0;
@@ -161,9 +161,9 @@ function boot(host, section) {
       if (active !== lastActive) {
         lastActive = active;
         for (let b = 0; b < beats.length; b++) beats[b].classList.toggle('on', b === active);
-        if (numEl) {
-          numEl.textContent = beats[active].dataset.val || '';
-          labelEl.textContent = beats[active].dataset.vlabel || '';
+        if (leadEl) {
+          leadEl.textContent = beats[active].dataset.vlead || '';
+          textEl.textContent = beats[active].dataset.vtext || '';
           valueEl.classList.remove('change'); void valueEl.offsetWidth; valueEl.classList.add('change');
         }
       }

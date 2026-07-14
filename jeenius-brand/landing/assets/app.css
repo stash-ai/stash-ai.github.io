@@ -518,14 +518,15 @@ html.lattice-live [data-lattice-section] .imx-fallback { display: none; }
 }
 .imx-overlay { position: relative; z-index: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .imx-copy { max-width: 460px; }
-/* live value readout — updates as the scroll wave reaches each subject */
-.imx-value { display: flex; align-items: baseline; gap: 14px; margin: 0 0 22px; min-height: 64px; }
-.imx-num {
-  font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: .95;
-  font-size: clamp(44px, 6vw, 68px); color: var(--accent-ink);
-  font-variant-numeric: tabular-nums; letter-spacing: -.02em;
+/* live value readout — how JEEnius helps in the active subject; updates as the
+   scroll wave reaches each one */
+.imx-value { margin: 0 0 22px; min-height: 82px; max-width: 30ch; }
+.imx-vlead {
+  display: block; font-family: 'Fraunces', Georgia, serif; font-weight: 600;
+  font-size: clamp(21px, 2.6vw, 29px); line-height: 1.12; letter-spacing: -.015em;
+  color: var(--accent-ink);
 }
-.imx-vlabel { font-size: 14.5px; font-weight: 600; color: var(--ink-soft); max-width: 22ch; line-height: 1.35; }
+.imx-vtext { display: block; margin-top: 8px; font-size: 15px; font-weight: 500; color: var(--ink-soft); line-height: 1.45; }
 .imx-value.change { animation: imxValue .5s var(--ease); }
 @keyframes imxValue { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: none; } }
 .imx-beats { display: flex; flex-wrap: wrap; gap: 10px; }
