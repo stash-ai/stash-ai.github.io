@@ -49,7 +49,9 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+/* overflow-x: clip (not hidden) — clip prevents horizontal overflow WITHOUT
+   creating a scroll container, so position:sticky (the spotlight stack) works */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -59,7 +61,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color .4s var(--ease), color .4s var(--ease);
 }
 
@@ -478,7 +480,11 @@ html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
     border-radius: 34px 34px 0 0;
     box-shadow: 0 -30px 70px -30px rgba(10, 23, 20, .5);
   }
+  /* extra scroll after NEET reaches the top, so it dwells fully covering JEE
+     (JEE gone) before the stack releases to the next section */
+  .stack-dwell { height: 60svh; }
 }
+@media (max-width: 899px) { .stack-dwell { height: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .stack > .section { position: static; min-height: 0; }
 }
