@@ -177,6 +177,9 @@ img { max-width: 100%; display: block; }
 .mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .mobile-menu a { padding: 12px 4px; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--line); }
 
+/* ---------- hero ambient glow ---------- */
+.glow { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; opacity: .5; }
+
 /* ---------- hero ambient (aurora) ---------- */
 .aurora { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .aurora__group { position: absolute; inset: -12%; will-change: transform; }
@@ -337,7 +340,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- stat boxes ---------- */
 .stat-box { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: var(--shadow-sm); }
-.stat-box .num { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: var(--green); line-height: 1; }
+.stat-box .num { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 600; color: var(--green); line-height: 1.02; overflow-wrap: anywhere; }
 .dark .stat-box .num { color: var(--gold-ink); }
 .stat-box .lbl { font-size: 12px; color: var(--ink-soft); margin-top: 5px; line-height: 1.3; letter-spacing: .02em; }
 
