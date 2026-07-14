@@ -85,8 +85,10 @@ function boot(host, section) {
   function applyTheme() {
     const dark = isDark();
     useBloom = dark && !small;
-    scene.fog = new THREE.FogExp2(dark ? 0x0a1714 : 0xf6f4ef, dark ? 0.045 : 0.06);
-    renderer.setClearColor(dark ? 0x0a1714 : 0x000000, dark ? 1 : 0);
+    // dark backdrop matches the CSS .imx-sticky bg + DNA section (#07201d) so the
+    // lattice and DNA sections share one uniform background (no split / seam)
+    scene.fog = new THREE.FogExp2(dark ? 0x07201d : 0xf6f4ef, dark ? 0.045 : 0.06);
+    renderer.setClearColor(dark ? 0x07201d : 0x000000, dark ? 1 : 0);
     rim.intensity = dark ? 0.4 : 0.28;
     render();
   }

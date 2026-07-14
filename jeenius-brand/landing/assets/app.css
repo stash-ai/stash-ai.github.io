@@ -504,7 +504,10 @@ html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
   display: flex; align-items: center; overflow: hidden;
   background: color-mix(in srgb, var(--accent) 8%, var(--surface));
 }
-.dark .imx-sticky { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+/* Dark: one flat backdrop shared by BOTH immersive sections (lattice + DNA),
+   matched to the WebGL clear/fog colour (#07201d in lattice.js + dna.js) and
+   the ::before scrim so the canvas edge is invisible — no split background. */
+.dark .imx-sticky { background: #07201d; }
 @media (min-width: 900px) { .imx-section { height: 260svh; } }
 .imx-stage { position: absolute; inset: 0; z-index: 0; }
 /* on larger screens the 3D object sits on the RIGHT, clear of the left copy
