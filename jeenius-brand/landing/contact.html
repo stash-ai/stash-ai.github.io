@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light dark">
 
   <title>Contact JEEnius</title>
-  <meta name="description" content="Get in touch with JEEnius — support, feedback and partnership enquiries for JEE JEEnius and NEET JEEnius.">
+  <meta name="description" content="Get in touch with JEEnius | support, feedback and partnership enquiries for JEE JEEnius and NEET JEEnius.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://jeenius.tech/contact.html"><!-- TODO(confirm) final brand host -->
   <meta name="theme-color" content="#1B3B36">
@@ -94,7 +94,7 @@
         <div class="reveal" style="text-align:center; margin-bottom:40px;">
           <span class="eyebrow" style="justify-content:center;">Contact</span>
           <h1 class="section-title font-display" style="margin:14px 0 12px;">Get in touch</h1>
-          <p class="lead" style="margin:0 auto;">Questions, feedback or partnerships — we read everything. For app support, the fastest route is email.</p>
+          <p class="lead" style="margin:0 auto;">Questions, feedback or partnerships: we read everything. For app support, the fastest route is email.</p>
         </div>
         <div class="grid md:grid-cols-2" style="gap:24px; align-items:start;">
           <div class="card reveal" style="padding:26px;">
@@ -135,7 +135,7 @@
       <div class="footer-cols">
         <div>
           <a href="index.html" class="brand" style="color:#fff;"><img src="jeenius.webp" alt="JEEnius" width="32" height="32"> JEEnius</a>
-          <p style="margin:16px 0 20px; max-width:34ch; font-size:14.5px; color:#9FB5AE;">AI-powered prep for India's toughest entrance exams — built by IITians. A Stash AI product.</p>
+          <p style="margin:16px 0 20px; max-width:34ch; font-size:14.5px; color:#9FB5AE;">AI-powered prep for India's toughest entrance exams, built by IITians. A Stash AI product.</p>
         </div>
         <div>
           <h4 style="color:#fff; font-size:14px; margin-bottom:14px;">Products</h4>
@@ -170,11 +170,14 @@
   </footer>
 
   <script src="assets/app.js"></script>
-  <script defer src="assets/motion.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="assets/anim.js"></script>
   <script>
     if (new URLSearchParams(location.search).get('sent') === '1') {
       var f = document.querySelector('form[name="contact"]');
-      if (f) f.innerHTML = '<div style="text-align:center; padding:24px 0;"><h2 class="font-display" style="font-size:22px; font-weight:600; margin-bottom:8px;">Thanks — message sent.</h2><p style="color:var(--ink-soft);">We\'ll get back to you at the email you gave us.</p></div>';
+      if (f) f.innerHTML = '<div style="text-align:center; padding:24px 0;"><h2 class="font-display" style="font-size:22px; font-weight:600; margin-bottom:8px;">Thanks, message sent.</h2><p style="color:var(--ink-soft);">We\'ll get back to you at the email you gave us.</p></div>';
     }
   </script>
 </body>

@@ -38,8 +38,9 @@
   });
 })();
 
-/* Count-up stats when scrolled into view (elements with data-count) */
-(function () {
+/* Count-up stats fallback (only when the GSAP layer did not load) */
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.documentElement.classList.contains('gsap')) return;
   var els = document.querySelectorAll('[data-count]');
   if (!els.length) return;
   function countUp(el) {
@@ -58,7 +59,7 @@
     });
   }, { threshold: 0.5 });
   els.forEach(function (el) { io.observe(el); });
-})();
+});
 
 /* FAQ accordion (brand pages) */
 (function () {

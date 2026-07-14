@@ -432,3 +432,31 @@ img { max-width: 100%; display: block; }
   [data-tilt], [data-tilt-layer], [data-magnetic] { transform: none !important; }
   .tilt-glare, [data-spotlight]::before { display: none !important; }
 }
+
+/* ==========================================================================
+   GSAP layer (assets/anim.js). When html.gsap is set, the legacy CSS
+   reveal/stagger transitions hand over to GSAP-driven choreography.
+   ========================================================================== */
+html.gsap .reveal, html.gsap [data-stagger] > * { opacity: 1; transform: none; filter: none; transition: none; }
+html.gsap [data-tilt] { transition: none; }
+html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  html.gsap .hl-sweep { background-size: 100% 100% !important; }
+}
+
+/* ---------- syllabus marquee ---------- */
+.marquee { overflow: hidden; padding: 20px 0; background: var(--green-deep); border-block: 1px solid rgba(255,255,255,.08); }
+.marquee__track { display: flex; align-items: center; gap: 36px; width: max-content; will-change: transform; }
+.mq { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 500; font-size: 19px; color: #C9D8D2; white-space: nowrap; }
+.mq-d { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: .75; flex: none; }
+@media (prefers-reduced-motion: reduce) { .marquee__track { transform: none !important; } }
+
+/* ---------- product spotlight stack (pinned on desktop) ---------- */
+@media (min-width: 900px) {
+  .stack > .section { min-height: 90svh; display: flex; align-items: center; }
+  .stack > .section + .section {
+    position: relative; z-index: 2;
+    border-radius: 32px 32px 0 0;
+    box-shadow: 0 -20px 60px -20px rgba(15, 32, 29, .25);
+  }
+}
