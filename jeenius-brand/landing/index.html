@@ -7,19 +7,36 @@
 
   <title>JEEnius | AI-powered JEE &amp; NEET prep, built by IITians</title>
   <meta name="description" content="JEEnius is AI-powered exam prep for India's toughest entrance exams. JEE JEEnius for engineering, NEET JEEnius for medical: real PYQs, step-by-step AI solutions and predicted mocks.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="keywords" content="JEEnius, JEE prep, NEET prep, AI exam prep, JEE Main, JEE Advanced, IIT JEE, NEET UG, PYQs, AI mock tests, AI doubt solver, JEE JEEnius, NEET JEEnius, built by IITians">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://jeenius.tech/"><!-- TODO(confirm) final brand host -->
+  <link rel="alternate" hreflang="en-in" href="https://jeenius.tech/">
+  <link rel="alternate" hreflang="x-default" href="https://jeenius.tech/">
+  <meta name="author" content="JEEnius">
+  <meta name="publisher" content="Stash AI">
+  <meta name="application-name" content="JEEnius">
   <meta name="theme-color" content="#1B3B36">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="content-language" content="en-IN">
+  <meta name="geo.region" content="IN">
+  <meta name="geo.placename" content="India">
   <link rel="icon" type="image/webp" href="jeenius.webp">
   <link rel="apple-touch-icon" href="jeenius.webp">
 
+  <meta property="og:locale" content="en_IN">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="JEEnius">
   <meta property="og:title" content="JEEnius | AI-powered JEE &amp; NEET prep, built by IITians">
   <meta property="og:description" content="One brand, two exams. JEE JEEnius for engineering and NEET JEEnius for medical: real PYQs, step-by-step AI solutions and predicted mocks.">
   <meta property="og:url" content="https://jeenius.tech/"><!-- TODO(confirm) -->
+  <meta property="og:image" content="https://jeenius.tech/jeenius.webp">
+  <meta property="og:image:alt" content="JEEnius: AI-powered JEE and NEET preparation">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@jeenius_ai">
+  <meta name="twitter:title" content="JEEnius | AI-powered JEE &amp; NEET prep, built by IITians">
+  <meta name="twitter:description" content="One brand, two exams. Real PYQs, step-by-step AI solutions and predicted mocks for JEE and NEET.">
+  <meta name="twitter:image" content="https://jeenius.tech/jeenius.webp">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,8 +82,88 @@
         "@id": "https://jeenius.tech/#website",
         "url": "https://jeenius.tech/",
         "name": "JEEnius",
+        "description": "AI-powered exam prep for JEE and NEET, built by IITians. One engine, two exams.",
         "publisher": { "@id": "https://jeenius.tech/#organization" },
-        "inLanguage": "en-IN"
+        "inLanguage": "en-IN",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://jeenius.tech/products.html?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://jeenius.tech/#edu",
+        "name": "JEEnius",
+        "url": "https://jeenius.tech/",
+        "logo": "https://jeenius.tech/jeenius.webp",
+        "description": "AI-powered preparation for JEE Main, JEE Advanced and NEET-UG: real PYQs, step-by-step AI solutions and AI-predicted mock tests. Built by IITians.",
+        "areaServed": "IN",
+        "audience": { "@type": "EducationalAudience", "educationalRole": "JEE and NEET aspirant" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://jeenius.tech/#products",
+        "name": "JEEnius products",
+        "itemListElement": [
+          {
+            "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "JEE JEEnius",
+              "applicationCategory": "EducationApplication",
+              "operatingSystem": "ANDROID",
+              "url": "https://landing.jeenius.tech/",
+              "description": "AI prep for JEE Main & Advanced: 20+ years of PYQs, AI-predicted mocks and step-by-step doubt solving. 92% of JEE 2026 topics predicted.",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "NEET JEEnius",
+              "applicationCategory": "EducationApplication",
+              "operatingSystem": "ANDROID",
+              "url": "https://neet.jeenius.tech/",
+              "description": "AI prep for NEET-UG across Biology, Physics and Chemistry: real PYQs, predicted mocks and step-by-step AI solutions.",
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+            }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://jeenius.tech/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What's the difference between JEE JEEnius and NEET JEEnius?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JEE JEEnius is for engineering aspirants (JEE Main & Advanced); NEET JEEnius is for medical aspirants (NEET-UG). Both run on the same AI engine (real PYQs, step-by-step solutions and predicted mocks), tuned to each exam." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it one app or two?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Two focused apps, one for JEE and one for NEET, so each experience is tailored to that exam. Pick the one that matches your goal from the cards above." }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is behind JEEnius?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JEEnius is built by IITians and is a product of Stash AI, which builds human-centric AI tools. Our engine includes reasoning models fine-tuned for high-level exam problems." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Both products are free to start, with paid plans that unlock unlimited AI solutions and predicted mocks. See current pricing on each product." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://jeenius.tech/#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jeenius.tech/" }
+        ]
       }
     ]
   }
