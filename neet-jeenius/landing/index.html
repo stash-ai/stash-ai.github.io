@@ -2247,18 +2247,17 @@
             });
         });
 
-        // Play Store / app redirect
-        // TODO(NEET-APP): confirm/replace the Play Store package id "com.stash.neetjeenius" with the real NEET Android app id once published (appears twice below).
+        // App redirect — the NEET Android app is coming soon, so every "open the
+        // app" action goes to the NEET web app instead.
+        var NEET_WEB_APP = 'https://neet-app.jeenius.tech';
         function getRedirectUrl() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const isAndroid = /android/i.test(userAgent);
-            return isAndroid ? 'https://play.google.com/store/apps/details?id=com.stash.neetjeenius&hl=en_IN' : 'https://neet.jeenius.tech';
+            return NEET_WEB_APP;
         }
 
         function goToPlayStore(event) {
             if (event) event.stopPropagation();
-            trackInteraction('section_click_play_store', 'cta');
-            window.open('https://play.google.com/store/apps/details?id=com.stash.neetjeenius&hl=en_IN', '_blank'); /* TODO(NEET-APP): real Play Store package id */
+            trackInteraction('section_click_web_app', 'cta');
+            window.open(NEET_WEB_APP, '_blank');
         }
 
         // Make page sections clickable: opens NEET JEEnius Play Store

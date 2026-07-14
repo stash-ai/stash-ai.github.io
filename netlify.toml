@@ -1,10 +1,10 @@
 # Netlify configuration for the JEEnius landing site.
 #
-# Canonical host: https://landing.jeenius.tech  (matches every <link rel="canonical">)
+# Canonical host: https://jee.jeenius.tech  (matches every <link rel="canonical">)
 #
 # NOTE: ai.jeenius.tech is the Django API backend (it returns 404 at / and 405
 # for /sitemap.xml and /llms.txt), NOT the marketing site. The landing page is
-# served only from landing.jeenius.tech, so there is no duplicate-content host
+# served only from jee.jeenius.tech, so there is no duplicate-content host
 # to redirect and NO host-level 301 is configured here. Do not add a
 # landing.* -> ai.* redirect: it would send users and crawlers into the API 404.
 #

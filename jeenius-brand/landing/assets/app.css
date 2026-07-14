@@ -424,6 +424,8 @@ html.webgl .aurora { opacity: 0; transition: opacity .8s var(--ease); }
 /* ---------- micro-interactions ---------- */
 .btn .arr { transition: transform .3s var(--ease); }
 .btn:hover .arr { transform: translateX(3px); }
+.webapp-link { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s var(--ease); }
+.webapp-link:hover { border-bottom-color: currentColor; }
 
 /* mini worked solution (engine bento featured tile) */
 .mini-sol { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin-top: 16px; }

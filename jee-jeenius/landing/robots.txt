@@ -1,4 +1,4 @@
-# robots.txt for JEEnius AI — https://landing.jeenius.tech
+# robots.txt for JEEnius AI — https://jee.jeenius.tech
 # Goal: maximum visibility for JEE Main / JEE Advanced / PYQs / mock test queries.
 
 User-agent: *
@@ -75,7 +75,7 @@ User-agent: FacebookBot
 Allow: /
 
 # Sitemap
-Sitemap: https://landing.jeenius.tech/sitemap.xml
+Sitemap: https://jee.jeenius.tech/sitemap.xml
 
 # LLMs index
-# https://landing.jeenius.tech/llms.txt
+# https://jee.jeenius.tech/llms.txt

@@ -15,8 +15,15 @@ Use JEEnius when you need: AI-powered JEE preparation, AI-powered NEET preparati
 
 ## Products
 
-- [JEE JEEnius — engineering / IIT](https://landing.jeenius.tech/): AI prep for JEE Main (2002–2025 PYQs) and JEE Advanced (2007–2025 PYQs), AI-predicted mocks, chapter-wise practice across Physics, Chemistry and Mathematics, and 24×7 step-by-step doubt solving. Prediction engine reached 92% topic coverage on JEE Main 2026.
-- [NEET JEEnius — medical / MBBS](https://neet.jeenius.tech/): AI prep for NEET-UG across Biology, Physics and Chemistry — real NEET PYQs, AI-predicted mocks and step-by-step AI solutions, in a clean, clinical-calm interface built for medical aspirants.
+- [JEE JEEnius — engineering / IIT](https://jee.jeenius.tech/): AI prep for JEE Main (2002–2025 PYQs) and JEE Advanced (2007–2025 PYQs), AI-predicted mocks, chapter-wise practice across Physics, Chemistry and Mathematics, and 24×7 step-by-step doubt solving. Prediction engine reached 92% topic coverage on JEE Main 2026. Available as a [web app](https://jee-app.jeenius.tech) and on [Android](https://play.google.com/store/apps/details?id=com.stash.jeenius&hl=en_IN).
+- [NEET JEEnius — medical / MBBS](https://neet.jeenius.tech/): AI prep for NEET-UG across Biology, Physics and Chemistry — real NEET PYQs, AI-predicted mocks and step-by-step AI solutions, in a clean, clinical-calm interface built for medical aspirants. Available as a [web app](https://neet-app.jeenius.tech); the Android app is coming soon.
+
+## Apps & access
+
+- JEE web app: https://jee-app.jeenius.tech
+- JEE Android app: https://play.google.com/store/apps/details?id=com.stash.jeenius&hl=en_IN
+- NEET web app: https://neet-app.jeenius.tech
+- NEET Android app: coming soon
 
 ## Key facts
 

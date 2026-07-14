@@ -3,86 +3,86 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://landing.jeenius.tech/</loc>
+    <loc>https://jee.jeenius.tech/</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-in" href="https://landing.jeenius.tech/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://landing.jeenius.tech/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://jee.jeenius.tech/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jee.jeenius.tech/"/>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#predictions-2027</loc>
+    <loc>https://jee.jeenius.tech/#predictions-2027</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#search-archive</loc>
+    <loc>https://jee.jeenius.tech/#search-archive</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#how</loc>
+    <loc>https://jee.jeenius.tech/#how</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#feel-physics</loc>
+    <loc>https://jee.jeenius.tech/#feel-physics</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#prediction-lab</loc>
+    <loc>https://jee.jeenius.tech/#prediction-lab</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#features</loc>
+    <loc>https://jee.jeenius.tech/#features</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#pricing</loc>
+    <loc>https://jee.jeenius.tech/#pricing</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/#faq</loc>
+    <loc>https://jee.jeenius.tech/#faq</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/prediction-results.html</loc>
+    <loc>https://jee.jeenius.tech/prediction-results.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/prediction-engine.html</loc>
+    <loc>https://jee.jeenius.tech/prediction-engine.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://landing.jeenius.tech/about.html</loc>
+    <loc>https://jee.jeenius.tech/about.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
