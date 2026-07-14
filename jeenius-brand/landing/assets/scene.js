@@ -57,8 +57,8 @@ function boot(host) {
     positions.set([x, y, z], i * 3);
     c.set(Math.random() > 0.9 ? GOLD : GREENS[(Math.random() * 4) | 0]);
     colors.set([c.r, c.g, c.b], i * 3);
-    const bright = Math.random() > 0.93;
-    sizes[i] = bright ? 24 + Math.random() * 16 : 4 + Math.random() * 9;
+    const bright = Math.random() > 0.955;
+    sizes[i] = bright ? 17 + Math.random() * 11 : 3.5 + Math.random() * 7;
     phases[i] = Math.random() * Math.PI * 2;
     if (bright && nodes.length < 60) nodes.push([x, y, z]);
   }
@@ -91,7 +91,7 @@ function boot(host) {
         float d = length(gl_PointCoord - vec2(0.5));
         if (d > 0.5) discard;
         float a = smoothstep(0.5, 0.0, d);
-        gl_FragColor = vec4(vColor * (1.0 + vTw * 0.5 * uGlow), a * uAlpha);
+        gl_FragColor = vec4(vColor * (0.82 + vTw * 0.38 * uGlow), a * uAlpha * 0.8);
       }`
   });
 
@@ -116,7 +116,7 @@ function boot(host) {
   // ── bloom (dark only; skip on light where additive washes out) ───────────
   const composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.85, 0.6, 0.2);
+  const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.5, 0.6, 0.25);
   composer.addPass(bloom);
 
   let useBloom = true;
