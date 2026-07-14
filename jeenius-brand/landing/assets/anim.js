@@ -40,7 +40,12 @@
     /* ---------- shared enter states ---------- */
     var enterEase = 'power3.out';
 
-    /* ---------- hero load choreography ---------- */
+    /* ---------- hero load choreography ----------
+       Two INDEPENDENT timelines so a SplitText re-split (which fires when web
+       fonts finish loading) can never revert/strand the rest of the hero:
+         1. the "content" timeline (eyebrow, lead, cards, chips, blobs, sweep)
+         2. the SplitText headline reveal (its own tween, safe to re-split)
+       Both kick off once fonts are ready so they play coordinated and once. */
     if (hero) {
       var eyebrow = hero.querySelector('.eyebrow');
       var h1 = hero.querySelector('h1');
@@ -48,58 +53,39 @@
       var cards = hero.querySelectorAll('.pick > *');
       var chips = hero.querySelectorAll('.chip');
       var blobs = hero.querySelectorAll('.aurora__blob');
+      var sweeps = hero.querySelectorAll('.hl-sweep');
 
+      // hide immediately (before paint) so nothing flashes then re-hides
       gsap.set([eyebrow, lead], { autoAlpha: 0, y: 18 });
       gsap.set(cards, { autoAlpha: 0, y: 42, scale: 0.985 });
       gsap.set(chips, { autoAlpha: 0, y: 14 });
       gsap.set(blobs, { autoAlpha: 0, scale: 0.85 });
+      gsap.set(sweeps, { backgroundSize: '0% 100%' });
 
-      var heroPlayed = false;
-      var buildHero = function (lines) {
-        // the sweep span may have been split into one fragment per line
-        var sweeps = hero.querySelectorAll('.hl-sweep');
-        var tl = gsap.timeline({ defaults: { ease: enterEase } });
-        tl.set(sweeps, { backgroundSize: '0% 100%' }, 0)
-          .to(blobs, { autoAlpha: 1, scale: 1, duration: 1.6, ease: 'sine.out', stagger: 0.15 }, 0)
-          .to(eyebrow, { autoAlpha: 1, y: 0, duration: 0.55 }, 0.1);
-        if (lines) {
-          tl.from(lines, { yPercent: 115, duration: 0.95, ease: 'power4.out', stagger: 0.12 }, 0.22);
-        } else {
-          tl.from(h1, { autoAlpha: 0, y: 24, duration: 0.8 }, 0.22);
-        }
-        tl.to(sweeps, { backgroundSize: '100% 100%', duration: 0.8, ease: 'power2.inOut' }, 0.9)
-          .to(lead, { autoAlpha: 1, y: 0, duration: 0.6 }, 0.7)
-          .to(cards, { autoAlpha: 1, y: 0, scale: 1, duration: 0.85, stagger: 0.14 }, 0.85)
-          .to(chips, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.07 }, 1.25);
-        heroPlayed = true;
-        return tl;
-      };
+      // 1. content timeline — never touched by SplitText, plays immediately
+      gsap.timeline({ defaults: { ease: enterEase } })
+        .to(blobs, { autoAlpha: 1, scale: 1, duration: 1.6, ease: 'sine.out', stagger: 0.15 }, 0)
+        .to(eyebrow, { autoAlpha: 1, y: 0, duration: 0.6 }, 0.15)
+        .to(sweeps, { backgroundSize: '100% 100%', duration: 0.8, ease: 'power2.inOut' }, 0.95)
+        .to(lead, { autoAlpha: 1, y: 0, duration: 0.6 }, 0.75)
+        .to(cards, { autoAlpha: 1, y: 0, scale: 1, duration: 0.85, stagger: 0.16 }, 0.9)
+        .to(chips, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.08 }, 1.35);
 
-      if (h1 && window.SplitText) {
+      // 2. headline — masked-line rise (independent). autoSplit re-splits when
+      // fonts swap; the first split animates, later ones just snap lines home.
+      if (window.SplitText && h1) {
+        var firstSplit = true;
         SplitText.create(h1, {
           type: 'lines',
           mask: 'lines',
           autoSplit: true,
           onSplit: function (self) {
-            if (heroPlayed) {
-              return gsap.set(hero.querySelectorAll('.hl-sweep'), { backgroundSize: '100% 100%' });
-            }
-            return buildHero(self.lines);
+            if (!firstSplit) return gsap.set(self.lines, { yPercent: 0 });
+            firstSplit = false;
+            return gsap.from(self.lines, { yPercent: 118, duration: 0.95, ease: 'power4.out', stagger: 0.12, delay: 0.3 });
           }
         });
-      } else if (h1) {
-        buildHero(null);
       }
-
-      // Safety net: if the intro never runs (e.g. GSAP ticker stalls), reveal
-      // the hero so content is never trapped invisible. Fires well after the
-      // ~1.8s intro; a normal playthrough leaves nothing to reveal.
-      window.setTimeout(function () {
-        if (parseFloat(getComputedStyle(eyebrow).opacity) < 0.9) {
-          gsap.set([eyebrow, lead, cards, chips, blobs], { clearProps: 'all', autoAlpha: 1 });
-          gsap.set(hero.querySelectorAll('.hl-sweep'), { backgroundSize: '100% 100%' });
-        }
-      }, 2600);
     }
 
     /* ---------- section titles: masked line rise on scroll ---------- */
