@@ -96,6 +96,10 @@ function boot(host, section) {
   new MutationObserver(applyTheme).observe(root, { attributes: true, attributeFilter: ['class'] });
 
   const beats = Array.prototype.slice.call(document.querySelectorAll('[data-lattice-beat]'));
+  const valueEl = document.querySelector('[data-lattice-value]');
+  const numEl = valueEl && valueEl.querySelector('.imx-num');
+  const labelEl = valueEl && valueEl.querySelector('.imx-vlabel');
+  let lastActive = -1;
 
   let mx = 0, my = 0, tmx = 0, tmy = 0;
   addEventListener('pointermove', function (e) { tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; }, { passive: true });
@@ -140,7 +144,15 @@ function boot(host, section) {
 
     if (beats.length) {
       const active = Math.min(beats.length - 1, Math.floor(p * beats.length + 0.0001));
-      for (let b = 0; b < beats.length; b++) beats[b].classList.toggle('on', b === active);
+      if (active !== lastActive) {
+        lastActive = active;
+        for (let b = 0; b < beats.length; b++) beats[b].classList.toggle('on', b === active);
+        if (numEl) {
+          numEl.textContent = beats[active].dataset.val || '';
+          labelEl.textContent = beats[active].dataset.vlabel || '';
+          valueEl.classList.remove('change'); void valueEl.offsetWidth; valueEl.classList.add('change');
+        }
+      }
     }
 
     render();
