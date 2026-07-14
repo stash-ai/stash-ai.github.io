@@ -507,6 +507,9 @@ html.gsap .hl-sweep { background-size: 0% 100%; transition: none; }
 .dark .imx-sticky { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
 @media (min-width: 900px) { .imx-section { height: 260svh; } }
 .imx-stage { position: absolute; inset: 0; z-index: 0; }
+/* on larger screens the 3D object sits on the RIGHT, clear of the left copy
+   (this override must come AFTER the inset:0 base rule to win) */
+@media (min-width: 900px) { .imx-stage { left: auto; width: 58%; } }
 .dna-canvas, .lattice-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1s var(--ease); }
 html.dna-live .dna-canvas, html.lattice-live .lattice-canvas { opacity: 1; }
 /* static fallback until (or unless) WebGL runs */
