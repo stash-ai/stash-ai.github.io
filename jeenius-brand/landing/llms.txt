@@ -45,7 +45,7 @@ Use JEEnius when you need: AI-powered JEE preparation, AI-powered NEET preparati
 
 ## Company & legal
 
-- [Stash AI](https://stash.ai/): The company behind JEEnius.
+- [Stash AI](https://stash-ai.github.io/website/): The company behind JEEnius.
 - [Privacy Policy](https://ai.jeenius.tech/privacy-policy/)
 - [Terms of Service](https://ai.jeenius.tech/terms-of-service/)
 - [Cancellation Policy](https://ai.jeenius.tech/refund-policy/)
