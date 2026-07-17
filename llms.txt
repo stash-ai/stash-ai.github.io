@@ -1,0 +1,27 @@
+# Stash AI
+
+> Human-Centric AI Innovation
+
+Stash AI is a venture lab building the next generation of human-centric tools. We combine the world's most powerful AI models into our proprietary "Model Stack" to create products that make life easier, smarter, and fairer.
+
+## Products
+
+- **The JEEnius Suite:** An advanced AI-powered educational platform for JEE and NEET preparation. It uses specialized agents fine-tuned on over 25 years of past exam papers to provide personalized, step-by-step tutoring without hallucinations.
+  - JEE JEEnius: For engineering aspirants (JEE Mains/Advanced).
+  - NEET JEEnius: For medical aspirants (NEET).
+
+## Future Labs
+
+- **Project Vital (Healthcare):** AI that simplifies medical reports for patients.
+- **Project Civic (Legal):** Democratizing access to justice by making legal documents readable.
+- **Project Green (Climate):** Hyper-local climate insights for sustainability.
+
+## Services & B2B
+
+- **Custom AI Solutions:** We partner with enterprises to build custom AI solutions, deploy specialized Model Stacks, and fine-tune Large Language Models (LLMs) for bespoke business applications.
+
+## Contact
+
+- Email: stash.ai.tech@gmail.com
+- GitHub: https://github.com/stash-ai
+- LinkedIn: https://www.linkedin.com/company/stashai/

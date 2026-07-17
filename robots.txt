@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stash-ai.github.io/sitemap.xml
