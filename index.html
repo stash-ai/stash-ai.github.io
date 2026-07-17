@@ -370,9 +370,87 @@
             position: relative;
         }
 
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 60px;
+            }
+        }
+
         .hero-content {
             max-width: 800px;
+            position: relative;
+            z-index: 2;
         }
+
+        /* Hero Visual (Model Stack Animation) */
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            display: none; /* Hide on mobile by default, show on desktop */
+            perspective: 1000px;
+            z-index: 1;
+        }
+
+        @media (min-width: 992px) {
+            .hero-visual {
+                display: block;
+            }
+        }
+
+        .model-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: rotateX(60deg) rotateZ(-45deg);
+        }
+
+        .stack-layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 260px;
+            height: 260px;
+            margin-left: -130px;
+            margin-top: -130px;
+            background: rgba(10, 10, 15, 0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.02), 0 20px 40px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease;
+        }
+
+        .stack-layer i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .stack-layer span {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .layer-1 { transform: translateZ(0px); border-color: rgba(6, 182, 212, 0.3); }
+        .layer-2 { transform: translateZ(100px); border-color: rgba(236, 72, 153, 0.3); }
+        .layer-3 { transform: translateZ(200px); border-color: rgba(99, 102, 241, 0.3); }
 
         .hero-badges {
             margin-top: 40px;
@@ -780,7 +858,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container hero-grid">
             <div class="hero-content">
                 <h1 class="gradient-text">We Don’t Just Build AI.<br>We Solve Problems.</h1>
                 <p>Stash AI is the venture lab building the next generation of <strong>human-centric tools</strong>. We combine the world’s most powerful AI with deep empathy to create products that make life easier, smarter, and fairer.</p>
@@ -795,6 +873,23 @@
                 <div class="hero-badges">
                     <i class="fa-solid fa-rocket" style="color: var(--accent-secondary);"></i>
                     <span>Incubating the future. Creators of the <strong>JEEnius Suite for JEE & NEET</strong>. Built by engineers from <strong>IIT Kanpur</strong>.</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="model-stack">
+                    <div class="stack-layer layer-1">
+                        <i class="fa-solid fa-bolt" style="color: var(--accent-tertiary);"></i>
+                        <span>Frontier Models</span>
+                    </div>
+                    <div class="stack-layer layer-2">
+                        <i class="fa-solid fa-code-merge" style="color: var(--accent-secondary);"></i>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="stack-layer layer-3">
+                        <i class="fa-solid fa-brain" style="color: var(--accent-primary);"></i>
+                        <span>Proprietary Logic</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1139,6 +1234,24 @@
             { opacity: 0 }, 
             { opacity: 1, duration: 1.5, ease: "power2.out", delay: 0.8 }
         );
+        
+        // Hero Visual Model Stack Animation
+        gsap.fromTo(".hero-visual", 
+            { opacity: 0, x: 50 },
+            { opacity: 1, x: 0, duration: 1.5, ease: "power4.out", delay: 0.5 }
+        );
+        
+        gsap.to(".layer-1", { z: -20, duration: 2.5, yoyo: true, repeat: -1, ease: "sine.inOut" });
+        gsap.to(".layer-2", { z: 120, duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 0.2 });
+        gsap.to(".layer-3", { z: 220, duration: 3.5, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 0.4 });
+        
+        gsap.to(".model-stack", {
+            rotateZ: "-35deg",
+            duration: 12,
+            yoyo: true,
+            repeat: -1,
+            ease: "sine.inOut"
+        });
 
         // GSAP ScrollTrigger for elements with .fade-in-up
         gsap.utils.toArray('.fade-in-up:not(.hero-content)').forEach(elem => {
