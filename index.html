@@ -168,18 +168,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .interactive-card {
-            --tiltX: 0deg;
-            --tiltY: 0deg;
-            --lift: 0px;
-            transform: perspective(1200px) rotateX(var(--tiltX)) rotateY(var(--tiltY)) translateY(var(--lift));
-            transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            will-change: transform;
-        }
-
-        .interactive-card:hover {
-            --lift: -6px;
-        }
+        /* Moved interactive-card definition to bottom of CSS to avoid duplication */
 
         /* Navigation */
         nav {
@@ -611,18 +600,47 @@
         }
 
         /* Animations */
+        /* Animations managed by GSAP now */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            /* transition removed for GSAP */
+        }
+        
+        .interactive-card {
+            position: relative;
+            overflow: hidden;
+            --tiltX: 0deg;
+            --tiltY: 0deg;
+            --lift: 0px;
+            --glare-x: 50%;
+            --glare-y: 50%;
+            --glare-opacity: 0;
+            transform: perspective(1200px) rotateX(var(--tiltX)) rotateY(var(--tiltY)) translateY(var(--lift));
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
         }
 
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .interactive-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--glare-x) var(--glare-y), rgba(255,255,255,0.2) 0%, transparent 50%);
+            opacity: var(--glare-opacity);
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .interactive-card:hover {
+            --lift: -6px;
+            --glare-opacity: 1;
         }
 
     </style>
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -917,9 +935,10 @@
 
     <script>
         /*
-            Experience Layer
-            Example: a visitor scrolling halfway down sees the nav tighten, the progress bar fill accordingly, stat counters tick up once, and cards tilt toward the cursor.
+            Experience Layer & Motion Graphics
         */
+        gsap.registerPlugin(ScrollTrigger);
+
         const navbar = document.getElementById('navbar');
         const scrollProgress = document.querySelector('.scroll-progress');
 
@@ -940,16 +959,59 @@
         window.addEventListener('scroll', syncScrollState);
         syncScrollState();
 
-        const revealObserver = new IntersectionObserver((entries, observerInstance) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observerInstance.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        // Hero Intro Animation
+        gsap.fromTo(".hero-content h1", 
+            { opacity: 0, y: 50 }, 
+            { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", delay: 0.2 }
+        );
+        gsap.fromTo(".hero-content p", 
+            { opacity: 0, y: 30 }, 
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.6 }
+        );
+        gsap.fromTo(".hero-content .btn-group", 
+            { opacity: 0, scale: 0.9 }, 
+            { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)", delay: 0.9 }
+        );
 
-        document.querySelectorAll('.fade-in-up').forEach(el => revealObserver.observe(el));
+        // GSAP ScrollTrigger for elements with .fade-in-up
+        gsap.utils.toArray('.fade-in-up:not(.hero-content)').forEach(elem => {
+            gsap.fromTo(elem, 
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        // Background Orbs Parallax
+        document.addEventListener('mousemove', e => {
+            const x = e.clientX / window.innerWidth - 0.5;
+            const y = e.clientY / window.innerHeight - 0.5;
+            gsap.to('.orb-1', { x: x * 100, y: y * 100, duration: 2, ease: 'power2.out' });
+            gsap.to('.orb-2', { x: x * -80, y: y * -80, duration: 2, ease: 'power2.out' });
+            gsap.to('.orb-3', { x: x * 50, y: y * -50, duration: 2, ease: 'power2.out' });
+        });
+
+        // Magnetic CTA Buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: 'power2.out' });
+            });
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
+            });
+        });
 
         const compactFormatter = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 });
 
@@ -996,18 +1058,28 @@
 
         document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 
+        // Enhanced Interactive 3D Cards with Glare
         const interactiveCards = document.querySelectorAll('.interactive-card');
         interactiveCards.forEach(card => {
             card.addEventListener('mousemove', event => {
                 const rect = card.getBoundingClientRect();
                 const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
                 const rotateX = (0.5 - (event.clientY - rect.top) / rect.height) * 14;
+                
+                // Calculate glare position based on cursor
+                const glareX = ((event.clientX - rect.left) / rect.width) * 100;
+                const glareY = ((event.clientY - rect.top) / rect.height) * 100;
+
                 card.style.setProperty('--tiltX', `${rotateX.toFixed(2)}deg`);
                 card.style.setProperty('--tiltY', `${rotateY.toFixed(2)}deg`);
+                card.style.setProperty('--glare-x', `${glareX}%`);
+                card.style.setProperty('--glare-y', `${glareY}%`);
             });
             const resetTilt = () => {
                 card.style.setProperty('--tiltX', '0deg');
                 card.style.setProperty('--tiltY', '0deg');
+                card.style.setProperty('--glare-x', '50%');
+                card.style.setProperty('--glare-y', '50%');
             };
             card.addEventListener('mouseleave', resetTilt);
             card.addEventListener('touchend', resetTilt);
