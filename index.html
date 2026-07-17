@@ -16,6 +16,47 @@
     <meta name="twitter:description" content="Stash AI builds human-centric AI products like the JEEnius Suite.">
     <meta name="twitter:image" content="https://ai.jeenius.tech/jee-jeenius/landing/jeenius.webp">
     <meta name="twitter:image:alt" content="Stash AI logomark">
+    
+    <!-- SEO & AEO Enhancements -->
+    <meta name="keywords" content="Stash AI, AI consulting, custom AI development, JEEnius, NEET, education AI, healthcare AI, generative engine optimization, B2B AI solutions">
+    <link rel="canonical" href="https://stash-ai.github.io/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Structured Data (JSON-LD) for SEO/GEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://stash-ai.github.io/#organization",
+          "name": "Stash AI",
+          "url": "https://stash-ai.github.io/",
+          "logo": "https://ai.jeenius.tech/jee-jeenius/landing/jeenius.webp",
+          "description": "Stash AI is a venture lab building human-centric AI tools and custom B2B solutions.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "stash.ai.tech@gmail.com",
+            "contactType": "customer support"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/stashai/",
+            "https://github.com/stash-ai"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "The JEEnius Suite",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web",
+          "description": "An advanced AI-powered educational suite for JEE and NEET preparation.",
+          "provider": {
+            "@id": "https://stash-ai.github.io/#organization"
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
@@ -637,6 +678,59 @@
             --glare-opacity: 1;
         }
 
+        /* FAQ Styles */
+        .faq-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(var(--blur-amt));
+            -webkit-backdrop-filter: blur(var(--blur-amt));
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-tertiary);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 20px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 0 20px 20px 20px;
+        }
     </style>
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -890,6 +984,63 @@
         </div>
     </section>
 
+    <!-- Client Projects / B2B -->
+    <section id="client-projects">
+        <div class="container">
+            <div class="fade-in-up" style="text-align: center; max-width: 700px; margin: 0 auto; margin-bottom: 40px;">
+                <h2>Custom AI Solutions & Client Projects</h2>
+                <p>Beyond our internal products, Stash AI partners with forward-thinking companies to build bespoke AI solutions. From fine-tuning specialized agents to deploying proprietary Model Stacks, we help you integrate human-centric AI into your business.</p>
+            </div>
+            <div class="glass-panel fade-in-up interactive-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 40px;">
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">Ready to elevate your business?</h3>
+                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; max-width: 600px;">Our engineers specialize in generative AI integration, custom LLM fine-tuning, and robust architecture design. Let's explore how AI can solve your toughest challenges.</p>
+                <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
+                    Let's Build Together <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (AEO & GEO Optimization) -->
+    <section id="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="container">
+            <h2 class="fade-in-up" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+            <div class="faq-container fade-in-up" style="max-width: 800px; margin: 0 auto;">
+                
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question">
+                        <span itemprop="name">What is Stash AI?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Stash AI is a venture lab and technology company that builds human-centric AI tools. We combine multiple AI models (our proprietary "Model Stack") to solve real-world problems in education, healthcare, and business.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question">
+                        <span itemprop="name">What is the JEEnius Suite?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">The JEEnius Suite is an advanced AI-powered educational platform designed for JEE and NEET preparation. It uses agents fine-tuned on over 25 years of past exam papers to provide personalized, step-by-step tutoring without hallucinations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="faq-question">
+                        <span itemprop="name">Does Stash AI build custom AI for businesses?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. Stash AI partners with enterprises to build custom AI solutions, deploy specialized Model Stacks, and fine-tune Large Language Models (LLMs) for bespoke business applications.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1122,6 +1273,24 @@
                 }
             });
         }
+        /* FAQ Accordion Logic */
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+
+                // Close all other open answers
+                document.querySelectorAll('.faq-answer').forEach(el => {
+                    el.classList.remove('open');
+                    el.previousElementSibling.classList.remove('active');
+                });
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    button.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
