@@ -63,16 +63,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #0a0a0f;
+            --bg-dark: #000000;
             --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --accent-primary: #6366f1; /* Indigo */
-            --accent-secondary: #ec4899; /* Pink */
-            --accent-tertiary: #06b6d4; /* Cyan */
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-highlight: rgba(255, 255, 255, 0.15);
-            --blur-amt: 16px;
+            --text-muted: #888888;
+            --accent-primary: #ffffff; 
+            --accent-secondary: #3b82f6; 
+            --accent-tertiary: #8b5cf6; 
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --glass-highlight: rgba(255, 255, 255, 0.1);
+            --blur-amt: 24px;
         }
 
         * {
@@ -82,10 +82,11 @@
         }
 
         html {
-            scrollbar-color: rgba(255, 255, 255, 0.2) #050507;
+            scrollbar-color: rgba(255, 255, 255, 0.2) #000000;
             scrollbar-width: thin;
             max-width: 100%;
             overflow-x: hidden;
+            background-color: var(--bg-dark);
         }
 
         html::-webkit-scrollbar {
@@ -93,17 +94,17 @@
         }
 
         html::-webkit-scrollbar-track {
-            background: #050507;
+            background: #000000;
         }
 
         html::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, rgba(236, 72, 153, 0.65), rgba(99, 102, 241, 0.65));
+            background: rgba(255,255,255,0.2);
             border-radius: 999px;
-            border: 2px solid #050507;
+            border: 2px solid #000000;
         }
 
         html::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, rgba(236, 72, 153, 0.85), rgba(99, 102, 241, 0.85));
+            background: rgba(255,255,255,0.3);
         }
 
         body {
@@ -113,20 +114,22 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .scroll-progress {
             position: fixed;
             top: 0;
             left: 0;
-            height: 4px;
+            height: 2px;
             width: 0;
-            background: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary));
+            background: #ffffff;
             z-index: 1100;
             transition: width 0.15s ease-out;
         }
 
-        /* Animated Background Mesh */
+        /* Animated Background Mesh - Vercel/Linear style deep aurora */
         .bg-mesh {
             position: fixed;
             inset: 0;
@@ -134,26 +137,29 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
-            background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.15), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.1), transparent 40%);
+            background-color: #000000;
+            background-image: 
+                radial-gradient(ellipse at 50% -20%, rgba(120, 119, 198, 0.15), transparent 60%),
+                radial-gradient(ellipse at 0% 50%, rgba(255, 255, 255, 0.03), transparent 50%),
+                radial-gradient(ellipse at 100% 50%, rgba(255, 255, 255, 0.03), transparent 50%);
         }
 
+        /* The floating orbs will now act as a slow-moving spotlight in the background */
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s infinite ease-in-out;
+            filter: blur(120px);
+            opacity: 0.3;
+            animation: float 25s infinite ease-in-out;
         }
 
-        .orb-1 { width: 400px; height: 400px; background: var(--accent-primary); top: -100px; left: -100px; animation-delay: 0s; }
-        .orb-2 { width: 300px; height: 300px; background: var(--accent-secondary); bottom: 20%; right: -50px; animation-delay: -5s; }
-        .orb-3 { width: 350px; height: 350px; background: var(--accent-tertiary); top: 40%; left: 30%; animation-delay: -10s; }
+        .orb-1 { width: 600px; height: 600px; background: rgba(59, 130, 246, 0.15); top: -200px; left: -200px; animation-delay: 0s; }
+        .orb-2 { width: 500px; height: 500px; background: rgba(139, 92, 246, 0.15); bottom: 10%; right: -100px; animation-delay: -5s; }
+        .orb-3 { width: 400px; height: 400px; background: rgba(255, 255, 255, 0.05); top: 30%; left: 40%; animation-delay: -10s; }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, -50px); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, -60px) scale(1.1); }
         }
 
         @keyframes cue-bounce {
@@ -168,13 +174,13 @@
             letter-spacing: -0.02em;
         }
 
-        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
-        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        h1 { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+        h3 { font-size: 1.75rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+        p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; font-weight: 300; }
 
         .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -188,25 +194,37 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 140px 0;
+            position: relative;
         }
 
-        /* Glass Components */
+        /* Glass Components - Vercel style ultra-thin borders */
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(var(--blur-amt));
             -webkit-backdrop-filter: blur(var(--blur-amt));
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px; /* slightly sharper corners */
+            padding: 2.5rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            pointer-events: none;
+            border-radius: 16px;
         }
 
         .glass-panel:hover:not(.interactive-card) {
             border-color: var(--glass-highlight);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
         }
 
         /* Moved interactive-card definition to bottom of CSS to avoid duplication */
@@ -650,32 +668,28 @@
         
         .interactive-card {
             position: relative;
-            overflow: hidden;
-            --tiltX: 0deg;
-            --tiltY: 0deg;
-            --lift: 0px;
             --glare-x: 50%;
             --glare-y: 50%;
             --glare-opacity: 0;
-            transform: perspective(1200px) rotateX(var(--tiltX)) rotateY(var(--tiltY)) translateY(var(--lift));
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-            will-change: transform;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .interactive-card::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at var(--glare-x) var(--glare-y), rgba(255,255,255,0.2) 0%, transparent 50%);
+            background: radial-gradient(800px circle at var(--glare-x) var(--glare-y), rgba(255,255,255,0.06), transparent 40%);
             opacity: var(--glare-opacity);
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
             pointer-events: none;
             z-index: 10;
         }
 
         .interactive-card:hover {
-            --lift: -6px;
+            transform: translateY(-4px);
             --glare-opacity: 1;
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
 
         /* FAQ Styles */
@@ -1112,26 +1126,31 @@
 
         // Hero Intro Animation
         gsap.fromTo(".hero-content h1", 
-            { opacity: 0, y: 50 }, 
-            { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", delay: 0.2 }
+            { opacity: 0, y: 30, scale: 0.98 }, 
+            { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "power4.out", delay: 0.1 }
         );
         gsap.fromTo(".hero-content p", 
-            { opacity: 0, y: 30 }, 
-            { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.6 }
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.4 }
         );
         gsap.fromTo(".hero-content .btn-group", 
-            { opacity: 0, scale: 0.9 }, 
-            { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)", delay: 0.9 }
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.6 }
+        );
+        gsap.fromTo(".hero-badges", 
+            { opacity: 0 }, 
+            { opacity: 1, duration: 1.5, ease: "power2.out", delay: 0.8 }
         );
 
         // GSAP ScrollTrigger for elements with .fade-in-up
         gsap.utils.toArray('.fade-in-up:not(.hero-content)').forEach(elem => {
             gsap.fromTo(elem, 
-                { opacity: 0, y: 50 },
+                { opacity: 0, y: 60, scale: 0.98 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
+                    scale: 1,
+                    duration: 1.2,
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: elem,
@@ -1209,31 +1228,25 @@
 
         document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 
-        // Enhanced Interactive 3D Cards with Glare
+        // Premium Spotlight Glow on Cards
         const interactiveCards = document.querySelectorAll('.interactive-card');
         interactiveCards.forEach(card => {
             card.addEventListener('mousemove', event => {
                 const rect = card.getBoundingClientRect();
-                const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
-                const rotateX = (0.5 - (event.clientY - rect.top) / rect.height) * 14;
                 
-                // Calculate glare position based on cursor
-                const glareX = ((event.clientX - rect.left) / rect.width) * 100;
-                const glareY = ((event.clientY - rect.top) / rect.height) * 100;
+                // Calculate glare position based on cursor relative to card
+                const glareX = event.clientX - rect.left;
+                const glareY = event.clientY - rect.top;
 
-                card.style.setProperty('--tiltX', `${rotateX.toFixed(2)}deg`);
-                card.style.setProperty('--tiltY', `${rotateY.toFixed(2)}deg`);
-                card.style.setProperty('--glare-x', `${glareX}%`);
-                card.style.setProperty('--glare-y', `${glareY}%`);
+                card.style.setProperty('--glare-x', `${glareX}px`);
+                card.style.setProperty('--glare-y', `${glareY}px`);
             });
-            const resetTilt = () => {
-                card.style.setProperty('--tiltX', '0deg');
-                card.style.setProperty('--tiltY', '0deg');
+            const resetGlow = () => {
                 card.style.setProperty('--glare-x', '50%');
                 card.style.setProperty('--glare-y', '50%');
             };
-            card.addEventListener('mouseleave', resetTilt);
-            card.addEventListener('touchend', resetTilt);
+            card.addEventListener('mouseleave', resetGlow);
+            card.addEventListener('touchend', resetGlow);
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
