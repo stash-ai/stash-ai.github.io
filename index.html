@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>document.documentElement.className = 'js';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stash AI | Human-Centric Innovation</title>
     <link rel="icon" type="image/svg+xml" href="./stash-logo.svg">
@@ -17,12 +19,13 @@
     <meta name="twitter:description" content="Stash AI builds human-centric AI products like the JEEnius Suite.">
     <meta name="twitter:image" content="https://ai.jeenius.tech/jee-jeenius/landing/jeenius.webp">
     <meta name="twitter:image:alt" content="Stash AI logomark">
-    
+
     <!-- SEO & AEO Enhancements -->
     <meta name="keywords" content="Stash AI, AI consulting, custom AI development, JEEnius, NEET, education AI, healthcare AI, generative engine optimization, B2B AI solutions">
     <link rel="canonical" href="https://stash-ai.github.io/">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    
+    <meta name="theme-color" content="#08090b">
+
     <!-- Structured Data (JSON-LD) for SEO/GEO -->
     <script type="application/ld+json">
     {
@@ -60,58 +63,64 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* ============================================================
+           STASH AI — "Warm Signal Lab"
+           Engineering instrument-panel, warmed with coral/amber + human copy.
+           Radius scale (documented): buttons full-pill, panels 16px, chips 999px.
+           One accent family: warm (ember/amber). Cyan is confined to the
+           routing diagram as a functional "signal" colour only.
+        ============================================================ */
         :root {
-            --bg-dark: #0a0a0f;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --accent-primary: #6366f1; /* Indigo */
-            --accent-secondary: #ec4899; /* Pink */
-            --accent-tertiary: #06b6d4; /* Cyan */
-            --glass-bg: rgba(255, 255, 255, 0.02);
-            --glass-border: rgba(255, 255, 255, 0.05);
-            --glass-highlight: rgba(255, 255, 255, 0.1);
-            --blur-amt: 24px;
+            --void: #08090b;
+            --panel: #0f1116;
+            --panel-2: #15171e;
+            --panel-3: #1b1e27;
+            --line: rgba(255, 255, 255, 0.08);
+            --line-2: rgba(255, 255, 255, 0.14);
+
+            --ink: #f5f2ec;         /* warm white */
+            --muted: #a6a4af;
+            --faint: #6d6d79;
+
+            --warm: #ff7a45;        /* ember — PRIMARY accent */
+            --warm-2: #ff6a4d;
+            --amber: #ffc24b;
+            --iris: #7c5cff;        /* gradient bridge only */
+            --signal: #37e0ff;      /* cyan — routing diagram only */
+
+            --grad-warm: linear-gradient(100deg, #ff7a45, #ffc24b);
+            --grad-ink: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.62) 100%);
+
+            --r: 16px;
+            --r-lg: 22px;
+            --maxw: 1200px;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         html {
-            scrollbar-color: rgba(255, 255, 255, 0.2) #050507;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            background: var(--void);
+            scrollbar-color: rgba(255,255,255,0.18) var(--void);
             scrollbar-width: thin;
-            max-width: 100%;
-            overflow-x: hidden;
-            background-color: var(--bg-dark);
         }
-
-        html::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        html::-webkit-scrollbar-track {
-            background: #050507;
-        }
-
+        html::-webkit-scrollbar { width: 10px; }
+        html::-webkit-scrollbar-track { background: var(--void); }
         html::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, rgba(236, 72, 153, 0.65), rgba(99, 102, 241, 0.65));
-            border-radius: 999px;
-            border: 2px solid #050507;
-        }
-
-        html::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, rgba(236, 72, 153, 0.85), rgba(99, 102, 241, 0.85));
+            background: linear-gradient(180deg, var(--warm), var(--amber));
+            border-radius: 999px; border: 2px solid var(--void);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            background: var(--void);
+            color: var(--ink);
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
@@ -119,1001 +128,722 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        ::selection { background: rgba(255,122,69,0.28); color: #fff; }
+
+        a { color: inherit; }
+        img, svg { display: block; max-width: 100%; }
+
+        /* ---------- Background aura (restrained, warm) ---------- */
+        .aura {
+            position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none;
+            background:
+                radial-gradient(60% 50% at 78% 8%, rgba(255,122,69,0.16), transparent 60%),
+                radial-gradient(50% 45% at 12% 12%, rgba(255,194,75,0.10), transparent 60%),
+                radial-gradient(60% 60% at 50% 108%, rgba(124,92,255,0.10), transparent 60%);
+        }
+        .aura::after {
+            content: ""; position: absolute; inset: -20%;
+            background: radial-gradient(38% 38% at 50% 50%, rgba(255,122,69,0.06), transparent 70%);
+            animation: drift 26s ease-in-out infinite;
+        }
+        @keyframes drift {
+            0%,100% { transform: translate(-6%, -3%) scale(1); }
+            50%     { transform: translate(8%, 6%) scale(1.12); }
+        }
+        .grain {
+            position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ---------- Scroll progress ---------- */
         .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 2px;
-            width: 0;
-            background: #ffffff;
-            z-index: 1100;
-            transition: width 0.15s ease-out;
+            position: fixed; top: 0; left: 0; height: 2px; width: 0;
+            background: var(--grad-warm); z-index: 1100;
+            box-shadow: 0 0 12px rgba(255,122,69,0.6);
         }
 
-        /* Animated Background Mesh - Vercel/Linear style deep aurora */
-        .bg-mesh {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
-                        radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.15), transparent 25%),
-                        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.1), transparent 40%);
+        /* ---------- Typography ---------- */
+        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; }
+        h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+        h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); letter-spacing: -0.035em; }
+        h3 { font-size: 1.5rem; letter-spacing: -0.02em; }
+        p  { color: var(--muted); font-size: 1.06rem; font-weight: 400; }
+        .lead { font-size: 1.16rem; max-width: 58ch; }
+
+        .kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+            color: var(--warm); font-weight: 500;
+            display: inline-flex; align-items: center; gap: 0.55rem;
         }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s infinite ease-in-out;
+        .kicker::before {
+            content: ""; width: 22px; height: 1px; background: var(--warm); opacity: 0.7;
         }
-
-        .orb-1 { width: 400px; height: 400px; background: var(--accent-primary); top: -100px; left: -100px; animation-delay: 0s; }
-        .orb-2 { width: 300px; height: 300px; background: var(--accent-secondary); bottom: 20%; right: -50px; animation-delay: -5s; }
-        .orb-3 { width: 350px; height: 350px; background: var(--accent-tertiary); top: 40%; left: 30%; animation-delay: -10s; }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, -50px); }
+        .ink-grad {
+            background: var(--grad-ink); -webkit-background-clip: text;
+            background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .warm-word { color: var(--warm); }
+        .dim { color: var(--faint); }
+        em.warm-word { font-style: normal; }
 
-        @keyframes cue-bounce {
-            0%, 100% { transform: translateY(0); opacity: 0.85; }
-            50% { transform: translateY(8px); opacity: 0.3; }
-        }
+        /* ---------- Layout ---------- */
+        .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+        section { padding: clamp(84px, 12vh, 132px) 0; position: relative; }
+        .section-head { max-width: 60ch; margin-bottom: 3rem; }
+        .section-head p { margin-top: 1rem; }
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        h1 { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
-        h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; letter-spacing: -0.03em; }
-        h3 { font-size: 1.75rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
-        p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 1.5rem; font-weight: 300; }
-
-        .gradient-text {
-            background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Layout Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 140px 0;
-            position: relative;
-        }
-
-        /* Glass Components - Vercel style ultra-thin borders */
-        .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(var(--blur-amt));
-            -webkit-backdrop-filter: blur(var(--blur-amt));
-            border: 1px solid var(--glass-border);
-            border-radius: 16px; /* slightly sharper corners */
-            padding: 2.5rem;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-panel::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
-            pointer-events: none;
-            border-radius: 16px;
-        }
-
-        .glass-panel:hover:not(.interactive-card) {
-            border-color: var(--glass-highlight);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Moved interactive-card definition to bottom of CSS to avoid duplication */
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: background 0.3s ease;
-        }
-        
-        nav.scrolled {
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo span { color: var(--accent-primary); }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: white; }
-
-        .menu-toggle {
-            display: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
-            border-radius: 999px;
-            padding: 10px 14px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .menu-toggle:active {
-            transform: scale(0.95);
-        }
-
-        @media (max-width: 768px) {
-            .nav-content {
-                position: relative;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 64px;
-                right: 0;
-                left: 0;
-                flex-direction: column;
-                gap: 16px;
-                padding: 24px;
-                background: rgba(10, 10, 15, 0.95);
-                border: 1px solid var(--glass-border);
-                border-radius: 16px;
-                opacity: 0;
-                transform: translateY(-10px);
-                pointer-events: none;
-                transition: opacity 0.25s ease, transform 0.25s ease;
-            }
-
-            .nav-links.open {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-
-            .menu-toggle {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-            }
-        }
-
-        /* Buttons */
+        /* ---------- Buttons (pill) ---------- */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            --pad-y: 0.9rem; --pad-x: 1.5rem;
+            display: inline-flex; align-items: center; gap: 0.6rem; white-space: nowrap;
+            padding: var(--pad-y) var(--pad-x);
+            border-radius: 999px; font-family: inherit; font-size: 0.98rem; font-weight: 600;
+            text-decoration: none; cursor: pointer; border: 1px solid transparent;
+            transition: transform 0.25s var(--ease), background 0.25s, border-color 0.25s, color 0.25s;
+            will-change: transform;
+        }
+        .btn i { font-size: 0.85em; transition: transform 0.25s var(--ease); }
+        .btn-primary { background: var(--warm); color: #1a0d05; box-shadow: 0 8px 30px rgba(255,122,69,0.25); }
+        .btn-primary:hover { background: #ff8a5a; }
+        .btn-primary:hover i { transform: translateX(3px); }
+        .btn-ghost { background: rgba(255,255,255,0.03); color: var(--ink); border-color: var(--line-2); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.28); }
+        .btn:active { transform: scale(0.97); }
+        .btn-sm { --pad-y: 0.62rem; --pad-x: 1.05rem; font-size: 0.9rem; }
+
+        /* ---------- Navigation ---------- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 18px 0;
+            transition: background 0.35s, border-color 0.35s, padding 0.35s;
+            border-bottom: 1px solid transparent;
+        }
+        nav.scrolled {
+            background: rgba(8,9,11,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line); padding: 12px 0;
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        .logo {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-weight: 700; font-size: 1.22rem; letter-spacing: -0.02em; text-decoration: none; color: var(--ink);
+        }
+        .logo .mark {
+            width: 30px; height: 30px; display: grid; place-items: center;
+            color: var(--warm); font-size: 1.05rem;
+            background: rgba(255,122,69,0.12); border: 1px solid rgba(255,122,69,0.3); border-radius: 9px;
+        }
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
+        .nav-links { display: flex; gap: 1.9rem; }
+        .nav-links a {
+            position: relative; color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500;
+            transition: color 0.25s;
+        }
+        .nav-links a::after {
+            content: ""; position: absolute; left: 0; bottom: -6px; height: 1px; width: 0; background: var(--warm);
+            transition: width 0.3s var(--ease);
+        }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links a:hover::after { width: 100%; }
+        .menu-toggle {
+            display: none; align-items: center; gap: 0.5rem; background: none; border: 1px solid var(--line-2);
+            color: var(--ink); font-family: inherit; font-size: 0.85rem; padding: 0.5rem 0.8rem; border-radius: 999px; cursor: pointer;
         }
 
-        .btn-primary {
-            background: white;
-            color: black;
+        /* ---------- Hero ---------- */
+        .hero { padding-top: clamp(120px, 18vh, 180px); padding-bottom: clamp(40px, 6vh, 70px); min-height: 100dvh; display: flex; align-items: center; }
+        .hero-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; width: 100%; }
+        .hero h1 { margin: 1.4rem 0 1.5rem; }
+        .hero .lead { margin-bottom: 2.1rem; }
+        .btn-group { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+        /* trust band under hero (not inside it) */
+        .trust-band {
+            border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+            margin-top: clamp(30px, 6vh, 56px);
         }
-
-        .btn-primary:hover {
-            background: #e0e7ff;
-            transform: scale(1.05);
+        .trust-band .container { display: flex; align-items: center; gap: 1rem 2.4rem; flex-wrap: wrap; padding-top: 20px; padding-bottom: 20px; }
+        .trust-band span {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--muted);
+            display: inline-flex; align-items: center; gap: 0.6rem;
         }
+        .trust-band i { color: var(--warm); }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* ---------- Routing engine (hero visual) ---------- */
+        .engine-panel {
+            position: relative; background:
+                linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%), var(--panel);
+            border: 1px solid var(--line); border-radius: var(--r-lg); padding: 1.15rem;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+            overflow: hidden;
         }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
+        .engine-panel::before { /* internal grid — organises the diagram (not page decoration) */
+            content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 30px 30px;
+            mask-image: radial-gradient(120% 90% at 70% 30%, #000 30%, transparent 78%);
         }
+        .engine-bar { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; margin-bottom: 0.4rem; padding: 0 0.35rem; }
+        .engine-bar .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--faint); letter-spacing: 0.04em; }
+        .engine-bar .tag b { color: var(--warm); font-weight: 600; }
+        .engine-bar .live { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--signal); display: inline-flex; align-items: center; gap: 0.4rem; }
+        .engine-bar .live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 10px var(--signal); animation: blink 1.8s ease-in-out infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+        .routing-svg { width: 100%; height: auto; position: relative; z-index: 1; }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            position: relative;
+        .r-track { fill: none; stroke: rgba(255,255,255,0.13); stroke-width: 1.4; }
+        .r-flow  { fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 5 12; animation: flow 1.3s linear infinite; opacity: 0.9; }
+        .r-flow.warm { stroke: var(--warm); }
+        .r-flow.amber { stroke: var(--amber); }
+        .r-flow.signal { stroke: var(--signal); }
+        @keyframes flow { to { stroke-dashoffset: -34; } }
+        .r-node rect { fill: var(--panel-2); stroke: var(--line-2); stroke-width: 1; }
+        .r-node.key rect { fill: rgba(255,122,69,0.07); stroke: rgba(255,122,69,0.5); }
+        .r-node .r-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--ink); letter-spacing: 0.02em; }
+        .r-node .r-sub { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; fill: var(--faint); letter-spacing: 0.06em; }
+        .r-dot { animation: nodepulse 2.4s ease-in-out infinite; }
+        @keyframes nodepulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+        .r-io rect { fill: rgba(255,122,69,0.08); stroke: rgba(255,122,69,0.4); }
+        .r-out rect { fill: rgba(255,194,75,0.09); stroke: rgba(255,194,75,0.45); }
+        .r-out .r-big { font-family: 'Space Grotesk'; font-weight: 700; font-size: 17px; fill: var(--amber); letter-spacing: -0.02em; }
+        .packet { fill: #fff; }
+
+        /* ---------- Panels / instrument cards ---------- */
+        .panel {
+            position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
+            padding: 2rem; overflow: hidden;
+            transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
         }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: center;
+        .panel::after { /* cursor spotlight */
+            content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.4s;
+            background: radial-gradient(320px circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,122,69,0.12), transparent 60%);
         }
-
-        @media (min-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1.1fr 0.9fr;
-                gap: 60px;
-            }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Hero Visual (Model Stack Animation) */
-        .hero-visual {
-            position: relative;
-            height: 400px;
-            display: none; /* Hide on mobile by default, show on desktop */
-            perspective: 1000px;
-            z-index: 1;
-        }
-
-        @media (min-width: 992px) {
-            .hero-visual {
-                display: block;
-            }
-        }
-
-        .model-stack {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transform: rotateX(60deg) rotateZ(-45deg);
-        }
-
-        .stack-layer {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 260px;
-            height: 260px;
-            margin-left: -130px;
-            margin-top: -130px;
-            background: rgba(10, 10, 15, 0.4);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: inset 0 0 20px rgba(255,255,255,0.02), 0 20px 40px rgba(0,0,0,0.5);
-            transition: border-color 0.3s ease;
-        }
-
-        .stack-layer i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px currentColor);
-        }
-
-        .stack-layer span {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .layer-1 { transform: translateZ(0px); border-color: rgba(6, 182, 212, 0.3); }
-        .layer-2 { transform: translateZ(100px); border-color: rgba(236, 72, 153, 0.3); }
-        .layer-3 { transform: translateZ(200px); border-color: rgba(99, 102, 241, 0.3); }
-
-        .hero-badges {
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            background: var(--glass-bg);
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 1px solid var(--glass-border);
-            width: fit-content;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-badges strong { color: white; }
-
-        .scroll-cue {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .scroll-cue::before {
-            content: '';
-            width: 1px;
-            height: 30px;
-            background: linear-gradient(180deg, transparent, var(--accent-primary));
-            opacity: 0.7;
-        }
-
-        .scroll-cue i {
-            animation: cue-bounce 1.6s infinite;
-            font-size: 1rem;
-            color: var(--accent-tertiary);
-        }
-
-        /* Bento Grid Layouts */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .bento-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .bento-item.wide {
-            grid-column: span 2;
-        }
-        
-        @media (max-width: 768px) {
-            .bento-item.wide { grid-column: span 1; }
-        }
-
-        @media (max-width: 600px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        .panel:hover { border-color: var(--line-2); transform: translateY(-3px); box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+        .panel:hover::after { opacity: 1; }
+        .panel .corner { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; border-top: 1px solid var(--line-2); border-right: 1px solid var(--line-2); opacity: 0.6; }
         .icon-box {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; font-size: 1.25rem;
+            background: rgba(255,255,255,0.04); border: 1px solid var(--line); margin-bottom: 1.2rem; color: var(--warm);
         }
+        .panel h3 { margin-bottom: 0.6rem; }
+        .panel p { font-size: 1rem; }
 
-        /* Flagship Section */
-        .flagship-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+        /* ---------- Vision (asymmetric bento) ---------- */
+        .vision-grid { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: auto auto; gap: 1.1rem; }
+        .vision-lead { grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between;
+            background:
+                radial-gradient(90% 80% at 15% 0%, rgba(255,122,69,0.14), transparent 60%), var(--panel);
         }
+        .vision-lead .icon-box { width: 56px; height: 56px; font-size: 1.5rem; }
+        .vision-lead h3 { font-size: 1.9rem; }
+        .vision-quote { margin-top: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--faint); border-left: 2px solid var(--warm); padding-left: 0.9rem; }
+        /* Vision "real-world impact" globe motif (desktop) */
+        .impact-viz { flex: 1; display: grid; place-items: center; min-height: 0; padding: 0.5rem 0; }
+        .globe-svg { width: min(80%, 250px); height: auto; overflow: visible; }
+        .globe circle, .globe ellipse, .globe line { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+        .impact-viz .orbit { fill: none; stroke: rgba(255,122,69,0.32); stroke-width: 1.2; stroke-dasharray: 3 7; }
+        .orbit-dot { fill: var(--warm); filter: drop-shadow(0 0 5px var(--warm)); }
+        .impact-viz .pt { fill: var(--amber); animation: nodepulse 2.4s ease-in-out infinite; }
+        .impact-viz .pt.p2 { fill: var(--warm); animation-delay: 0.5s; }
+        .impact-viz .pt.p3 { animation-delay: 1s; }
+        .impact-viz .pt.p4 { fill: var(--signal); animation-delay: 1.5s; }
+        .impact-viz .core { fill: var(--warm); filter: drop-shadow(0 0 8px rgba(255,122,69,0.85)); }
+        .ripple { fill: none; stroke: rgba(255,122,69,0.35); stroke-width: 1; transform-box: fill-box; transform-origin: center; opacity: 0; animation: ripple 4.5s ease-out infinite; }
+        .ripple.r2 { animation-delay: 2.25s; }
+        @keyframes ripple { 0% { transform: scale(0.35); opacity: 0.55; } 100% { transform: scale(2); opacity: 0; } }
 
-        @media (max-width: 900px) {
-            .flagship-container { grid-template-columns: 1fr; }
+        /* ---------- Flagship (zigzag) ---------- */
+        .product { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.5rem, 4vw, 3.2rem); align-items: center; padding: clamp(1.8rem, 3vw, 2.6rem); }
+        .product + .product { margin-top: 1.4rem; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+            padding: 0.35rem 0.7rem; border-radius: 999px; margin-bottom: 1rem;
+            color: var(--warm); background: rgba(255,122,69,0.1); border: 1px solid rgba(255,122,69,0.28);
         }
+        .product.neet .chip { color: var(--amber); background: rgba(255,194,75,0.1); border-color: rgba(255,194,75,0.28); }
+        .product h3 { font-size: 1.9rem; margin-bottom: 0.7rem; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.6rem 0; }
+        .stat-item { border-left: 1px solid var(--line-2); padding-left: 0.85rem; }
+        .stat-number { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ink); }
+        .product.neet .stat-number { color: #fff; }
+        .stat-item span { display: block; font-size: 0.8rem; color: var(--faint); margin-top: 0.2rem; }
+        blockquote.q { margin: 1.5rem 0 1.7rem; padding-left: 1rem; border-left: 2px solid var(--warm); color: var(--ink); font-style: italic; font-size: 1.02rem; }
+        blockquote.q .attr { display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.78rem; color: var(--faint); font-family: 'JetBrains Mono', monospace; }
+        .product-visual {
+            position: relative; min-height: 240px; border-radius: var(--r); border: 1px solid var(--line);
+            display: grid; place-items: center; padding: 2rem; overflow: hidden;
+            background: radial-gradient(80% 80% at 70% 20%, rgba(255,122,69,0.12), transparent 60%), var(--panel-2);
+        }
+        .product.neet .product-visual { background: radial-gradient(80% 80% at 30% 20%, rgba(255,194,75,0.12), transparent 60%), var(--panel-2); }
+        .product-visual .vcard { text-align: center; position: relative; z-index: 2; }
+        .product-visual .vcard i { font-size: 2.6rem; margin-bottom: 0.9rem; color: var(--warm); }
+        .product.neet .product-visual .vcard i { color: var(--amber); }
+        .product-visual .vcard h4 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+        .product-visual .vcard p { font-size: 0.88rem; margin: 0; }
+        .product-visual .ring { position: absolute; width: 260px; height: 260px; border: 1px solid var(--line); border-radius: 50%; opacity: 0.5; }
+        .product-visual .ring.r2 { width: 190px; height: 190px; }
 
-        .flagship-visual {
-            position: relative;
-            height: 400px;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        /* ---------- Engine (diff / compare) ---------- */
+        .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; padding: 0; }
+        .compare-col { padding: clamp(1.6rem, 3vw, 2.4rem); }
+        .compare-col.old { background: rgba(255,255,255,0.015); }
+        .compare-col.stash { background: radial-gradient(90% 80% at 80% 0%, rgba(255,122,69,0.1), transparent 60%); border-left: 1px solid var(--line); }
+        .compare h4 { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.4rem; }
+        .compare-col.old h4 { color: var(--faint); }
+        .compare-col.stash h4 { color: var(--warm); }
+        .c-item { display: flex; gap: 0.8rem; padding: 0.85rem 0; border-top: 1px solid var(--line); align-items: flex-start; }
+        .c-item:first-of-type { border-top: none; }
+        .c-item i { margin-top: 0.2rem; font-size: 0.95rem; }
+        .c-item .cross { color: var(--faint); }
+        .c-item .check { color: var(--warm); }
+        .c-item span { font-size: 0.98rem; color: var(--muted); }
+        .compare-col.stash .c-item span { color: var(--ink); }
+        .c-item strong { color: var(--ink); font-weight: 600; }
 
-        .flagship-card {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-            max-width: 80%;
-            text-align: center;
+        /* ---------- Labs (interactive index list) ---------- */
+        .labs-list { border-top: 1px solid var(--line); }
+        .lab-row {
+            display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center;
+            padding: 1.7rem 0.5rem; border-bottom: 1px solid var(--line); position: relative;
+            transition: background 0.35s, padding 0.35s; cursor: default;
         }
+        .lab-row::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--warm); transform: scaleY(0); transform-origin: top; transition: transform 0.4s var(--ease); }
+        .lab-row:hover { background: rgba(255,255,255,0.02); padding-left: 1.2rem; }
+        .lab-row:hover::before { transform: scaleY(1); }
+        .lab-ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 1.15rem; border: 1px solid var(--line); background: rgba(255,255,255,0.03); }
+        .lab-main h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+        .lab-main .field { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+        .lab-main p { font-size: 0.95rem; margin-top: 0.5rem; max-width: 52ch; }
+        .lab-status { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); border: 1px dashed rgba(255,194,75,0.4); border-radius: 999px; padding: 0.4rem 0.85rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.45rem; }
+        /* Locked (undisclosed) lab slots */
+        .lab-ico.lock { color: var(--faint); }
+        .lab-row.locked { cursor: default; }
+        .lab-row.locked:hover { padding-left: 0.5rem; background: rgba(255,255,255,0.015); }
+        .lab-row.locked:hover::before { transform: scaleY(0); }
+        .lab-redact { display: flex; flex-direction: column; gap: 0.7rem; max-width: 44ch; }
+        .redact { height: 13px; border-radius: 6px; background: rgba(255,255,255,0.06); }
+        .redact.w1 { width: 38%; }
+        .redact.w2 { width: 70%; }
+        .redact.w3 { width: 54%; }
 
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
+        /* ---------- B2B CTA band ---------- */
+        .cta-band { text-align: center; }
+        .cta-panel {
+            padding: clamp(2.6rem, 6vw, 4.5rem) 2rem; text-align: center; border-radius: var(--r-lg);
+            border: 1px solid var(--line); position: relative; overflow: hidden;
+            background: radial-gradient(70% 120% at 50% 0%, rgba(255,122,69,0.14), transparent 60%), var(--panel);
         }
+        .cta-panel h2 { margin-bottom: 1rem; }
+        .cta-panel p { max-width: 60ch; margin: 0 auto 2rem; }
 
-        .stat-item h4 {
-            font-size: 1.8rem;
-            color: var(--accent-tertiary);
-            margin-bottom: 0;
-        }
-
-        .stat-number {
-            display: inline-block;
-            min-width: 70px;
-        }
-        
-        .stat-item span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* The Engine Section */
-        .engine-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 700px) {
-            .engine-comparison {
-                grid-template-columns: 1fr;
-            }
-            
-            .comparison-col {
-                border-left: none !important;
-            }
-        }
-
-        .comparison-col h4 {
-            margin-bottom: 20px;
-            text-align: center;
-            opacity: 0.8;
-        }
-
-        .comparison-item {
-            padding: 15px;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .comparison-item:last-child { border-bottom: none; }
-
-        .check-icon { color: var(--accent-tertiary); }
-        .cross-icon { color: #ef4444; }
-
-        /* Future Labs */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card.reveal-placeholder > :not(.placeholder-label) {
-            filter: blur(8px);
-            opacity: 0.2;
-        }
-
-        .placeholder-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(10, 10, 15, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        .project-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--glass-border);
-            padding: 80px 0 40px;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .floating-cta {
-            position: fixed;
-            right: 30px;
-            bottom: 30px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: #0a0a0f;
-            text-decoration: none;
-            padding: 14px 24px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            z-index: 1100;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .floating-cta i {
-            font-size: 1rem;
-        }
-
-        .floating-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45);
-        }
-
-        @media (max-width: 600px) {
-            .floating-cta {
-                right: 16px;
-                bottom: 16px;
-                padding: 12px 18px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Animations */
-        /* Animations managed by GSAP now */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            /* transition removed for GSAP */
-        }
-        
-        .interactive-card {
-            position: relative;
-            --glare-x: 50%;
-            --glare-y: 50%;
-            --glare-opacity: 0;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .interactive-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(800px circle at var(--glare-x) var(--glare-y), rgba(255,255,255,0.06), transparent 40%);
-            opacity: var(--glare-opacity);
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .interactive-card:hover {
-            transform: translateY(-4px);
-            --glare-opacity: 1;
-            border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-        }
-
-        /* FAQ Styles */
-        .faq-item {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(var(--blur-amt));
-            -webkit-backdrop-filter: blur(var(--blur-amt));
-        }
-
+        /* ---------- FAQ ---------- */
+        .faq-container { max-width: 800px; margin: 0 auto; border-top: 1px solid var(--line); }
+        .faq-item { border-bottom: 1px solid var(--line); }
         .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 20px;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: color 0.3s ease;
+            width: 100%; background: none; border: none; color: var(--ink); font-family: inherit;
+            font-size: 1.12rem; font-weight: 600; text-align: left; padding: 1.5rem 0.25rem; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem; letter-spacing: -0.01em;
+        }
+        .faq-question i { color: var(--warm); transition: transform 0.35s var(--ease); font-size: 0.9rem; }
+        .faq-question.active i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
+        .faq-answer.open { max-height: 320px; }
+        .faq-answer p { padding: 0 0.25rem 1.5rem; font-size: 1rem; }
+
+        /* ---------- Footer ---------- */
+        footer { border-top: 1px solid var(--line); padding: clamp(60px, 8vh, 90px) 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2.5rem; }
+        footer h3 { font-size: 1.5rem; margin: 1rem 0 0.6rem; }
+        footer h4 { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+        footer .col-links ul { list-style: none; margin-top: 1.1rem; }
+        footer .col-links li { margin-bottom: 0.7rem; }
+        footer .col-links a { color: var(--muted); text-decoration: none; transition: color 0.25s; }
+        footer .col-links a:hover { color: var(--warm); }
+        footer p { font-size: 0.98rem; }
+        .socials { display: flex; gap: 0.8rem; margin-top: 1.1rem; }
+        .socials a { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color 0.25s, color 0.25s, background 0.25s; }
+        .socials a:hover { border-color: var(--warm); color: var(--warm); background: rgba(255,122,69,0.08); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--faint); }
+
+        /* ---------- Floating CTA ---------- */
+        .floating-cta {
+            position: fixed; bottom: 24px; right: 24px; z-index: 900;
+            display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.2rem;
+            background: var(--warm); color: #1a0d05; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.92rem;
+            box-shadow: 0 10px 34px rgba(255,122,69,0.35); transition: transform 0.25s var(--ease), background 0.25s;
+        }
+        .floating-cta:hover { transform: translateY(-2px); background: #ff8a5a; }
+
+        /* ---------- Reveal (progressive-enhancement gated) ---------- */
+        .js .reveal { opacity: 0; transform: translateY(30px); }
+        .js.no-gsap .reveal { opacity: 1; transform: none; }
+
+        /* ---------- Reduced motion ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+            .aura::after, .r-flow, .r-dot, .packet, .engine-bar .live .dot, .ripple, .impact-viz .pt, .orbit-dot { animation: none !important; }
+            .packet, .orbit-dot { display: none; }
+            * { transition-duration: 0.001ms !important; }
+        }
+        /* ---------- Reduced transparency fallback ---------- */
+        @media (prefers-reduced-transparency: reduce) {
+            nav.scrolled { background: var(--void); backdrop-filter: none; -webkit-backdrop-filter: none; }
         }
 
-        .faq-question:hover {
-            color: var(--accent-tertiary);
+        /* ---------- Responsive ---------- */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero-visual { order: 2; }
+            .vision-grid { grid-template-columns: 1fr; }
+            .vision-lead { grid-row: auto; }
+            .impact-viz { display: none; }
+            .product { grid-template-columns: 1fr; }
+            .product .product-visual { order: -1; }
+            .product.neet .product-visual { order: -1; }
+            .compare { grid-template-columns: 1fr; }
+            .compare-col.stash { border-left: none; border-top: 1px solid var(--line); }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
+        @media (max-width: 768px) {
+            .menu-toggle { display: inline-flex; }
+            .nav-right { position: fixed; inset: 0 0 auto 0; top: 0; flex-direction: column; align-items: stretch;
+                background: rgba(8,9,11,0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+                padding: 88px 24px 28px; gap: 1.2rem; transform: translateY(-102%); transition: transform 0.4s var(--ease);
+                border-bottom: 1px solid var(--line); }
+            .nav-right.open { transform: translateY(0); }
+            .nav-links { flex-direction: column; gap: 1.1rem; }
+            .nav-links a { font-size: 1.1rem; }
+            .nav-cta { align-self: flex-start; }
+            .lab-row { grid-template-columns: auto 1fr; }
+            .lab-status { grid-column: 2; justify-self: start; }
+            .footer-bottom { justify-content: flex-start; }
         }
-
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            padding: 0 20px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .faq-answer.open {
-            max-height: 200px;
-            padding: 0 20px 20px 20px;
+        @media (max-width: 480px) {
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .floating-cta span { display: none; }
+            .floating-cta { padding: 0.9rem; }
         }
     </style>
-    <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <div class="scroll-progress"></div>
-
-    <!-- Background Elements -->
-    <div class="bg-mesh">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="aura" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-layer-group"></i> Stash<span>AI</span>
+            <a href="#" class="logo" aria-label="Stash AI home">
+                <span class="mark"><i class="fa-solid fa-layer-group"></i></span> Stash AI
             </a>
-            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span>Menu</span>
-                <i class="fa-solid fa-bars"></i>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span>Menu</span> <i class="fa-solid fa-bars"></i>
             </button>
-            <div class="nav-links" id="primary-navigation">
-                <a href="#vision">Vision</a>
-                <a href="#flagship">Products</a>
-                <a href="#engine">Technology</a>
-                <a href="#labs">Labs</a>
+            <div class="nav-right" id="primary-navigation">
+                <div class="nav-links">
+                    <a href="#vision">Vision</a>
+                    <a href="#flagship">Products</a>
+                    <a href="#engine">Technology</a>
+                    <a href="#labs">Labs</a>
+                </div>
+                <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-primary btn-sm nav-cta">Start a build</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero -->
+    <header class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1 class="gradient-text">We Don’t Just Build AI.<br>We Solve Problems.</h1>
-                <p>Stash AI is the venture lab building the next generation of <strong>human-centric tools</strong>. We combine the world’s most powerful AI with deep empathy to create products that make life easier, smarter, and fairer.</p>
-                
-                <div class="btn-group" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#flagship" class="btn btn-primary">
-                        View Our Portfolio <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#vision" class="btn btn-secondary">Our Philosophy</a>
-                </div>
-
-                <div class="hero-badges">
-                    <i class="fa-solid fa-rocket" style="color: var(--accent-secondary);"></i>
-                    <span>Incubating the future. Creators of the <strong>JEEnius Suite for JEE & NEET</strong>. Built by engineers from <strong>IIT Kanpur</strong>.</span>
+                <span class="kicker reveal">Human-centric AI · venture lab</span>
+                <h1 class="reveal">We don't just build AI.<br><em class="warm-word">We solve problems.</em></h1>
+                <p class="lead reveal">A venture lab pairing frontier models with real empathy, building tools that make life easier, smarter and fairer.</p>
+                <div class="btn-group reveal">
+                    <a href="#flagship" class="btn btn-primary">See our products <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#vision" class="btn btn-ghost">Our philosophy</a>
                 </div>
             </div>
 
-            <div class="hero-visual">
-                <div class="model-stack">
-                    <div class="stack-layer layer-1">
-                        <i class="fa-solid fa-bolt" style="color: var(--accent-tertiary);"></i>
-                        <span>Frontier Models</span>
+            <div class="hero-visual reveal">
+                <div class="engine-panel">
+                    <div class="engine-bar">
+                        <span class="tag"><b>stash</b> · model stack</span>
+                        <span class="live"><span class="dot"></span> live</span>
                     </div>
-                    <div class="stack-layer layer-2">
-                        <i class="fa-solid fa-code-merge" style="color: var(--accent-secondary);"></i>
-                        <span>Open Source</span>
-                    </div>
-                    <div class="stack-layer layer-3">
-                        <i class="fa-solid fa-brain" style="color: var(--accent-primary);"></i>
-                        <span>Proprietary Logic</span>
-                    </div>
+                    <svg class="routing-svg" viewBox="0 0 520 360" role="img" aria-label="Diagram: a prompt processed by Stash's Model Stack (orchestration, fine-tuned agents and grounded reasoning) into an explained answer.">
+                        <!-- base tracks -->
+                        <path class="r-track" d="M120,180 C160,180 160,76 200,76"/>
+                        <path class="r-track" d="M120,180 L200,180"/>
+                        <path class="r-track" d="M120,180 C160,180 160,284 200,284"/>
+                        <path class="r-track" d="M350,76 C390,76 390,180 420,180"/>
+                        <path class="r-track" d="M350,180 L420,180"/>
+                        <path class="r-track" d="M350,284 C390,284 390,180 420,180"/>
+                        <!-- animated flow -->
+                        <path id="p1" class="r-flow amber"  d="M120,180 C160,180 160,76 200,76"/>
+                        <path id="p2" class="r-flow signal" d="M120,180 L200,180"/>
+                        <path id="p3" class="r-flow warm"   d="M120,180 C160,180 160,284 200,284"/>
+                        <path id="q1" class="r-flow amber"  d="M350,76 C390,76 390,180 420,180"/>
+                        <path id="q2" class="r-flow signal" d="M350,180 L420,180"/>
+                        <path id="q3" class="r-flow warm"   d="M350,284 C390,284 390,180 420,180"/>
+
+                        <!-- packets -->
+                        <circle class="packet" r="2.6"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+                        <circle class="packet" r="2.6"><animateMotion dur="1.4s" begin="0.3s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+                        <circle class="packet" r="2.6"><animateMotion dur="1.6s" begin="0.15s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+                        <circle class="packet" r="2.6"><animateMotion dur="1.5s" begin="0.7s" repeatCount="indefinite"><mpath href="#q1"/></animateMotion></circle>
+                        <circle class="packet" r="2.6"><animateMotion dur="1.4s" begin="1s" repeatCount="indefinite"><mpath href="#q2"/></animateMotion></circle>
+                        <circle class="packet" r="2.6"><animateMotion dur="1.6s" begin="0.85s" repeatCount="indefinite"><mpath href="#q3"/></animateMotion></circle>
+
+                        <!-- PROMPT -->
+                        <g class="r-node r-io">
+                            <rect x="16" y="150" width="104" height="60" rx="12"/>
+                            <text class="r-label" x="68" y="176" text-anchor="middle">Prompt</text>
+                            <text class="r-sub" x="68" y="192" text-anchor="middle">INPUT</text>
+                        </g>
+                        <!-- MODELS -->
+                        <g class="r-node">
+                            <rect x="200" y="48" width="150" height="56" rx="12"/>
+                            <circle class="r-dot" cx="218" cy="76" r="4" fill="#ff7a45"/>
+                            <text class="r-label" x="234" y="73">Orchestration</text>
+                            <text class="r-sub" x="234" y="88">MODEL ROUTING</text>
+                        </g>
+                        <g class="r-node key">
+                            <rect x="200" y="152" width="150" height="56" rx="12"/>
+                            <circle class="r-dot" cx="218" cy="180" r="4" fill="#ffc24b"/>
+                            <text class="r-label" x="234" y="177">Fine-Tuned Agents</text>
+                            <text class="r-sub" x="234" y="192">PROPRIETARY</text>
+                        </g>
+                        <g class="r-node">
+                            <rect x="200" y="256" width="150" height="56" rx="12"/>
+                            <circle class="r-dot" cx="218" cy="284" r="4" fill="#37e0ff"/>
+                            <text class="r-label" x="234" y="281">Grounded Reasoning</text>
+                            <text class="r-sub" x="234" y="296">EXPLAINABLE</text>
+                        </g>
+                        <!-- ANSWER -->
+                        <g class="r-node r-out">
+                            <rect x="420" y="146" width="84" height="68" rx="12"/>
+                            <text class="r-sub" x="462" y="171" text-anchor="middle">ANSWER</text>
+                            <path d="M454,187 l6,7 l13,-16" fill="none" stroke="#ffc24b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text class="r-sub" x="462" y="207" text-anchor="middle">EXPLAINED</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
-        <div class="scroll-cue fade-in-up" aria-hidden="true">
-            <span>Scroll</span>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-    </section>
+    </header>
 
-    <!-- The Why (Societal Impact) -->
+    <!-- Trust band (under hero) -->
+    <div class="trust-band">
+        <div class="container">
+            <span><i class="fa-solid fa-graduation-cap"></i> Built by engineers from IIT Kanpur</span>
+            <span><i class="fa-solid fa-layer-group"></i> Creators of the JEEnius Suite for JEE and NEET</span>
+        </div>
+    </div>
+
+    <!-- Vision -->
     <section id="vision">
         <div class="container">
-            <div class="fade-in-up" style="margin-bottom: 40px;">
-                <h2>Technology Should Serve Humanity,<br><span style="opacity: 0.5;">Not Confuse It.</span></h2>
-                <p style="max-width: 600px;">We believe AI shouldn’t be a “black box” reserved for tech giants. It should be a utility that helps you pass exams, manage your health, and reclaim your time.</p>
+            <div class="section-head reveal">
+                <h2>Technology should serve humanity,<br><span class="dim">not confuse it.</span></h2>
+                <p class="lead">AI should not be a black box kept for tech giants. It should help you pass exams, manage your health, and reclaim your time.</p>
             </div>
 
-            <div class="bento-grid">
-                <div class="glass-panel bento-item fade-in-up interactive-card">
-                    <div class="icon-box" style="color: var(--accent-tertiary);"><i class="fa-solid fa-earth-americas"></i></div>
-                    <h3>Real World, Real Impact</h3>
-                    <p>We don’t build AI for the sake of AI. If it doesn’t solve a societal problem—like education inequality or data privacy—we don’t build it.</p>
+            <div class="vision-grid">
+                <div class="panel vision-lead reveal">
+                    <span class="corner"></span>
+                    <div>
+                        <div class="icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+                        <h3>Real world, real impact</h3>
+                        <p>We don't build AI for its own sake. If it doesn't solve a real problem like education inequality or data privacy, we don't build it.</p>
+                    </div>
+                    <div class="impact-viz" aria-hidden="true">
+                        <svg viewBox="0 0 300 300" class="globe-svg">
+                            <circle class="ripple" cx="150" cy="150" r="52"/>
+                            <circle class="ripple r2" cx="150" cy="150" r="52"/>
+                            <g class="globe">
+                                <circle cx="150" cy="150" r="104"/>
+                                <ellipse cx="150" cy="150" rx="40" ry="104"/>
+                                <ellipse cx="150" cy="150" rx="78" ry="104"/>
+                                <line x1="46" y1="150" x2="254" y2="150"/>
+                                <ellipse cx="150" cy="150" rx="104" ry="44"/>
+                                <ellipse cx="150" cy="150" rx="104" ry="82"/>
+                            </g>
+                            <g transform="rotate(-20 150 150)">
+                                <path id="impact-orbit" class="orbit" d="M22,150 a128,46 0 1,0 256,0 a128,46 0 1,0 -256,0"/>
+                                <circle class="orbit-dot" r="4"><animateMotion dur="8s" repeatCount="indefinite"><mpath href="#impact-orbit"/></animateMotion></circle>
+                            </g>
+                            <circle class="pt p1" cx="112" cy="98" r="3.5"/>
+                            <circle class="pt p2" cx="196" cy="120" r="3.5"/>
+                            <circle class="pt p3" cx="120" cy="202" r="3.5"/>
+                            <circle class="pt p4" cx="190" cy="196" r="3.5"/>
+                            <circle class="core" cx="150" cy="150" r="4"/>
+                        </svg>
+                    </div>
+                    <p class="vision-quote">If it doesn't help a person, it doesn't ship.</p>
                 </div>
-                <div class="glass-panel bento-item fade-in-up interactive-card">
-                    <div class="icon-box" style="color: var(--accent-secondary);"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Privacy as a Promise</h3>
-                    <p>In an era of data mining, Stash AI builds "Safety by Design." Your data belongs to you, not our servers. We use on-device inference where possible.</p>
+                <div class="panel reveal">
+                    <span class="corner"></span>
+                    <div class="icon-box" style="color: var(--amber);"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Privacy as a promise</h3>
+                    <p>Your data belongs to you, not our servers. We build safety in from the start and run on-device inference wherever we can.</p>
                 </div>
-                <div class="glass-panel bento-item wide fade-in-up interactive-card">
-                    <div class="icon-box" style="color: var(--accent-primary);"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h3>The Human Co-Pilot</h3>
-                    <p>Our tools never replace human effort; they amplify it. We build the engine; you steer the ship. From students to doctors, we empower the user.</p>
+                <div class="panel reveal">
+                    <span class="corner"></span>
+                    <div class="icon-box" style="color: var(--iris);"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <h3>The human co-pilot</h3>
+                    <p>Our tools amplify human effort, they never replace it. We build the engine; you steer. From students to doctors, the user stays in control.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Flagship: JEEnius AI -->
+    <!-- Flagship: JEEnius Suite -->
     <section id="flagship">
         <div class="container">
-            <div class="fade-in-up" style="margin-bottom: 40px; text-align: center;">
-                <h2>From Our Lab to the World:<br><span class="gradient-text">The JEEnius Suite</span></h2>
-                <p style="max-width: 600px; margin: 0 auto;">Education was broken. Students were drowning in generic content. We fixed it with specialized prediction engines that are changing how India studies.</p>
+            <div class="section-head reveal" style="max-width: 62ch;">
+                <span class="kicker">From our lab to the world</span>
+                <h2 style="margin-top: 1rem;">The JEEnius Suite</h2>
+                <p class="lead">Students were drowning in generic content. We answered with specialized prediction engines that are changing how India studies.</p>
             </div>
 
-            <!-- JEE JEEnius -->
-            <div class="glass-panel fade-in-up interactive-card" style="margin-bottom: 30px;">
-                <div class="flagship-container">
-                    <div>
-                        <div style="display: inline-block; padding: 5px 15px; background: rgba(236, 72, 153, 0.2); border-radius: 20px; color: var(--accent-secondary); font-size: 0.8rem; font-weight: bold; margin-bottom: 15px;">STASH ORIGINAL</div>
-                        <h3>JEE JEEnius</h3>
-                        <p>Our flagship prediction engine for IIT-JEE. Orchestrating multiple LLMs to outperform human experts in physics, chemistry, and mathematics.</p>
-                        
-                        <div class="stat-grid">
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="20000" data-format="compact" data-suffix="+">20k+</h4>
-                                <span>Active Students</span>
-                            </div>
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="94" data-suffix="%">94%</h4>
-                                <span>Accuracy</span>
-                            </div>
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="24" data-suffix="/7">24/7</h4>
-                                <span>AI Tutor</span>
-                            </div>
-                        </div>
-
-                        <blockquote style="margin-top: 30px; border-left: 3px solid var(--accent-primary); padding-left: 15px; font-style: italic; color: white;">
-                            “Stash AI took complex model stacking and turned it into a simple app that helped me score higher.”
-                        </blockquote>
-                        
-                        <a href="https://jee.jeenius.tech" class="btn btn-primary" style="margin-top: 30px;" target="_blank" rel="noopener noreferrer">Explore JEE JEEnius</a>
+            <!-- JEE -->
+            <div class="panel product reveal">
+                <span class="corner"></span>
+                <div>
+                    <span class="chip"><i class="fa-solid fa-star"></i> Stash original</span>
+                    <h3>JEE JEEnius</h3>
+                    <p>Our flagship prediction engine for IIT-JEE. It orchestrates a stack of models to outperform human experts across physics, chemistry and mathematics.</p>
+                    <div class="stat-grid">
+                        <div class="stat-item"><span class="stat-number" data-target="20000" data-format="compact" data-suffix="+">20k+</span><span>Active students</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="94" data-suffix="%">94%</span><span>Accuracy</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="24" data-suffix="/7">24/7</span><span>AI tutor</span></div>
                     </div>
-                    
-                    <div class="flagship-visual">
-                        <div style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, rgba(0,0,0,0) 70%);"></div>
-                        <div class="flagship-card interactive-card">
-                            <i class="fa-solid fa-brain" style="font-size: 3rem; color: var(--accent-secondary); margin-bottom: 15px;"></i>
-                            <h3>Super-Brain Architecture</h3>
-                            <p style="font-size: 0.9rem; margin-bottom: 0;">Orchestrating Gemini 3 Pro, GPT-5, and Fathom AI to outperform human experts.</p>
-                        </div>
+                    <blockquote class="q">
+                        "Stash AI turned complex model-stacking into a simple app that helped me score higher."
+                        <span class="attr">JEEnius student</span>
+                    </blockquote>
+                    <a href="https://jee.jeenius.tech" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Explore JEE JEEnius <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="product-visual">
+                    <div class="ring"></div><div class="ring r2"></div>
+                    <div class="vcard">
+                        <i class="fa-solid fa-brain"></i>
+                        <h4>Super-brain architecture</h4>
+                        <p>A proprietary Model Stack of fine-tuned agents, built to outperform human experts.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- NEET JEEnius -->
-            <div class="glass-panel fade-in-up interactive-card">
-                <div class="flagship-container">
-                    <!-- Visual on the left for alternate layout on desktop -->
-                    <div class="flagship-visual" style="order: -1;">
-                        <div style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, rgba(0,0,0,0) 70%);"></div>
-                        <div class="flagship-card interactive-card">
-                            <i class="fa-solid fa-stethoscope" style="font-size: 3rem; color: #34d399; margin-bottom: 15px;"></i>
-                            <h3>Medical AI Engine</h3>
-                            <p style="font-size: 0.9rem; margin-bottom: 0;">Pinpoint accuracy for NCERT biology line-by-line inferences.</p>
-                        </div>
+            <!-- NEET -->
+            <div class="panel product neet reveal">
+                <span class="corner"></span>
+                <div class="product-visual">
+                    <div class="ring"></div><div class="ring r2"></div>
+                    <div class="vcard">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        <h4>Medical AI engine</h4>
+                        <p>Pinpoint accuracy for NCERT biology, inferred line by line.</p>
                     </div>
-
-                    <div>
-                        <div style="display: inline-block; padding: 5px 15px; background: rgba(52, 211, 153, 0.2); border-radius: 20px; color: #34d399; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px;">STASH ORIGINAL</div>
-                        <h3>NEET JEEnius</h3>
-                        <p>The NEET Prediction Engine: Mock Tests, PYQs & AI Solutions for NEET-UG. Perfectly tuned for biology, physics, and chemistry.</p>
-                        
-                        <div class="stat-grid">
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="10" data-format="compact" data-suffix="k+">10k+</h4>
-                                <span>Practice Questions</span>
-                            </div>
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="100" data-suffix="%">100%</h4>
-                                <span>NCERT Based</span>
-                            </div>
-                            <div class="stat-item">
-                                <h4 class="stat-number" data-target="24" data-suffix="/7">24/7</h4>
-                                <span>AI Tutor</span>
-                            </div>
-                        </div>
-                        
-                        <a href="https://neet.jeenius.tech" class="btn btn-primary" style="margin-top: 30px; background-color: #34d399; border-color: #34d399; color: #000;" target="_blank" rel="noopener noreferrer">Explore NEET JEEnius</a>
+                </div>
+                <div>
+                    <span class="chip"><i class="fa-solid fa-star"></i> Stash original</span>
+                    <h3>NEET JEEnius</h3>
+                    <p>The NEET prediction engine: mock tests, PYQs and AI solutions for NEET-UG, tuned for biology, physics and chemistry.</p>
+                    <div class="stat-grid">
+                        <div class="stat-item"><span class="stat-number" data-target="10" data-format="compact" data-suffix="k+">10k+</span><span>Practice questions</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="100" data-suffix="%">100%</span><span>NCERT based</span></div>
+                        <div class="stat-item"><span class="stat-number" data-target="24" data-suffix="/7">24/7</span><span>AI tutor</span></div>
                     </div>
+                    <a href="https://neet.jeenius.tech" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top: 0.4rem;">Explore NEET JEEnius <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Stash AI Engine -->
+    <!-- Engine: the Model Stack -->
     <section id="engine">
         <div class="container">
-            <div class="fade-in-up" style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <h2>The Stash AI Advantage:<br>The Best Brain for Every Job.</h2>
-                <p>Most companies rely on one AI model. We rely on the <em>right</em> one. Our proprietary <strong>"Model Stack"</strong> technology combines the strengths of different AIs into one seamless solution.</p>
+            <div class="section-head reveal" style="max-width: 64ch;">
+                <span class="kicker">The Model Stack advantage</span>
+                <h2 style="margin-top: 1rem;">One model is a gamble.<br><span class="warm-word">A stack is a system.</span></h2>
+                <p class="lead">Most companies bet on a single model. We route each job to the right one. Our Model Stack combines their strengths into one answer.</p>
             </div>
 
-            <div class="glass-panel fade-in-up interactive-card" style="margin-top: 40px;">
-                <div class="engine-comparison">
-                    <div class="comparison-col">
-                        <h4>The Old Way</h4>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-xmark cross-icon"></i>
-                            <span>Locked into one provider (e.g., just GPT)</span>
-                        </div>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-xmark cross-icon"></i>
-                            <span>Generic, hallucinated answers</span>
-                        </div>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-xmark cross-icon"></i>
-                            <span>"Black Box" decisions</span>
-                        </div>
-                    </div>
-                    <div class="comparison-col" style="border-left: 1px solid var(--glass-border);">
-                        <h4 style="color: var(--accent-tertiary);">The Stash AI Way</h4>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-check check-icon"></i>
-                            <span><strong>A Team of Models:</strong> We mix Gemini, OpenAI, and Open Source.</span>
-                        </div>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-check check-icon"></i>
-                            <span><strong>Specialized Agents:</strong> Fine-tuned on specific data (e.g., 25 years of JEE papers).</span>
-                        </div>
-                        <div class="comparison-item">
-                            <i class="fa-solid fa-check check-icon"></i>
-                            <span><strong>Radical Transparency:</strong> We show you <em>how</em> the AI thinks.</span>
-                        </div>
-                    </div>
+            <div class="panel compare reveal">
+                <div class="compare-col old">
+                    <h4>The old way</h4>
+                    <div class="c-item"><i class="fa-solid fa-xmark cross"></i><span>Locked to a single provider, one model for everything.</span></div>
+                    <div class="c-item"><i class="fa-solid fa-xmark cross"></i><span>Generic, hallucinated answers.</span></div>
+                    <div class="c-item"><i class="fa-solid fa-xmark cross"></i><span>Black-box decisions you cannot inspect.</span></div>
+                </div>
+                <div class="compare-col stash">
+                    <h4>The Stash AI way</h4>
+                    <div class="c-item"><i class="fa-solid fa-check check"></i><span><strong>A team of models.</strong> We orchestrate multiple frontier models with our own fine-tuned agents.</span></div>
+                    <div class="c-item"><i class="fa-solid fa-check check"></i><span><strong>Specialized agents,</strong> fine-tuned on real data like 25 years of JEE papers.</span></div>
+                    <div class="c-item"><i class="fa-solid fa-check check"></i><span><strong>Radical transparency.</strong> We show you how the answer was reached.</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Future Labs -->
+    <!-- Future Labs (undisclosed / locked) -->
     <section id="labs">
         <div class="container">
-            <h2 class="fade-in-up">What We Are Solving Next.</h2>
-            <div class="bento-grid" style="margin-top: 40px;">
-                <div class="glass-panel project-card fade-in-up reveal-placeholder interactive-card">
-                    <div class="project-tag" style="color: #ef4444; border-color: #ef4444;">Healthcare</div>
-                    <div class="icon-box" style="background: rgba(239, 68, 68, 0.2); color: #ef4444;"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3>Project Vital</h3>
-                    <p>AI that simplifies medical reports for patients, not just doctors. Understanding your health shouldn't require a PhD.</p>
-                    <div class="placeholder-label">Revealing Soon</div>
+            <div class="section-head reveal">
+                <h2>In the lab.</h2>
+            </div>
+            <div class="labs-list">
+                <div class="lab-row locked reveal" aria-label="Undisclosed project, revealing soon">
+                    <div class="lab-ico lock"><i class="fa-solid fa-lock"></i></div>
+                    <div class="lab-redact" aria-hidden="true">
+                        <span class="redact w1"></span>
+                        <span class="redact w3"></span>
+                    </div>
+                    <span class="lab-status"><i class="fa-solid fa-lock"></i> Revealing soon</span>
                 </div>
-                <div class="glass-panel project-card fade-in-up reveal-placeholder interactive-card">
-                    <div class="project-tag" style="color: #eab308; border-color: #eab308;">Legal</div>
-                    <div class="icon-box" style="background: rgba(234, 179, 8, 0.2); color: #eab308;"><i class="fa-solid fa-scale-balanced"></i></div>
-                    <h3>Project Civic</h3>
-                    <p>Making legal documents and government schemes readable for everyone. Democratizing access to justice.</p>
-                    <div class="placeholder-label">Revealing Soon</div>
+                <div class="lab-row locked reveal" aria-label="Undisclosed project, revealing soon">
+                    <div class="lab-ico lock"><i class="fa-solid fa-lock"></i></div>
+                    <div class="lab-redact" aria-hidden="true">
+                        <span class="redact w2"></span>
+                        <span class="redact w1"></span>
+                    </div>
+                    <span class="lab-status"><i class="fa-solid fa-lock"></i> Revealing soon</span>
                 </div>
-                <div class="glass-panel project-card fade-in-up reveal-placeholder interactive-card">
-                    <div class="project-tag" style="color: #22c55e; border-color: #22c55e;">Climate</div>
-                    <div class="icon-box" style="background: rgba(34, 197, 94, 0.2); color: #22c55e;"><i class="fa-solid fa-leaf"></i></div>
-                    <h3>Project Green</h3>
-                    <p>Hyper-local climate insights to help farmers and homeowners plan better. Data-driven sustainability.</p>
-                    <div class="placeholder-label">Revealing Soon</div>
+                <div class="lab-row locked reveal" aria-label="Undisclosed project, revealing soon">
+                    <div class="lab-ico lock"><i class="fa-solid fa-lock"></i></div>
+                    <div class="lab-redact" aria-hidden="true">
+                        <span class="redact w3"></span>
+                        <span class="redact w2"></span>
+                    </div>
+                    <span class="lab-status"><i class="fa-solid fa-lock"></i> Revealing soon</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Client Projects / B2B -->
-    <section id="client-projects">
+    <!-- B2B / Client Projects -->
+    <section id="client-projects" class="cta-band">
         <div class="container">
-            <div class="fade-in-up" style="text-align: center; max-width: 700px; margin: 0 auto; margin-bottom: 40px;">
-                <h2>Custom AI Solutions & Client Projects</h2>
-                <p>Beyond our internal products, Stash AI partners with forward-thinking companies to build bespoke AI solutions. From fine-tuning specialized agents to deploying proprietary Model Stacks, we help you integrate human-centric AI into your business.</p>
-            </div>
-            <div class="glass-panel fade-in-up interactive-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 40px;">
-                <h3 style="font-size: 2rem; margin-bottom: 20px;">Ready to elevate your business?</h3>
-                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; max-width: 600px;">Our engineers specialize in generative AI integration, custom LLM fine-tuning, and robust architecture design. Let's explore how AI can solve your toughest challenges.</p>
-                <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 30px;">
-                    Let's Build Together <i class="fa-solid fa-arrow-right"></i>
-                </a>
+            <div class="cta-panel reveal">
+                <span class="kicker" style="justify-content: center;">Custom AI &amp; client projects</span>
+                <h2 style="margin-top: 1.2rem;">Have a problem worth solving?</h2>
+                <p>Beyond our own products, we build bespoke AI with teams who care about doing it right. From fine-tuned agents to full Model Stacks, we help you ship human-centric AI.</p>
+                <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-primary" style="--pad-y: 1rem; --pad-x: 1.8rem; font-size: 1.05rem;">Start a build <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (AEO & GEO Optimization) -->
+    <!-- FAQ -->
     <section id="faq" itemscope itemtype="https://schema.org/FAQPage">
         <div class="container">
-            <h2 class="fade-in-up" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
-            <div class="faq-container fade-in-up" style="max-width: 800px; margin: 0 auto;">
-                
+            <div class="section-head reveal" style="text-align: center; margin: 0 auto 3rem;">
+                <h2>Frequently asked questions</h2>
+            </div>
+            <div class="faq-container reveal">
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="faq-question">
                         <span itemprop="name">What is Stash AI?</span>
@@ -1123,7 +853,6 @@
                         <p itemprop="text">Stash AI is a venture lab and technology company that builds human-centric AI tools. We combine multiple AI models (our proprietary "Model Stack") to solve real-world problems in education, healthcare, and business.</p>
                     </div>
                 </div>
-
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="faq-question">
                         <span itemprop="name">What is the JEEnius Suite?</span>
@@ -1133,7 +862,6 @@
                         <p itemprop="text">The JEEnius Suite is an advanced AI-powered educational platform designed for JEE and NEET preparation. It uses agents fine-tuned on over 25 years of past exam papers to provide personalized, step-by-step tutoring without hallucinations.</p>
                     </div>
                 </div>
-
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="faq-question">
                         <span itemprop="name">Does Stash AI build custom AI for businesses?</span>
@@ -1143,7 +871,6 @@
                         <p itemprop="text">Yes. Stash AI partners with enterprises to build custom AI solutions, deploy specialized Model Stacks, and fine-tune Large Language Models (LLMs) for bespoke business applications.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1153,268 +880,197 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="logo" style="margin-bottom: 20px;">
-                        <i class="fa-solid fa-layer-group"></i> Stash<span>AI</span>
-                    </a>
-                    <h3 style="margin-bottom: 10px;">Let’s Build a Better Future.</h3>
-                    <p>Whether you are an engineer, a dreamer, or a partner—there is a place for you at Stash AI.</p>
-                    <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-secondary" style="margin-top: 10px;">
-                        <i class="fa-regular fa-envelope"></i> stash.ai.tech@gmail.com
-                    </a>
+                    <a href="#" class="logo"><span class="mark"><i class="fa-solid fa-layer-group"></i></span> Stash AI</a>
+                    <h3>Let's build a better future.</h3>
+                    <p>Whether you are an engineer, a dreamer, or a partner, there is a place for you at Stash AI.</p>
+                    <a href="mailto:stash.ai.tech@gmail.com" class="btn btn-ghost" style="margin-top: 1.2rem;"><i class="fa-regular fa-envelope"></i> stash.ai.tech@gmail.com</a>
                 </div>
-                <div>
+                <div class="col-links">
                     <h4>Explore</h4>
-                    <ul style="list-style: none; margin-top: 20px;">
-                        <li style="margin-bottom: 10px;"><a href="#flagship" style="color: var(--text-muted); text-decoration: none;">The JEEnius Suite</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#vision" style="color: var(--text-muted); text-decoration: none;">Our Vision</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#labs" style="color: var(--text-muted); text-decoration: none;">Future Labs</a></li>
+                    <ul>
+                        <li><a href="#flagship">The JEEnius Suite</a></li>
+                        <li><a href="#vision">Our vision</a></li>
+                        <li><a href="#labs">Future Labs</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Origin</h4>
-                    <p style="margin-top: 20px;">Developed with love by engineers from <strong>IIT Kanpur</strong>.</p>
-                    <div style="display: flex; gap: 15px; margin-top: 10px;">
-                        <a href="https://www.linkedin.com/company/stashai/" style="color: white; font-size: 1.2rem;" aria-label="StashAI on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/stash-ai" style="color: white; font-size: 1.2rem;" aria-label="StashAI on GitHub"><i class="fa-brands fa-github"></i></a>
+                    <p style="margin-top: 1.1rem;">Built by engineers from <strong style="color: var(--ink);">IIT Kanpur</strong>.</p>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/company/stashai/" aria-label="Stash AI on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/stash-ai" aria-label="Stash AI on GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; 2025 Stash AI. Crafted with curiosity.</span>
-                <span>Human-Centric Intelligence</span>
+                <span>© 2026 Stash AI. Crafted with curiosity.</span>
+                <span>Human-centric intelligence</span>
             </div>
         </div>
     </footer>
 
-    <a href="mailto:stash.ai.tech@gmail.com" class="floating-cta">
-        <i class="fa-solid fa-comments"></i>
-        <span>Start a Build</span>
+    <a href="mailto:stash.ai.tech@gmail.com" class="floating-cta" aria-label="Start a build">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Start a build</span>
     </a>
 
+    <!-- GSAP (motion layer) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-        /*
-            Experience Layer & Motion Graphics
-        */
-        gsap.registerPlugin(ScrollTrigger);
+    (function () {
+        "use strict";
+        var root = document.documentElement;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var hasGSAP = typeof window.gsap !== "undefined";
 
-        const navbar = document.getElementById('navbar');
-        const scrollProgress = document.querySelector('.scroll-progress');
-
-        const syncScrollState = () => {
-            const scrolled = window.scrollY;
-            if (scrolled > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            const pageHeight = document.body.scrollHeight - window.innerHeight;
-            const progress = pageHeight > 0 ? (scrolled / pageHeight) * 100 : 0;
-            if (scrollProgress) {
-                scrollProgress.style.width = `${progress}%`;
-            }
-        };
-
-        window.addEventListener('scroll', syncScrollState);
-        syncScrollState();
-
-        // Hero Intro Animation
-        gsap.fromTo(".hero-content h1", 
-            { opacity: 0, y: 30, scale: 0.98 }, 
-            { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "power4.out", delay: 0.1 }
-        );
-        gsap.fromTo(".hero-content p", 
-            { opacity: 0, y: 20 }, 
-            { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.4 }
-        );
-        gsap.fromTo(".hero-content .btn-group", 
-            { opacity: 0, y: 20 }, 
-            { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.6 }
-        );
-        gsap.fromTo(".hero-badges", 
-            { opacity: 0 }, 
-            { opacity: 1, duration: 1.5, ease: "power2.out", delay: 0.8 }
-        );
-        
-        // Hero Visual Model Stack Animation
-        gsap.fromTo(".hero-visual", 
-            { opacity: 0, x: 50 },
-            { opacity: 1, x: 0, duration: 1.5, ease: "power4.out", delay: 0.5 }
-        );
-        
-        gsap.to(".layer-1", { z: -20, duration: 2.5, yoyo: true, repeat: -1, ease: "sine.inOut" });
-        gsap.to(".layer-2", { z: 120, duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 0.2 });
-        gsap.to(".layer-3", { z: 220, duration: 3.5, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 0.4 });
-        
-        gsap.to(".model-stack", {
-            rotateZ: "-35deg",
-            duration: 12,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut"
-        });
-
-        // GSAP ScrollTrigger for elements with .fade-in-up
-        gsap.utils.toArray('.fade-in-up:not(.hero-content)').forEach(elem => {
-            gsap.fromTo(elem, 
-                { opacity: 0, y: 60, scale: 0.98 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 1.2,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: elem,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        });
-
-        // Background Orbs Parallax
-        document.addEventListener('mousemove', e => {
-            const x = e.clientX / window.innerWidth - 0.5;
-            const y = e.clientY / window.innerHeight - 0.5;
-            gsap.to('.orb-1', { x: x * 100, y: y * 100, duration: 2, ease: 'power2.out' });
-            gsap.to('.orb-2', { x: x * -80, y: y * -80, duration: 2, ease: 'power2.out' });
-            gsap.to('.orb-3', { x: x * 50, y: y * -50, duration: 2, ease: 'power2.out' });
-        });
-
-        // Magnetic CTA Buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mousemove', e => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: 'power2.out' });
+        /* -------- Progressive-enhancement safety --------
+           If GSAP failed to load (or motion is reduced), reveal everything so
+           nothing can stay stuck at opacity:0. */
+        if (!hasGSAP || reduce) { root.classList.add("no-gsap"); }
+        // Safety net: hero is not scroll-gated, so if it never revealed, show it.
+        setTimeout(function () {
+            document.querySelectorAll(".hero .reveal").forEach(function (el) {
+                if (getComputedStyle(el).opacity === "0") { el.style.opacity = "1"; el.style.transform = "none"; }
             });
-            btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
-            });
-        });
+        }, 1800);
 
-        const compactFormatter = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 });
+        /* -------- Nav state + scroll progress (ScrollTrigger, no scroll listener) -------- */
+        var navbar = document.getElementById("navbar");
+        var progress = document.querySelector(".scroll-progress");
+        function setProgress() {
+            var h = document.body.scrollHeight - window.innerHeight;
+            var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+            if (progress) progress.style.width = p + "%";
+            if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 40);
+        }
+        if (hasGSAP) {
+            gsap.registerPlugin(ScrollTrigger);
+            ScrollTrigger.create({ start: 0, end: "max", onUpdate: setProgress, onRefresh: setProgress });
+        } else {
+            // minimal rAF-throttled fallback
+            var ticking = false;
+            window.addEventListener("scroll", function () {
+                if (!ticking) { requestAnimationFrame(function () { setProgress(); ticking = false; }); ticking = true; }
+            }, { passive: true });
+        }
+        setProgress();
 
-        const formatValue = (value, format) => {
-            if (format === 'compact') {
-                return compactFormatter.format(value);
-            }
-            return Math.round(value).toString();
-        };
+        /* -------- Reveal choreography -------- */
+        if (hasGSAP && !reduce) {
+            // Hero intro (fromTo so it plays even though CSS pre-hides .reveal)
+            gsap.fromTo(".hero .reveal", { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.12, delay: 0.1, clearProps: "transform" });
 
-        const animateNumber = element => {
-            const target = parseFloat(element.dataset.target || '0');
-            const duration = parseInt(element.dataset.duration || '1600', 10);
-            const suffix = element.dataset.suffix || '';
-            const prefix = element.dataset.prefix || '';
-            const format = element.dataset.format || 'standard';
-            const start = performance.now();
-
-            const step = currentTime => {
-                const progress = Math.min((currentTime - start) / duration, 1);
-                const currentValue = target * progress;
-                element.textContent = `${prefix}${formatValue(currentValue, format)}${suffix}`;
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                }
-            };
-
-            element.textContent = `${prefix}0${suffix}`;
-            requestAnimationFrame(step);
-        };
-
-        const statObserver = new IntersectionObserver((entries, observerInstance) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    if (!el.dataset.animated) {
-                        el.dataset.animated = 'true';
-                        animateNumber(el);
-                    }
-                    observerInstance.unobserve(el);
-                }
-            });
-        }, { threshold: 0.6 });
-
-        document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
-
-        // Premium Spotlight Glow on Cards
-        const interactiveCards = document.querySelectorAll('.interactive-card');
-        interactiveCards.forEach(card => {
-            card.addEventListener('mousemove', event => {
-                const rect = card.getBoundingClientRect();
-                
-                // Calculate glare position based on cursor relative to card
-                const glareX = event.clientX - rect.left;
-                const glareY = event.clientY - rect.top;
-
-                card.style.setProperty('--glare-x', `${glareX}px`);
-                card.style.setProperty('--glare-y', `${glareY}px`);
-            });
-            const resetGlow = () => {
-                card.style.setProperty('--glare-x', '50%');
-                card.style.setProperty('--glare-y', '50%');
-            };
-            card.addEventListener('mouseleave', resetGlow);
-            card.addEventListener('touchend', resetGlow);
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', event => {
-                event.preventDefault();
-                const destination = document.querySelector(anchor.getAttribute('href'));
-                if (destination) {
-                    destination.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        /* Navigation toggle handles responsive menu state transitions */
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinksGroup = document.getElementById('primary-navigation');
-        if (menuToggle && navLinksGroup) {
-            const setMenuState = desiredState => {
-                const isOpen = navLinksGroup.classList.contains('open');
-                if (desiredState === isOpen) {
-                    return;
-                }
-                navLinksGroup.classList.toggle('open', desiredState);
-                menuToggle.setAttribute('aria-expanded', String(desiredState));
-            };
-
-            menuToggle.addEventListener('click', () => {
-                setMenuState(!navLinksGroup.classList.contains('open'));
-            });
-
-            navLinksGroup.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => setMenuState(false));
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    setMenuState(false);
-                }
+            // Section reveals on scroll
+            gsap.utils.toArray(".reveal").forEach(function (el) {
+                if (el.closest(".hero")) return;
+                gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                    opacity: 1, y: 0, duration: 0.9, ease: "power3.out", clearProps: "transform",
+                    scrollTrigger: { trigger: el, start: "top 86%", toggleActions: "play none none none" }
+                });
             });
         }
-        /* FAQ Accordion Logic */
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const isOpen = answer.classList.contains('open');
 
-                // Close all other open answers
-                document.querySelectorAll('.faq-answer').forEach(el => {
-                    el.classList.remove('open');
-                    el.previousElementSibling.classList.remove('active');
+        /* -------- Number counters (robust) -------- */
+        var compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+        function fmt(v, f) { return f === "compact" ? compact.format(v) : Math.round(v).toString(); }
+        function finalText(el) { return (el.dataset.prefix || "") + fmt(parseFloat(el.dataset.target || "0"), el.dataset.format) + (el.dataset.suffix || ""); }
+        function countUp(el) {
+            var target = parseFloat(el.dataset.target || "0");
+            var dur = 1500, start = null, suffix = el.dataset.suffix || "", prefix = el.dataset.prefix || "", f = el.dataset.format, done = false;
+            function step(t) {
+                if (start === null) start = t;
+                var p = Math.min((t - start) / dur, 1);
+                el.textContent = prefix + fmt(target * (p < 1 ? p : 1), f) + suffix;
+                if (p < 1) requestAnimationFrame(step); else { el.textContent = finalText(el); done = true; }
+            }
+            requestAnimationFrame(step);
+            // Robustness: guarantee the real value even if rAF stalls mid-count.
+            setTimeout(function () { if (!done) el.textContent = finalText(el); }, dur + 700);
+        }
+        var nums = document.querySelectorAll(".stat-number");
+        if (reduce || !("IntersectionObserver" in window)) {
+            nums.forEach(function (el) { el.textContent = finalText(el); });
+        } else {
+            var io = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting && !e.target.dataset.done) {
+                        e.target.dataset.done = "1"; countUp(e.target); obs.unobserve(e.target);
+                    }
                 });
+            }, { threshold: 0.6 });
+            nums.forEach(function (el) { io.observe(el); });
+            // safety: if a counter never fires (e.g. tab backgrounded), show real value
+            document.addEventListener("visibilitychange", function () {
+                if (document.hidden) nums.forEach(function (el) { if (!el.dataset.done) el.textContent = finalText(el); });
+            });
+        }
 
-                if (!isOpen) {
-                    answer.classList.add('open');
-                    button.classList.add('active');
-                }
+        /* -------- Magnetic buttons + card spotlight (skip on touch) -------- */
+        var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        if (hasGSAP && !reduce && fine) {
+            document.querySelectorAll(".btn").forEach(function (btn) {
+                btn.addEventListener("mousemove", function (e) {
+                    var r = btn.getBoundingClientRect();
+                    gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.28, y: (e.clientY - r.top - r.height / 2) * 0.4, duration: 0.3, ease: "power2.out" });
+                });
+                btn.addEventListener("mouseleave", function () { gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.4)" }); });
+            });
+        }
+        if (fine) {
+            document.querySelectorAll(".panel").forEach(function (card) {
+                card.addEventListener("mousemove", function (e) {
+                    var r = card.getBoundingClientRect();
+                    card.style.setProperty("--glare-x", (e.clientX - r.left) + "px");
+                    card.style.setProperty("--glare-y", (e.clientY - r.top) + "px");
+                });
+            });
+        }
+
+        /* -------- Aura parallax (subtle) -------- */
+        if (hasGSAP && !reduce && fine) {
+            var aura = document.querySelector(".aura");
+            window.addEventListener("mousemove", function (e) {
+                gsap.to(aura, { x: (e.clientX / window.innerWidth - 0.5) * 40, y: (e.clientY / window.innerHeight - 0.5) * 40, duration: 1.4, ease: "power2.out" });
+            }, { passive: true });
+        }
+
+        /* -------- Smooth-scroll for in-page anchors -------- */
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener("click", function (e) {
+                var id = a.getAttribute("href");
+                if (id === "#" || id.length < 2) { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); return; }
+                var dest = document.querySelector(id);
+                if (dest) { e.preventDefault(); dest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); }
             });
         });
+
+        /* -------- Mobile menu -------- */
+        var toggle = document.querySelector(".menu-toggle");
+        var navRight = document.getElementById("primary-navigation");
+        if (toggle && navRight) {
+            function setMenu(open) { navRight.classList.toggle("open", open); toggle.setAttribute("aria-expanded", String(open)); }
+            toggle.addEventListener("click", function () { setMenu(!navRight.classList.contains("open")); });
+            navRight.querySelectorAll("a").forEach(function (l) { l.addEventListener("click", function () { setMenu(false); }); });
+            window.addEventListener("resize", function () { if (window.innerWidth > 768) setMenu(false); });
+        }
+
+        /* -------- FAQ accordion -------- */
+        document.querySelectorAll(".faq-question").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var answer = btn.nextElementSibling;
+                var isOpen = answer.classList.contains("open");
+                document.querySelectorAll(".faq-answer").forEach(function (a) { a.classList.remove("open"); a.previousElementSibling.classList.remove("active"); });
+                if (!isOpen) { answer.classList.add("open"); btn.classList.add("active"); }
+            });
+        });
+
+        /* -------- Reduced motion: stop native SVG animations -------- */
+        if (reduce) {
+            document.querySelectorAll("svg").forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
+        }
+    })();
     </script>
 </body>
 </html>

@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "stash-root",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "python3 -m http.server 8756"],
+      "port": 8756
+    },
+    {
       "name": "jee-landing",
       "runtimeExecutable": "sh",
       "runtimeArgs": ["-c", "cd jee-jeenius/landing && python3 -m http.server 8753"],
