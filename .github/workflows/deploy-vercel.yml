@@ -1,0 +1,60 @@
+name: Static Sites → Vercel
+
+on:
+  push:
+    branches: ["prod"]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-static-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: jeenius-static
+            project_id: prj_Rjo3YKhbv8z4jKbmkuIJbSimp4TU
+          - name: jee-jeenius-static
+            project_id: prj_ZmKgnnZkRsUs2UFJ5DnprKdX4rQC
+          - name: neet-jeenius-static
+            project_id: prj_yP2xy2h1d1ta8KpgB8kEku1pZ7p0
+    steps:
+      - uses: actions/checkout@v4
+
+      # Deploy from the repo root; each Vercel project's Root Directory setting
+      # (jeenius-brand/landing, jee-jeenius/landing, neet-jeenius/landing) selects the subfolder.
+      - name: Deploy ${{ matrix.name }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ matrix.project_id }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "⚠️ VERCEL_TOKEN not set on this repo — skipping ${{ matrix.name }}."
+            echo "   Add VERCEL_TOKEN in Settings → Secrets and variables → Actions to enable deploys."
+            exit 0
+          fi
+          npm i -g vercel@latest
+          echo "🚀 Deploying ${{ matrix.name }} to production"
+          vercel deploy --prod --yes --archive=tgz --token="$VERCEL_TOKEN"
+          echo "✅ ${{ matrix.name }} deployed"
+
+  notify-failure:
+    name: Slack alert on failure
+    needs: deploy
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Slack
+        run: |
+          if [ -n "${{ secrets.SLACK_WEBHOOK_URL }}" ]; then
+            curl -X POST -H 'Content-type: application/json' \
+              --data '{"text":"❌ Static sites deploy FAILED on Vercel (stash-ai.github.io @ prod). Check GitHub Actions: https://github.com/stash-ai/stash-ai.github.io/actions"}' \
+              "${{ secrets.SLACK_WEBHOOK_URL }}" || echo "Slack post failed"
+          else
+            echo "ℹ️ No SLACK_WEBHOOK_URL configured; skipping Slack alert."
+          fi
